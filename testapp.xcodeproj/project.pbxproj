@@ -13,6 +13,9 @@
 		80198DB51CC7FDBF00515123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB31CC7FDBF00515123 /* Main.storyboard */; };
 		80198DB71CC7FDBF00515123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB61CC7FDBF00515123 /* Assets.xcassets */; };
 		80198DBA1CC7FDBF00515123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */; };
+		80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DC81CC93FBF00515123 /* MasterTableViewController.m */; };
+		80198DCD1CC94CF200515123 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DCC1CC94CF200515123 /* Appointment.m */; };
+		80198DD21CC971F500515123 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DD11CC971F500515123 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		80198DB61CC7FDBF00515123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80198DB91CC7FDBF00515123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80198DBB1CC7FDBF00515123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80198DC71CC93FBF00515123 /* MasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewController.h; sourceTree = "<group>"; };
+		80198DC81CC93FBF00515123 /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
+		80198DCB1CC94CF200515123 /* Appointment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appointment.h; sourceTree = "<group>"; };
+		80198DCC1CC94CF200515123 /* Appointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
+		80198DD01CC971F500515123 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		80198DD11CC971F500515123 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +69,9 @@
 			children = (
 				80198DAD1CC7FDBF00515123 /* AppDelegate.h */,
 				80198DAE1CC7FDBF00515123 /* AppDelegate.m */,
-				80198DB01CC7FDBF00515123 /* ViewController.h */,
-				80198DB11CC7FDBF00515123 /* ViewController.m */,
+				80198DCF1CC971C400515123 /* View */,
+				80198DCE1CC9525A00515123 /* Model */,
+				80198DCA1CC94CC200515123 /* Controller */,
 				80198DB31CC7FDBF00515123 /* Main.storyboard */,
 				80198DB61CC7FDBF00515123 /* Assets.xcassets */,
 				80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */,
@@ -77,6 +87,35 @@
 				80198DAB1CC7FDBF00515123 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80198DCA1CC94CC200515123 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80198DB01CC7FDBF00515123 /* ViewController.h */,
+				80198DB11CC7FDBF00515123 /* ViewController.m */,
+				80198DC71CC93FBF00515123 /* MasterTableViewController.h */,
+				80198DC81CC93FBF00515123 /* MasterTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		80198DCE1CC9525A00515123 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80198DCB1CC94CF200515123 /* Appointment.h */,
+				80198DCC1CC94CF200515123 /* Appointment.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		80198DCF1CC971C400515123 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80198DD01CC971F500515123 /* TableViewCell.h */,
+				80198DD11CC971F500515123 /* TableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +189,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80198DB21CC7FDBF00515123 /* ViewController.m in Sources */,
+				80198DD21CC971F500515123 /* TableViewCell.m in Sources */,
+				80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,
+				80198DCD1CC94CF200515123 /* Appointment.m in Sources */,
 				80198DAC1CC7FDBF00515123 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -47,7 +47,7 @@
     NSString *query = [url query];
     NSString *accessToken = [[query componentsSeparatedByString: @"="] objectAtIndex:1];
     NSString *headerValue = [NSString stringWithFormat:@"Bearer %@", accessToken];
-    NSLog(@"URL parameters:%@", headerValue);
+//    NSLog(@"URL parameters:%@", headerValue);
 
 //    NSString *urlString = [NSString stringWithFormat: @"https://liwen.drchrono.com/o/token/?%@&grant_type=authorization_code&redirect_uri=http%%3A%%2F%%2F127.0.0.1%%3A8000%%2FGroupOrder%%2Fdefault%%2Ftest&client_id=V7jV4QDuGHjSMtIFc3BW4Rdaf4k1N2focgvGTxpj&client_secret=05iKwS5NINtEo9YNNM83Ut6ofv8FPZhU9HMppKYP6SElXrVAw8qIJnWJQUcQJEj2oreSy59roSm1cJ7Lz1VKl3mkLaZe1aX0GXsMzdjO7SQVwqxw6WqXh2oGCSWWqDoQ", query];
 //    
@@ -86,24 +86,39 @@
 //        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 //        NSLog(@"requestReply: %@", requestReply);
 //    }] resume];
-//    
+////
 
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:[NSURL URLWithString:@"https://drchrono.com/api/patients"]];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request addValue:headerValue forHTTPHeaderField:@"Authorization"];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-        NSLog(@"requestReply: %@", requestReply);
-    }] resume];
+//    
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    NSDate *date = [NSDate date];
+//    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
+//    NSLog(@"date is : %@", dateString);
+//    NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
+//    NSLog(@"url is : %@", appointmentURLString);
+//    [request setURL:[NSURL URLWithString:appointmentURLString]];
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+////    [request setURL:[NSURL URLWithString:@"https://drchrono.com/api/patients"]];
+//    [request setHTTPMethod:@"GET"];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request addValue:headerValue forHTTPHeaderField:@"Authorization"];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
+//
+////        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//        NSLog(@"requestReply: %@", requestReply);
+//    }] resume];
     
     [[NSUserDefaults standardUserDefaults] setValue:headerValue forKey:@"headerValue"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
+
     return YES;
 
 }

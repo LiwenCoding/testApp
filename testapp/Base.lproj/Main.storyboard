@@ -27,17 +27,111 @@
                                     <action selector="redirect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHt-gS-LI6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRj-El-01g">
+                                <rect key="frame" x="249" y="290" width="103" height="30"/>
+                                <state key="normal" title="Enter Your App"/>
+                                <connections>
+                                    <segue destination="0Je-g1-krh" kind="show" identifier="initialView" id="u1e-6u-pbo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l0B-TK-xgK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="STh-5A-iSi"/>
+                            <constraint firstItem="dRj-El-01g" firstAttribute="top" secondItem="l0B-TK-xgK" secondAttribute="bottom" constant="8" id="Vmy-fs-bjn"/>
                             <constraint firstItem="l0B-TK-xgK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="232" id="heK-fm-vzb"/>
+                            <constraint firstItem="dRj-El-01g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vBw-F8-4qZ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="328"/>
+            <point key="canvasLocation" x="96" y="510"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mOT-It-DDf">
+            <objects>
+                <viewController id="5YS-JY-cig" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fom-ft-uAS"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kY-DV-iup"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RfR-po-4ND">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="THK-Ll-eVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="865"/>
+        </scene>
+        <!--Appointment-->
+        <scene sceneID="qvu-bU-A5l">
+            <objects>
+                <tableViewController title="Appointment" clearsSelectionOnViewWillAppear="NO" id="FIf-qr-ssf" customClass="MasterTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bSY-Ry-fBK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="nkp-ot-r4c" style="IBUITableViewCellStyleDefault" id="ur8-aK-4NE">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ur8-aK-4NE" id="zP9-Rc-B1O">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="DDDD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nkp-ot-r4c">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FIf-qr-ssf" id="Y5W-5O-cUW"/>
+                            <outlet property="delegate" destination="FIf-qr-ssf" id="yBC-hk-z98"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Appointment" id="prA-Rf-m6b"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oO7-ZZ-HQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="-70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A07-3d-ZZz">
+            <objects>
+                <navigationController id="QYf-pl-iRz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4y1-hP-9eH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FIf-qr-ssf" kind="relationship" relationship="rootViewController" id="T8v-i8-wBr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnX-VA-qrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-143"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="brh-my-TE6">
+            <objects>
+                <splitViewController id="0Je-g1-krh" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="QYf-pl-iRz" kind="relationship" relationship="masterViewController" id="A1d-M9-FH6"/>
+                        <segue destination="5YS-JY-cig" kind="relationship" relationship="detailViewController" id="iCI-7N-c0F"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEP-Dt-dkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="902"/>
         </scene>
     </scenes>
 </document>
