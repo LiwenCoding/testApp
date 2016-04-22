@@ -11,7 +11,6 @@
 @interface AddPatientViewController () <UITextViewDelegate>
 @property (strong, nonatomic) NSString *headerValue;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSelector;
-
 @end
 
 @implementation AddPatientViewController
@@ -48,7 +47,6 @@
     [super viewDidLoad];
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
     self.gender = @"Male";
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,15 +54,14 @@
 }
 
 
+#pragma mark - addPatient
 
 - (void)addPatient {
     
     NSString *doctor = @"89784";
     NSString *birth = @"1988-12-12";
-    
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys: self.firstName.text, @"first_name", self.lastName.text, @"last_name", self.phoneNumber.text, @"cell_phone",self.gender, @"gender", doctor, @"doctor", birth, @"date_of_birth",
                          nil];
-
     NSError *error;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
     
@@ -83,7 +80,6 @@
                 NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
                 if ([requestReply objectForKey:@"id"]) {
                     //post success
-                    
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self alert:@"Success!"];
                     });
@@ -94,21 +90,11 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self alert:@"failure, please try again"];
                     });
-                    
-
-                    
                 }
                 NSLog(@"requestReply: %@", [requestReply objectForKey:@"id"]);
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self.tableView reloadData];
-                    //go to main page
-//                });
             }
         }] resume];
     });
-    
-    
-    
 }
 
 
@@ -125,16 +111,4 @@
     [self presentViewController:alert animated:YES completion:nil];
     
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

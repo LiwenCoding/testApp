@@ -64,7 +64,7 @@
 }
 
 
-#pragma - request and handle data
+#pragma mark - request and handle data
 
 - (void)requestPatientInfo {
     
