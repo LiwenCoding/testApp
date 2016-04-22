@@ -22,7 +22,6 @@
     
 }
 - (IBAction)save:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
     
     for (int i = 0; i < 6; i++) {
         CheckInTableViewCell *cell = (id)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
@@ -31,7 +30,7 @@
         [self.textFieldArray replaceObjectAtIndex:i withObject:info];
     }
     [self savePatientInfo];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -128,7 +127,7 @@
                 if ([requestReply objectForKey:@"id"]) {
                     //post success
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self alert:@"Success!"];
+                        [self alert:@"You have Successfully checked in!"];
                     });
                 } else {
                     //post failure
