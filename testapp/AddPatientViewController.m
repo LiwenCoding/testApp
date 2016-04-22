@@ -75,8 +75,8 @@
     [request addValue:self.headerValue forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:postData];
 
-//    dispatch_queue_t fetchQ = dispatch_queue_create("fetcher", NULL);
-//    dispatch_async(fetchQ, ^{
+    dispatch_queue_t fetchQ = dispatch_queue_create("fetcher", NULL);
+    dispatch_async(fetchQ, ^{
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data) {
@@ -105,7 +105,7 @@
 //                });
             }
         }] resume];
-//    });
+    });
     
     
     
