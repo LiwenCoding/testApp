@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "Appointment.h"
 
-@interface MasterTableViewController () <UISplitViewControllerDelegate>
+@interface MasterTableViewController ()
 @property (strong, nonatomic) NSMutableArray *appointmentList;
 @property (strong, nonatomic) NSString *headerValue;
 @end
@@ -19,23 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
     self.appointmentList = [[NSMutableArray alloc] init];
     [self requestAppointmentList];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
-    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,17 +33,14 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
-
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        
-        [controller setDate:appointment.date];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        if ([[segue identifier] isEqualToString:@"showDetail"]) {
+            DetailViewController *detailViewController = segue.destinationViewController;
+            Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
+            detailViewController.patientId = appointment.patientId;
     }
 }
+
 
 
 
@@ -78,53 +62,17 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
-//    id detailView = self.splitViewController.viewControllers[1];
-    DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
-    NSLog(@"selected date is : %@ ", appointment.date);
-    detailVC.date = appointment.date;
-    NSLog(@"detailview is: %@", self.detailViewController.date);
-
-}
-
-
-//#pragma mark - UISplitViewControllerDelegate
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //
-//-(void)awakeFromNib {
+//    Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
+////    id detailView = self.splitViewController.viewControllers[1];
+//    DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+//    NSLog(@"selected date is : %@ ", appointment.date);
+//    detailVC.date = appointment.date;
+//    NSLog(@"detailview is: %@", self.detailViewController.date);
 //
-//    self.splitViewController.delegate = self;
-//}
-//
-//- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation {
-//
-//    return UIInterfaceOrientationIsPortrait(orientation);
-//}
-//
-//- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc {
-//    
-//    barButtonItem.title = aViewController.title;
-//    self.navigationItem.leftBarButtonItem = barButtonItem;
-//}
-//
-//- (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-//
-//    self.navigationItem.leftBarButtonItem = nil;
 //}
 
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
-//        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-//        [controller setDate:appointment.date];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-//    }
-//}
 
 
 - (IBAction)requestAppointmentList {
@@ -166,9 +114,6 @@
                 [self.tableView reloadData];
             });
         }
-        
-        
-        
         
     }] resume];
     

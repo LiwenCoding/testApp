@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  CheckInTableViewController.h
 //  testapp
 //
 //  Created by Shen Liwen on 4/22/16.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface CheckInTableViewController : UITableViewController
 @property(strong, nonatomic)NSNumber *patientId;
+
 @end
