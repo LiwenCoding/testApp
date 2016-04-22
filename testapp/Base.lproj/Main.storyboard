@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0B-TK-xgK">
-                                <rect key="frame" x="207" y="252" width="187" height="30"/>
+                                <rect key="frame" x="207" y="227" width="187" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="187" id="ULU-nu-nLp"/>
+                                    <constraint firstAttribute="width" constant="187" id="96l-an-6YB"/>
                                 </constraints>
                                 <state key="normal" title="Connect with Drchrono"/>
                                 <connections>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRj-El-01g">
-                                <rect key="frame" x="249" y="290" width="103" height="30"/>
+                                <rect key="frame" x="249" y="285" width="103" height="30"/>
                                 <state key="normal" title="Enter Your App"/>
                                 <connections>
                                     <segue destination="Cw4-NK-yev" kind="show" id="Znw-zu-dV3"/>
@@ -38,31 +38,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l0B-TK-xgK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="STh-5A-iSi"/>
-                            <constraint firstItem="dRj-El-01g" firstAttribute="top" secondItem="l0B-TK-xgK" secondAttribute="bottom" constant="8" id="Vmy-fs-bjn"/>
-                            <constraint firstItem="l0B-TK-xgK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="232" id="heK-fm-vzb"/>
-                            <constraint firstItem="dRj-El-01g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vBw-F8-4qZ"/>
+                            <constraint firstItem="l0B-TK-xgK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="207" id="3ep-p8-o9D"/>
+                            <constraint firstItem="dRj-El-01g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K9x-Ye-Ah6"/>
+                            <constraint firstItem="dRj-El-01g" firstAttribute="top" secondItem="l0B-TK-xgK" secondAttribute="bottom" constant="28" id="cuq-sr-lxh"/>
+                            <constraint firstItem="l0B-TK-xgK" firstAttribute="centerX" secondItem="dRj-El-01g" secondAttribute="centerX" id="qch-lj-Nlz"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="1584"/>
+            <point key="canvasLocation" x="2113" y="1508"/>
         </scene>
         <!--Master Table View Controller-->
         <scene sceneID="sP3-IF-Yc9">
             <objects>
                 <tableViewController id="Wlp-xZ-AcH" customClass="MasterTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="24" sectionHeaderHeight="28" sectionFooterHeight="28" id="DLu-bv-zpi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" id="DLu-bv-zpi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="24" id="BWK-k6-dK4">
-                                <rect key="frame" x="0.0" y="92" width="600" height="24"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="107" id="BWK-k6-dK4">
+                                <rect key="frame" x="0.0" y="92" width="600" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWK-k6-dK4" id="aUc-fB-Sqq">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="23.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="106.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -99,15 +99,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-iL-e0l">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-iL-e0l">
                                 <rect key="frame" x="260" y="247" width="80" height="30"/>
                                 <state key="normal" title="Add patient"/>
                                 <connections>
                                     <segue destination="EgY-Aq-yFg" kind="presentation" id="Cx8-4p-iOt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZN-6B-Yrh">
-                                <rect key="frame" x="242" y="285" width="116" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZN-6B-Yrh">
+                                <rect key="frame" x="242" y="311" width="116" height="30"/>
                                 <state key="normal" title="Start onboarding"/>
                                 <connections>
                                     <segue destination="V0I-3Z-Ysb" kind="presentation" identifier="onboarding" id="4lX-lG-6qJ"/>
@@ -115,13 +115,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mZN-6B-Yrh" firstAttribute="top" secondItem="0IR-iL-e0l" secondAttribute="bottom" constant="34" id="Kli-Xi-U2o"/>
+                            <constraint firstItem="0IR-iL-e0l" firstAttribute="centerX" secondItem="GHk-QL-yrM" secondAttribute="centerX" id="SKG-um-7YN"/>
+                            <constraint firstItem="0IR-iL-e0l" firstAttribute="top" secondItem="aIf-jX-pkM" secondAttribute="bottom" constant="183" id="q2Q-Sw-n0C"/>
+                            <constraint firstItem="mZN-6B-Yrh" firstAttribute="centerX" secondItem="GHk-QL-yrM" secondAttribute="centerX" id="vLx-dT-HLn"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yh-6i-xBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="2028"/>
+            <point key="canvasLocation" x="3261" y="1924"/>
         </scene>
         <!--Appointment Detail-->
         <scene sceneID="mOT-It-DDf">
@@ -296,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gq1-hL-AZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="1994"/>
+            <point key="canvasLocation" x="4020" y="1836"/>
         </scene>
         <!--Check In Table View Controller-->
         <scene sceneID="PN7-JP-7tZ">
@@ -364,7 +370,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3t-Sh-0PR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4628" y="2763"/>
+            <point key="canvasLocation" x="4204" y="2893"/>
         </scene>
         <!--Appointment-->
         <scene sceneID="qvu-bU-A5l">
@@ -509,7 +515,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiN-dM-EwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3816" y="2763"/>
+            <point key="canvasLocation" x="3390" y="2893"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

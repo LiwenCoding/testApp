@@ -10,5 +10,4 @@
 
 @interface CheckInTableViewController : UITableViewController
 @property(strong, nonatomic)NSNumber *patientId;
-
 @end
