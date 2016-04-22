@@ -7,9 +7,10 @@
 //
 
 #import "MasterTableViewController.h"
+#import "DetailViewController.h"
 #import "Appointment.h"
 
-@interface MasterTableViewController ()
+@interface MasterTableViewController () <UISplitViewControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *appointmentList;
 @property (strong, nonatomic) NSString *headerValue;
 @end
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
     self.appointmentList = [[NSMutableArray alloc] init];
     [self requestAppointmentList];
@@ -30,47 +33,114 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
+    [super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
+
+        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        
+        [controller setDate:appointment.date];
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    }
+}
+
+
+
 
 #pragma mark - Table view data source
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return [self.appointmentList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
     cell.textLabel.text = appointment.date;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-- (void)requestAppointmentList {
-    
-    
-    
+    Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
+//    id detailView = self.splitViewController.viewControllers[1];
+    DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:@"DetailView" bundle:nil];
+    NSLog(@"selected date is : %@ ", appointment.date);
+    detailVC.date = appointment.date;
+    NSLog(@"detailview is: %@", self.detailViewController.date);
 
+}
+
+
+//#pragma mark - UISplitViewControllerDelegate
+//
+//-(void)awakeFromNib {
+//
+//    self.splitViewController.delegate = self;
+//}
+//
+//- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation {
+//
+//    return UIInterfaceOrientationIsPortrait(orientation);
+//}
+//
+//- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc {
+//    
+//    barButtonItem.title = aViewController.title;
+//    self.navigationItem.leftBarButtonItem = barButtonItem;
+//}
+//
+//- (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+//
+//    self.navigationItem.leftBarButtonItem = nil;
+//}
+
+
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
+//        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+//        [controller setDate:appointment.date];
+//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+//        controller.navigationItem.leftItemsSupplementBackButton = YES;
+//    }
+//}
+
+
+- (IBAction)requestAppointmentList {
+    
+    
+    
+    [self.refreshControl beginRefreshing];
+    [self.appointmentList removeAllObjects];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSDate *date = [NSDate date];
     NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
-    NSLog(@"date is : %@", dateString);
     NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
-    NSLog(@"url is : %@", appointmentURLString);
-    
     [request setURL:[NSURL URLWithString:appointmentURLString]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:self.headerValue forHTTPHeaderField:@"Authorization"];
-    
-    
     
     
     dispatch_queue_t fetchQ = dispatch_queue_create("fetcher", NULL);
@@ -86,17 +156,15 @@
                 NSNumber *patientId = [everyRecord objectForKey:@"patient"];
                 NSString *date = [everyRecord objectForKey:@"scheduled_time"];
                 NSString *reason = [everyRecord objectForKey:@"reason"];
-            
-//                NSLog(@"result is : %@ , %@ , %@", patientId, date, reason);
                 
                 Appointment *appointment = [[Appointment alloc] initWithPatientId:patientId withDate:date withReason:reason];
                 [self.appointmentList addObject:appointment];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.refreshControl endRefreshing];
                 [self.tableView reloadData];
             });
-//            NSLog(@"count is : %lu", (unsigned long)self.appointmentList.count);
         }
         
         

@@ -16,6 +16,8 @@
 		80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DC81CC93FBF00515123 /* MasterTableViewController.m */; };
 		80198DCD1CC94CF200515123 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DCC1CC94CF200515123 /* Appointment.m */; };
 		80198DD21CC971F500515123 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DD11CC971F500515123 /* TableViewCell.m */; };
+		80198DD51CC972B300515123 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DD41CC972B300515123 /* DetailViewController.m */; };
+		80198DDB1CC989CE00515123 /* AddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DDA1CC989CE00515123 /* AddPatientViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		80198DCC1CC94CF200515123 /* Appointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
 		80198DD01CC971F500515123 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		80198DD11CC971F500515123 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		80198DD31CC972B300515123 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		80198DD41CC972B300515123 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		80198DD91CC989CE00515123 /* AddPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPatientViewController.h; sourceTree = "<group>"; };
+		80198DDA1CC989CE00515123 /* AddPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPatientViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,10 @@
 				80198DB11CC7FDBF00515123 /* ViewController.m */,
 				80198DC71CC93FBF00515123 /* MasterTableViewController.h */,
 				80198DC81CC93FBF00515123 /* MasterTableViewController.m */,
+				80198DD31CC972B300515123 /* DetailViewController.h */,
+				80198DD41CC972B300515123 /* DetailViewController.m */,
+				80198DD91CC989CE00515123 /* AddPatientViewController.h */,
+				80198DDA1CC989CE00515123 /* AddPatientViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -190,10 +200,12 @@
 			files = (
 				80198DB21CC7FDBF00515123 /* ViewController.m in Sources */,
 				80198DD21CC971F500515123 /* TableViewCell.m in Sources */,
+				80198DDB1CC989CE00515123 /* AddPatientViewController.m in Sources */,
 				80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,
 				80198DCD1CC94CF200515123 /* Appointment.m in Sources */,
 				80198DAC1CC7FDBF00515123 /* main.m in Sources */,
+				80198DD51CC972B300515123 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
