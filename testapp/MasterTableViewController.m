@@ -34,7 +34,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
             DetailViewController *detailViewController = segue.destinationViewController;
             Appointment *appointment = [self.appointmentList objectAtIndex:indexPath.row];
             detailViewController.patientId = appointment.patientId;
@@ -63,8 +63,10 @@
     [self.refreshControl beginRefreshing];
     [self.appointmentList removeAllObjects];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSDate *date = [NSDate date];
-    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
+//    NSDate *date = [NSDate date];
+//    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
+    // appointments on 4-23
+    NSString *dateString = @"2016-04-23";
     NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
     [request setURL:[NSURL URLWithString:appointmentURLString]];
     [request setHTTPMethod:@"GET"];
