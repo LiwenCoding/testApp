@@ -77,7 +77,7 @@
 - (void)getPatientInfo {
     //generate request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/patients?last_name=%@&first_name=%@&date_of_birth=%@", self.lastName.text, self.firstName.text, self.dateOfBirth.text];
+    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/patients?verbose=true&last_name=%@&first_name=%@&date_of_birth=%@", self.lastName.text, self.firstName.text, self.dateOfBirth.text];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -87,7 +87,7 @@
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data) {
-                NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
+                NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
                 //if there is no patient matched
                 NSLog(@"request reply is %@", requestReply);
                 NSNumber *count = [requestReply objectForKey:@"count"];
@@ -100,7 +100,7 @@
                     });
                 } else {
                     //find the patient in the appointment list
-                    NSDictionary *resultDictionary = [[requestReply objectForKey:@"results"] objectAtIndex:0];
+                    NSMutableDictionary *resultDictionary = [[requestReply objectForKey:@"results"] objectAtIndex:0];
                     self.patientInfo = [[NSMutableDictionary alloc]initWithDictionary:resultDictionary];
                     NSLog(@"patient info: %@", self.patientInfo);
                     [self getAppointmentList];

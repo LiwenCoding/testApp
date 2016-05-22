@@ -11,6 +11,8 @@
 #import "RaceSelectionTableViewController.h"
 #import "LanguageSelectionTableViewController.h"
 #import "EthnicitySelectionTableViewController.h"
+#import "ContactInfoViewController.h"
+#import "RKDropdownAlert.h"
 
 @interface BackgroundInfoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *dateOfBirth;
@@ -40,7 +42,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction)nextButtonPressed:(id)sender {
+    [self.view endEditing:YES];
+    
+    // validate required field
+    if ([[self.dateOfBirth.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.dateOfBirth.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
+        //drop down alert
+        [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+        return;
+    }
+    
+    // save changes in the memory
+    [self.patientInfo setObject:self.dateOfBirth.text forKey:@"date_of_birth"];
+    
+    if (![self.preferredLanguage.text isEqualToString:@""]) {
+        [self.patientInfo setObject:self.preferredLanguage.text forKey:@"preferred_language"];
+    }
+    
+    if (![self.race.text isEqualToString:@""]) {
+        [self.patientInfo setObject:self.race.text forKey:@"race"];
+    }
+    
+    if (![self.ethnicity.text isEqualToString:@""]) {
+        [self.patientInfo setObject:self.ethnicity.text forKey:@"ethnicity"];
+    }
+    
+    if (![self.ethnicity.text isEqualToString:@""]) {
+        [self.patientInfo setObject:self.socialSecurity.text forKey:@"social_security_number"];
+    }
+    
+    // do segue
+    [self performSegueWithIdentifier:@"showContactInfo" sender:self];
+    
+}
 
 
 
@@ -50,10 +84,30 @@
 - (void)setTextFieldText {
     
     self.dateOfBirth.text = [self.patientInfo objectForKey:@"date_of_birth"];
-    self.preferredLanguage.text = [self.patientInfo objectForKey:@"preferred_language"];
-    self.race.text = [self.patientInfo objectForKey:@"race"];
-    self.ethnicity.text = [self.patientInfo objectForKey:@"ethnicity"];
-    self.socialSecurity.text = [self.patientInfo objectForKey:@"social_security_number"];
+    
+    if ([[self.patientInfo objectForKey:@"preferred_language"] isEqualToString:@"blank"]) {
+        self.preferredLanguage.text = @"";
+    } else {
+        self.preferredLanguage.text = [self.patientInfo objectForKey:@"preferred_language"];
+    }
+    
+    if ([[self.patientInfo objectForKey:@"race"] isEqualToString:@"blank"]) {
+        self.race.text = @"";
+    } else {
+        self.race.text = [self.patientInfo objectForKey:@"race"];
+    }
+    
+    if ([[self.patientInfo objectForKey:@"ethnicity"] isEqualToString:@"blank"]) {
+        self.ethnicity.text = @"";
+    } else {
+        self.ethnicity.text = [self.patientInfo objectForKey:@"ethnicity"];
+    }
+    
+    if ([[self.patientInfo objectForKey:@"social_security_number"] isEqualToString:@"blank"]) {
+        self.socialSecurity.text = @"";
+    } else {
+        self.socialSecurity.text = [self.patientInfo objectForKey:@"social_security_number"];
+    }
 
 }
 
@@ -140,31 +194,31 @@
     bottomBorder.borderWidth = 2;
         
     CALayer *bottomBorder2 = [CALayer layer];
-    bottomBorder2.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
+    bottomBorder2.frame = CGRectMake(0.0f, self.socialSecurity.frame.size.height - 1, self.socialSecurity.frame.size.width - 1, 1.0f);
     bottomBorder2.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder2.borderWidth = 2;
     
     CALayer *bottomBorder3 = [CALayer layer];
-    bottomBorder3.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
+    bottomBorder3.frame = CGRectMake(0.0f, self.preferredLanguage.frame.size.height - 1, self.preferredLanguage.frame.size.width - 1, 1.0f);
     bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder3.borderWidth = 2;
     
     CALayer *bottomBorder4 = [CALayer layer];
-    bottomBorder4.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
+    bottomBorder4.frame = CGRectMake(0.0f, self.race.frame.size.height - 1, self.race.frame.size.width - 1, 1.0f);
     bottomBorder4.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder4.borderWidth = 2;
     
     CALayer *bottomBorder5 = [CALayer layer];
-    bottomBorder5.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
+    bottomBorder5.frame = CGRectMake(0.0f, self.ethnicity.frame.size.height - 1, self.ethnicity.frame.size.width - 1, 1.0f);
     bottomBorder5.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder5.borderWidth = 2;
 
     
     [self.dateOfBirth.layer addSublayer:bottomBorder];
-    [self.preferredLanguage.layer addSublayer:bottomBorder2];
-    [self.race.layer addSublayer:bottomBorder3];
-    [self.ethnicity.layer addSublayer:bottomBorder4];
-    [self.socialSecurity.layer addSublayer:bottomBorder5];
+    [self.preferredLanguage.layer addSublayer:bottomBorder3];
+    [self.race.layer addSublayer:bottomBorder4];
+    [self.ethnicity.layer addSublayer:bottomBorder5];
+    [self.socialSecurity.layer addSublayer:bottomBorder2];
     
 }
 
@@ -174,7 +228,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // racePopover
+    // get data from popovers
     if ([[segue identifier] isEqualToString:@"showRacePopover"]) {
         UINavigationController *navi = segue.destinationViewController;
         RaceSelectionTableViewController *vc = (RaceSelectionTableViewController *)navi.topViewController;
@@ -204,7 +258,13 @@
         };
     }
 
+    // prepare data for next segue
     
+    if ([[segue identifier] isEqualToString:@"showContactInfo"]) {
+        UINavigationController *navi = segue.destinationViewController;
+        ContactInfoViewController *vc = (ContactInfoViewController *)navi.topViewController;
+        vc.patientInfo = self.patientInfo;
+    }
     
     
     

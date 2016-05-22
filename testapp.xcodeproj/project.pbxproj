@@ -30,6 +30,10 @@
 		80BB68E21CF1273E004ABA2D /* RaceSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */; };
 		80BB68E51CF16C7B004ABA2D /* LanguageSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */; };
 		80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */; };
+		80BB68EB1CF1B895004ABA2D /* ContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68EA1CF1B895004ABA2D /* ContactInfoViewController.m */; };
+		80BB68EF1CF1C160004ABA2D /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68EE1CF1C160004ABA2D /* AddressViewController.m */; };
+		80BB68F21CF1CB39004ABA2D /* EmergencyContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */; };
+		80BB68F51CF265EF004ABA2D /* PrimaryInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,14 @@
 		80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageSelectionTableViewController.m; sourceTree = "<group>"; };
 		80BB68E61CF17356004ABA2D /* EthnicitySelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EthnicitySelectionTableViewController.h; sourceTree = "<group>"; };
 		80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EthnicitySelectionTableViewController.m; sourceTree = "<group>"; };
+		80BB68E91CF1B895004ABA2D /* ContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInfoViewController.h; sourceTree = "<group>"; };
+		80BB68EA1CF1B895004ABA2D /* ContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInfoViewController.m; sourceTree = "<group>"; };
+		80BB68ED1CF1C160004ABA2D /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		80BB68EE1CF1C160004ABA2D /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		80BB68F01CF1CB39004ABA2D /* EmergencyContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyContactViewController.h; sourceTree = "<group>"; };
+		80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactViewController.m; sourceTree = "<group>"; };
+		80BB68F31CF265EF004ABA2D /* PrimaryInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryInsuranceViewController.h; sourceTree = "<group>"; };
+		80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryInsuranceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,12 +166,15 @@
 				80BB68D81CEFB582004ABA2D /* NameViewController.m */,
 				80BB68DD1CF079CE004ABA2D /* BackgroundInfoViewController.h */,
 				80BB68DE1CF079CE004ABA2D /* BackgroundInfoViewController.m */,
-				80BB68E01CF1273E004ABA2D /* RaceSelectionTableViewController.h */,
-				80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */,
-				80BB68E31CF16C7B004ABA2D /* LanguageSelectionTableViewController.h */,
-				80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */,
-				80BB68E61CF17356004ABA2D /* EthnicitySelectionTableViewController.h */,
-				80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */,
+				80BB68E91CF1B895004ABA2D /* ContactInfoViewController.h */,
+				80BB68EA1CF1B895004ABA2D /* ContactInfoViewController.m */,
+				80BB68ED1CF1C160004ABA2D /* AddressViewController.h */,
+				80BB68EE1CF1C160004ABA2D /* AddressViewController.m */,
+				80BB68F01CF1CB39004ABA2D /* EmergencyContactViewController.h */,
+				80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */,
+				80BB68F31CF265EF004ABA2D /* PrimaryInsuranceViewController.h */,
+				80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */,
+				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -173,8 +188,6 @@
 				805EA38D1CEAB8B700A70189 /* MBProgressHUD.m */,
 				80BB68D11CEDB837004ABA2D /* RKDropdownAlert.h */,
 				80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */,
-				80BB68DA1CEFD203004ABA2D /* UIFloatLabelTextField.h */,
-				80BB68DB1CEFD203004ABA2D /* UIFloatLabelTextField.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -184,8 +197,23 @@
 			children = (
 				802E1A2B1CCA8C89009CB16D /* CheckInTableViewCell.h */,
 				802E1A2C1CCA8C89009CB16D /* CheckInTableViewCell.m */,
+				80BB68DA1CEFD203004ABA2D /* UIFloatLabelTextField.h */,
+				80BB68DB1CEFD203004ABA2D /* UIFloatLabelTextField.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80BB68E01CF1273E004ABA2D /* RaceSelectionTableViewController.h */,
+				80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */,
+				80BB68E31CF16C7B004ABA2D /* LanguageSelectionTableViewController.h */,
+				80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */,
+				80BB68E61CF17356004ABA2D /* EthnicitySelectionTableViewController.h */,
+				80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */,
+			);
+			name = "Popover Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +288,10 @@
 			files = (
 				802E1A2D1CCA8C89009CB16D /* CheckInTableViewCell.m in Sources */,
 				80198DB21CC7FDBF00515123 /* ViewController.m in Sources */,
+				80BB68F21CF1CB39004ABA2D /* EmergencyContactViewController.m in Sources */,
 				80BB68D91CEFB582004ABA2D /* NameViewController.m in Sources */,
+				80BB68F51CF265EF004ABA2D /* PrimaryInsuranceViewController.m in Sources */,
+				80BB68EF1CF1C160004ABA2D /* AddressViewController.m in Sources */,
 				80198DDB1CC989CE00515123 /* AddPatientViewController.m in Sources */,
 				805EA38B1CEA5C5000A70189 /* MatchUserViewController.m in Sources */,
 				80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */,
@@ -272,6 +303,7 @@
 				80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */,
 				80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */,
 				805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */,
+				80BB68EB1CF1B895004ABA2D /* ContactInfoViewController.m in Sources */,
 				802E1A271CCA2EA4009CB16D /* DetailViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,
 				80198DCD1CC94CF200515123 /* Appointment.m in Sources */,
