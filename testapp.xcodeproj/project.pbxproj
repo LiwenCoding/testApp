@@ -27,6 +27,9 @@
 		80BB68D91CEFB582004ABA2D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D81CEFB582004ABA2D /* NameViewController.m */; };
 		80BB68DC1CEFD203004ABA2D /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68DB1CEFD203004ABA2D /* UIFloatLabelTextField.m */; };
 		80BB68DF1CF079CE004ABA2D /* BackgroundInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68DE1CF079CE004ABA2D /* BackgroundInfoViewController.m */; };
+		80BB68E21CF1273E004ABA2D /* RaceSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */; };
+		80BB68E51CF16C7B004ABA2D /* LanguageSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */; };
+		80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,12 @@
 		80BB68DB1CEFD203004ABA2D /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextField.m; sourceTree = "<group>"; };
 		80BB68DD1CF079CE004ABA2D /* BackgroundInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundInfoViewController.h; sourceTree = "<group>"; };
 		80BB68DE1CF079CE004ABA2D /* BackgroundInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundInfoViewController.m; sourceTree = "<group>"; };
+		80BB68E01CF1273E004ABA2D /* RaceSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceSelectionTableViewController.h; sourceTree = "<group>"; };
+		80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceSelectionTableViewController.m; sourceTree = "<group>"; };
+		80BB68E31CF16C7B004ABA2D /* LanguageSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageSelectionTableViewController.h; sourceTree = "<group>"; };
+		80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageSelectionTableViewController.m; sourceTree = "<group>"; };
+		80BB68E61CF17356004ABA2D /* EthnicitySelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EthnicitySelectionTableViewController.h; sourceTree = "<group>"; };
+		80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EthnicitySelectionTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +154,12 @@
 				80BB68D81CEFB582004ABA2D /* NameViewController.m */,
 				80BB68DD1CF079CE004ABA2D /* BackgroundInfoViewController.h */,
 				80BB68DE1CF079CE004ABA2D /* BackgroundInfoViewController.m */,
+				80BB68E01CF1273E004ABA2D /* RaceSelectionTableViewController.h */,
+				80BB68E11CF1273E004ABA2D /* RaceSelectionTableViewController.m */,
+				80BB68E31CF16C7B004ABA2D /* LanguageSelectionTableViewController.h */,
+				80BB68E41CF16C7B004ABA2D /* LanguageSelectionTableViewController.m */,
+				80BB68E61CF17356004ABA2D /* EthnicitySelectionTableViewController.h */,
+				80BB68E71CF17356004ABA2D /* EthnicitySelectionTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -250,9 +265,12 @@
 				805EA38B1CEA5C5000A70189 /* MatchUserViewController.m in Sources */,
 				80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */,
 				805EA3881CEA5A9800A70189 /* StartPageViewController.m in Sources */,
+				80BB68E21CF1273E004ABA2D /* RaceSelectionTableViewController.m in Sources */,
 				80BB68DF1CF079CE004ABA2D /* BackgroundInfoViewController.m in Sources */,
 				802E1A2A1CCA6EA7009CB16D /* CheckInTableViewController.m in Sources */,
+				80BB68E51CF16C7B004ABA2D /* LanguageSelectionTableViewController.m in Sources */,
 				80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */,
+				80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */,
 				805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */,
 				802E1A271CCA2EA4009CB16D /* DetailViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,

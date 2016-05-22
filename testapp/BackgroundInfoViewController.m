@@ -8,8 +8,11 @@
 
 #import "BackgroundInfoViewController.h"
 #import "UIFloatLabelTextField.h"
+#import "RaceSelectionTableViewController.h"
+#import "LanguageSelectionTableViewController.h"
+#import "EthnicitySelectionTableViewController.h"
 
-@interface BackgroundInfoViewController ()
+@interface BackgroundInfoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *dateOfBirth;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *preferredLanguage;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *race;
@@ -22,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dateOfBirth.delegate = self;
+    self.race.delegate = self;
+    self.preferredLanguage.delegate = self;
+    self.ethnicity.delegate = self;
     NSLog(@"backgroundview info list %@", self.patientInfo);
     [self setTextFieldText];
     [self setTextFieldUI];
@@ -34,6 +41,12 @@
 }
 
 
+
+
+
+
+
+
 - (void)setTextFieldText {
     
     self.dateOfBirth.text = [self.patientInfo objectForKey:@"date_of_birth"];
@@ -44,6 +57,59 @@
 
 }
 
+
+- (void)editDidBegin {
+    if (self.dateOfBirth.inputView == nil) {
+        UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+        datePicker.datePickerMode = UIDatePickerModeDate;
+        [datePicker addTarget:self action:@selector(updateTextField:)
+             forControlEvents:UIControlEventValueChanged];
+        [self.dateOfBirth setInputView:datePicker];
+        UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+        [toolBar setTintColor:[UIColor grayColor]];
+        UIBarButtonItem *doneBtn=[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonPressed)];
+        UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [toolBar setItems:[NSArray arrayWithObjects:space,doneBtn, nil]];
+        [self.dateOfBirth setInputAccessoryView:toolBar];
+    }
+}
+
+
+-(void)updateTextField:(UIDatePicker *)sender {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.dateOfBirth.text = [formatter stringFromDate:sender.date];
+}
+
+-(void)doneButtonPressed {
+    [self.dateOfBirth resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
+
+- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField
+{
+    
+    if (textField == self.race) {
+        [self.view endEditing:YES];
+        [self performSegueWithIdentifier:@"showRacePopover" sender:self];
+    } else if (textField == self.dateOfBirth) {
+        [self editDidBegin];
+        return YES;
+    } else if (textField == self.preferredLanguage) {
+        [self.view endEditing:YES];
+        [self performSegueWithIdentifier:@"showLanguagePopover" sender:self];
+    } else if (textField == self.ethnicity) {
+        [self.view endEditing:YES];
+        [self performSegueWithIdentifier:@"showEthnicityPopover" sender:self];
+    }
+
+    return NO;
+}
 
 - (void)setTextFieldUI {
     
@@ -104,14 +170,44 @@
 
 
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    // racePopover
+    if ([[segue identifier] isEqualToString:@"showRacePopover"]) {
+        UINavigationController *navi = segue.destinationViewController;
+        RaceSelectionTableViewController *vc = (RaceSelectionTableViewController *)navi.topViewController;
+        vc.selectionHappenedInPopoverVC = ^(NSString *responseRace) {
+            //get selection result
+            self.race.text = responseRace;
+            // dissmiss popover view
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+    } else if ([[segue identifier] isEqualToString:@"showLanguagePopover"]) {
+        UINavigationController *navi = segue.destinationViewController;
+        LanguageSelectionTableViewController *vc = (LanguageSelectionTableViewController *)navi.topViewController;
+        vc.selectionHappenedInPopoverVC = ^(NSString *responseLanguage) {
+            //get selection result
+            self.preferredLanguage.text = responseLanguage;
+            // dissmiss popover view
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+    } else if ([[segue identifier] isEqualToString:@"showEthnicityPopover"]) {
+        UINavigationController *navi = segue.destinationViewController;
+        EthnicitySelectionTableViewController *vc = (EthnicitySelectionTableViewController *)navi.topViewController;
+        vc.selectionHappenedInPopoverVC = ^(NSString *responseEthnicity) {
+            //get selection result
+            self.ethnicity.text = responseEthnicity;
+            // dissmiss popover view
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+    }
+
+    
+    
+    
+    
 }
-*/
 
 @end
