@@ -1,35 +1,27 @@
 //
-//  AllergyTableViewController.m
+//  MedicationTableViewController.m
 //  testapp
 //
 //  Created by Shen Liwen on 5/22/16.
 //  Copyright © 2016 Shen Liwen. All rights reserved.
 //
 
-#import "AllergyTableViewController.h"
 #import "MedicationTableViewController.h"
-#import "AllergyTableViewCell.h"
 #import "MBProgressHUD.h"
 
-@interface AllergyTableViewController ()
+@interface MedicationTableViewController ()
+@property (strong, nonatomic) NSArray *medicationArray;
 @property (strong, nonatomic) NSString *headerValue;
-@property (strong, nonatomic) NSArray *allergyArray;
-
 @end
 
-@implementation AllergyTableViewController
-
+@implementation MedicationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
     [self getPatientHealthHistory];
-
-
     // Uncomment the following line to preserve selection between presentations.
-//     self.clearsSelectionOnViewWillAppear = NO;
-    
-
+    // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -40,6 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (void) getPatientHealthHistory {
     
     //show progress indicator
@@ -49,7 +43,7 @@
     
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/allergies?verbose=true&patient=%@", [self.patientInfo objectForKey:@"id"]];
+    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/medications?patient=%@", [self.patientInfo objectForKey:@"id"]];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -69,15 +63,15 @@
                 
                 
                 if ([count intValue] != 0) {
-                    self.allergyArray = [requestReply objectForKey:@"results"];
-                    NSLog(@"allergy array %@", self.allergyArray);
+                    self.medicationArray = [requestReply objectForKey:@"results"];
+                    NSLog(@"medication array %@", self.allergyArray);
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                     [self.tableView reloadData];
                 });
-
+                
                 
             }
         }] resume];
@@ -94,15 +88,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.allergyArray count];
+    return [self.medicationArray count];
 }
 
 
-- (AllergyTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medication" forIndexPath:indexPath];
     
-    AllergyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"allergy" forIndexPath:indexPath];
-    cell.allergyDescription.text = [[self.allergyArray objectAtIndex:indexPath.row] objectForKey:@"description"];
-    cell.reaction.text = [[self.allergyArray objectAtIndex:indexPath.row] objectForKey:@"reaction"];
+    cell.textLabel.text = [[self.medicationArray objectAtIndex:indexPath.row] objectForKey:@"name"];
     return cell;
 }
 
@@ -141,13 +134,14 @@
 }
 */
 
+/*
 #pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showMedication"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        MedicationTableViewController *vc = (MedicationTableViewController *)navi.topViewController;
-        vc.patientInfo = self.patientInfo;
-        vc.allergyArray = self.allergyArray;
-    }
-}@end
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

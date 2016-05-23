@@ -37,6 +37,7 @@
 		80BB68F81CF27E04004ABA2D /* SecondaryInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F71CF27E04004ABA2D /* SecondaryInsuranceViewController.m */; };
 		80BB68FE1CF2BCBB004ABA2D /* AllergyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68FD1CF2BCBB004ABA2D /* AllergyTableViewCell.m */; };
 		80BB69011CF2C309004ABA2D /* AllergyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */; };
+		80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,8 @@
 		80BB68FD1CF2BCBB004ABA2D /* AllergyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergyTableViewCell.m; sourceTree = "<group>"; };
 		80BB68FF1CF2C309004ABA2D /* AllergyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllergyTableViewController.h; sourceTree = "<group>"; };
 		80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergyTableViewController.m; sourceTree = "<group>"; };
+		80BB69021CF2DDC0004ABA2D /* MedicationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewController.h; sourceTree = "<group>"; };
+		80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 				80BB68F71CF27E04004ABA2D /* SecondaryInsuranceViewController.m */,
 				80BB68FF1CF2C309004ABA2D /* AllergyTableViewController.h */,
 				80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */,
+				80BB69021CF2DDC0004ABA2D /* MedicationTableViewController.h */,
+				80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */,
 				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
 			);
 			name = Controller;
@@ -319,6 +324,7 @@
 				80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */,
 				80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */,
 				805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */,
+				80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */,
 				80BB68EB1CF1B895004ABA2D /* ContactInfoViewController.m in Sources */,
 				80BB68F81CF27E04004ABA2D /* SecondaryInsuranceViewController.m in Sources */,
 				802E1A271CCA2EA4009CB16D /* DetailViewController.m in Sources */,
