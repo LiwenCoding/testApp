@@ -835,11 +835,70 @@
                         <outlet property="groupNumber" destination="rvg-XW-u2O" id="OC0-3W-NHi"/>
                         <outlet property="insuranceID" destination="xub-vW-aRJ" id="gX4-vo-zsl"/>
                         <outlet property="planName" destination="yTP-dd-z1r" id="Bif-4d-3jx"/>
+                        <segue destination="Bft-va-Ffb" kind="show" identifier="showSecondaryInsurance" id="TDB-eX-X9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikI-6o-Fi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7998" y="5745"/>
+        </scene>
+        <!--Secondary Insurance-->
+        <scene sceneID="26e-Bl-DUd">
+            <objects>
+                <viewController id="mfr-77-ega" customClass="SecondaryInsuranceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="skp-hY-Qnd"/>
+                        <viewControllerLayoutGuide type="bottom" id="hb1-fe-Zbx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R3n-Vu-nYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Secondary Insurance Company" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-Xs-ecO" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="20" y="173" width="254" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Group Number" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-ik-Eln" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="20" y="308" width="254" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Insurance ID" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yAz-yx-I2E" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="326" y="173" width="254" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Plan Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-FH-NaK" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="326" y="308" width="254" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Secondary Insurance" id="rzz-pU-hd2">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3gg-xD-BBu"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="pyo-Z8-SnY">
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="mfr-77-ega" id="qFU-cB-fWn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="company" destination="4nq-Xs-ecO" id="pSr-Bt-sXc"/>
+                        <outlet property="groupNumber" destination="v7g-ik-Eln" id="CN6-4Q-e0M"/>
+                        <outlet property="insuranceID" destination="yAz-yx-I2E" id="PUg-z3-Bwg"/>
+                        <outlet property="planName" destination="tFd-FH-NaK" id="gr8-4Y-azo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmg-NM-U63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9889" y="5787"/>
         </scene>
         <!--Select Language-->
         <scene sceneID="HFA-77-A8C">
@@ -1170,6 +1229,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0X-NE-ecm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7186" y="5745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RNu-yc-Xvn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bft-va-Ffb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEY-gS-ZOV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mfr-77-ega" kind="relationship" relationship="rootViewController" id="sv5-wF-HQu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbQ-D9-OJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8675" y="5724"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

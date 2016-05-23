@@ -34,6 +34,7 @@
 		80BB68EF1CF1C160004ABA2D /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68EE1CF1C160004ABA2D /* AddressViewController.m */; };
 		80BB68F21CF1CB39004ABA2D /* EmergencyContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */; };
 		80BB68F51CF265EF004ABA2D /* PrimaryInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */; };
+		80BB68F81CF27E04004ABA2D /* SecondaryInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68F71CF27E04004ABA2D /* SecondaryInsuranceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyContactViewController.m; sourceTree = "<group>"; };
 		80BB68F31CF265EF004ABA2D /* PrimaryInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryInsuranceViewController.h; sourceTree = "<group>"; };
 		80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryInsuranceViewController.m; sourceTree = "<group>"; };
+		80BB68F61CF27E04004ABA2D /* SecondaryInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryInsuranceViewController.h; sourceTree = "<group>"; };
+		80BB68F71CF27E04004ABA2D /* SecondaryInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryInsuranceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				80BB68F11CF1CB39004ABA2D /* EmergencyContactViewController.m */,
 				80BB68F31CF265EF004ABA2D /* PrimaryInsuranceViewController.h */,
 				80BB68F41CF265EF004ABA2D /* PrimaryInsuranceViewController.m */,
+				80BB68F61CF27E04004ABA2D /* SecondaryInsuranceViewController.h */,
+				80BB68F71CF27E04004ABA2D /* SecondaryInsuranceViewController.m */,
 				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
 			);
 			name = Controller;
@@ -304,6 +309,7 @@
 				80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */,
 				805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */,
 				80BB68EB1CF1B895004ABA2D /* ContactInfoViewController.m in Sources */,
+				80BB68F81CF27E04004ABA2D /* SecondaryInsuranceViewController.m in Sources */,
 				802E1A271CCA2EA4009CB16D /* DetailViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,
 				80198DCD1CC94CF200515123 /* Appointment.m in Sources */,

@@ -1,28 +1,27 @@
 //
-//  PrimaryInsuranceViewController.m
+//  SecondaryInsuranceViewController.m
 //  testapp
 //
 //  Created by Shen Liwen on 5/22/16.
 //  Copyright © 2016 Shen Liwen. All rights reserved.
 //
 
-#import "PrimaryInsuranceViewController.h"
 #import "SecondaryInsuranceViewController.h"
 #import "UIFloatLabelTextField.h"
 
-@interface PrimaryInsuranceViewController ()
+@interface SecondaryInsuranceViewController ()
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *company;
+@property (weak, nonatomic) IBOutlet UIFloatLabelTextField *insuranceID;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *groupNumber;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *planName;
-@property (weak, nonatomic) IBOutlet UIFloatLabelTextField *insuranceID;
 
 @end
 
-@implementation PrimaryInsuranceViewController
+@implementation SecondaryInsuranceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"insuranceview info list %@", self.patientInfo);
+    NSLog(@"insurance2view info list %@", self.patientInfo);
     [self setTextFieldText];
     [self setTextFieldUI];
 }
@@ -38,26 +37,26 @@
     
     
     // save changes in the memory
-    [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
-    [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
-    [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.planName.text forKey:@"insurance_group_number"];
-    [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_group_number"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
     
-    NSLog(@"saved info is %@", [self.patientInfo objectForKey:@"primary_insurance"]);
+    NSLog(@"saved info is %@", [self.patientInfo objectForKey:@"secondary_insurance"]);
     
     // do segue
-        [self performSegueWithIdentifier:@"showSecondaryInsurance" sender:self];
+//    [self performSegueWithIdentifier:@"showSecondaryInsurance" sender:self];
     
 }
 
 - (void)setTextFieldText {
     
-    NSLog(@"insurance info is %@", [self.patientInfo objectForKey:@"primary_insurance"]);
-    self.company.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_company"];
-    self.groupNumber.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_group_number"];
-    self.planName.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_plan_name"];
-    self.insuranceID.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_id_number"];
-
+    NSLog(@"insurance info is %@", [self.patientInfo objectForKey:@"secondary_insurance"]);
+    self.company.text = [[self.patientInfo objectForKey:@"secondary_insurance"] objectForKey:@"insurance_company"];
+    self.groupNumber.text = [[self.patientInfo objectForKey:@"secondary_insurance"] objectForKey:@"insurance_group_number"];
+    self.planName.text = [[self.patientInfo objectForKey:@"secondary_insurance"] objectForKey:@"insurance_plan_name"];
+    self.insuranceID.text = [[self.patientInfo objectForKey:@"secondary_insurance"] objectForKey:@"insurance_id_number"];
+    
     
 }
 
@@ -105,18 +104,18 @@
     [self.groupNumber.layer addSublayer:bottomBorder2];
     [self.planName.layer addSublayer:bottomBorder3];
     [self.insuranceID.layer addSublayer:bottomBorder4];
-
+    
     
 }
 
+/*
 #pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showSecondaryInsurance"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        SecondaryInsuranceViewController *vc = (SecondaryInsuranceViewController *)navi.topViewController;
-        vc.patientInfo = self.patientInfo;
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end
