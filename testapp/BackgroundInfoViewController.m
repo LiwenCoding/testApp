@@ -44,7 +44,15 @@
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
+    [self.view endEditing:YES];
 
+    // validate required field
+    if ([[self.dateOfBirth.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.dateOfBirth.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
+        //drop down alert
+        [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+        return;
+    }
+    
     [self saveChangesInMemory];
     // do segue
     [self performSegueWithIdentifier:@"showContactInfo" sender:self];
@@ -52,20 +60,15 @@
 }
 
 - (IBAction)backButtonPressed:(id)sender {
+    [self.view endEditing:YES];
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backName" sender:self];
     
 }
 
 - (void)saveChangesInMemory {
-    [self.view endEditing:YES];
     
-    // validate required field
-    if ([[self.dateOfBirth.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.dateOfBirth.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
-        //drop down alert
-        [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
-        return;
-    }
+
     
     // save changes in the memory
     [self.patientInfo setObject:self.dateOfBirth.text forKey:@"date_of_birth"];

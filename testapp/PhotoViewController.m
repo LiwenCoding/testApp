@@ -58,8 +58,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"nameInfo"]) {
         UINavigationController *navi = segue.destinationViewController;
-        NameViewController *nameViewController = (NameViewController *)navi.topViewController;
-        nameViewController.patientInfo = self.patientInfo;
+        NameViewController *vc = (NameViewController *)navi.topViewController;
+        vc.patientInfo = self.patientInfo;
     }
 }
 

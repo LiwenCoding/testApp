@@ -426,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcX-Q5-Blh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="-152"/>
+            <point key="canvasLocation" x="-67" y="-154"/>
         </scene>
         <!--Profile Photo-->
         <scene sceneID="v4e-sS-dGn">
@@ -452,7 +452,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile Photo" id="heo-9s-1AS">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="yBL-Yx-0Kz"/>
+                        <barButtonItem key="leftBarButtonItem" id="diZ-vy-aeo"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ciH-1x-BIj">
                             <connections>
                                 <segue destination="Lly-4f-j67" kind="show" identifier="nameInfo" id="BWm-bI-XvY"/>
@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWj-rx-yUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="-250"/>
+            <point key="canvasLocation" x="2088" y="-1086"/>
         </scene>
         <!--Name & Sex-->
         <scene sceneID="aSO-K1-E4f">
@@ -514,7 +514,7 @@
                     <navigationItem key="navigationItem" title="Name &amp; Sex" id="sU0-Sx-0VD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="bsg-gB-lhD">
                             <connections>
-                                <segue destination="yDG-eu-gEE" kind="show" id="QYK-hC-1Rt"/>
+                                <action selector="backButtonPressed:" destination="P7r-bV-Y12" id="gqU-0W-t2J"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ulV-mh-uU5">
@@ -529,11 +529,12 @@
                         <outlet property="lastName" destination="clA-dF-63W" id="JiM-mJ-50V"/>
                         <outlet property="middleName" destination="bTg-Bq-1pA" id="2Rw-2k-Swv"/>
                         <segue destination="yTb-yF-Tlb" kind="show" identifier="showBackgroundInfo" id="Ne9-Dr-1OK"/>
+                        <segue destination="yDG-eu-gEE" kind="show" identifier="backPhoto" id="zGO-mu-EvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gck-sx-vQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="744"/>
+            <point key="canvasLocation" x="790" y="616"/>
         </scene>
         <!--Backgound Information-->
         <scene sceneID="OON-Oa-Fwf">
@@ -1440,7 +1441,7 @@
         <segue reference="L5s-dN-bj2"/>
         <segue reference="MGD-Lv-zE8"/>
         <segue reference="4sn-Fh-eqa"/>
-        <segue reference="QYK-hC-1Rt"/>
+        <segue reference="zGO-mu-EvH"/>
         <segue reference="BWm-bI-XvY"/>
     </inferredMetricsTieBreakers>
 </document>

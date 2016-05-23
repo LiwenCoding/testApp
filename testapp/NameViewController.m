@@ -10,6 +10,7 @@
 #import "UIFloatLabelTextField.h"
 #import "RKDropdownAlert.h"
 #import "BackgroundInfoViewController.h"
+#import "PhotoViewController.h"
 
 @interface NameViewController ()
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *firstName;
@@ -68,16 +69,33 @@
     }
     
     // save changes in the memory
-    [self.patientInfo setObject:self.firstName.text forKey:@"first_name"];
-    [self.patientInfo setObject:self.lastName.text forKey:@"last_name"];
-    [self.patientInfo setObject:self.middleName.text forKey:@"middle_name"];
-    [self.patientInfo setObject:self.gender forKey:@"gender"];
 
 
+    [self saveChangesInMemory];
     // do segue
     [self performSegueWithIdentifier:@"showBackgroundInfo" sender:self];
 
 }
+
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self.view endEditing:YES];
+    [self saveChangesInMemory];
+    [self performSegueWithIdentifier:@"backPhoto" sender:self];
+    
+}
+
+- (void)saveChangesInMemory {
+    
+    [self.patientInfo setObject:self.firstName.text forKey:@"first_name"];
+    [self.patientInfo setObject:self.lastName.text forKey:@"last_name"];
+    [self.patientInfo setObject:self.middleName.text forKey:@"middle_name"];
+    [self.patientInfo setObject:self.gender forKey:@"gender"];
+}
+
+
+
+
 
 - (void)setTextFieldText {
 
@@ -153,6 +171,12 @@
         UINavigationController *navi = segue.destinationViewController;
         BackgroundInfoViewController *backgroundInfoViewController = (BackgroundInfoViewController *)navi.topViewController;
         backgroundInfoViewController.patientInfo = self.patientInfo;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"backPhoto"]) {
+        PhotoViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
     }
 }
 
