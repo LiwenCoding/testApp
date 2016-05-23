@@ -40,7 +40,7 @@
     // save changes in the memory
     [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
     [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
-    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_group_number"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_plan_name"];
     [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
     
     

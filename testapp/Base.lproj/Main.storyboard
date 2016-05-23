@@ -956,13 +956,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Allergies" id="QTn-5I-JZP">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="zvJ-TI-ZL0"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="zvJ-TI-ZL0">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="X1R-Cz-QDx" id="Wd2-B0-QLP"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="YS2-2c-0SS">
                             <connections>
                                 <segue destination="M9T-ST-uSV" kind="show" identifier="showMedication" id="06R-t0-daw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="mfr-77-ega" kind="show" identifier="backSecondaryInsurance" id="jwu-YB-Ys7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcT-KS-469" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1001,7 +1008,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Medications" id="Ppj-gX-ffK">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="DWe-hX-hlx"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="DWe-hX-hlx">
+                            <connections>
+                                <segue destination="X1R-Cz-QDx" kind="show" id="lCM-bN-aw3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="RWP-ox-9Zd"/>
                     </navigationItem>
                 </tableViewController>
@@ -1398,5 +1409,7 @@
         <segue reference="tsp-mM-QAH"/>
         <segue reference="y3A-fu-UMs"/>
         <segue reference="7SW-6s-fEm"/>
+        <segue reference="lCM-bN-aw3"/>
+        <segue reference="jwu-YB-Ys7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 #import "AllergyTableViewController.h"
 #import "MedicationTableViewController.h"
+#import "SecondaryInsuranceViewController.h"
 #import "AllergyTableViewCell.h"
 #import "MBProgressHUD.h"
 
@@ -87,6 +88,12 @@
     
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    
+    [self performSegueWithIdentifier:@"backSecondaryInsurance" sender:self];
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -150,4 +157,12 @@
         vc.patientInfo = self.patientInfo;
         vc.allergyArray = self.allergyArray;
     }
+    
+    if ([[segue identifier] isEqualToString:@"backSecondaryInsurance"]) {
+            SecondaryInsuranceViewController *vc = segue.destinationViewController;
+            vc.patientInfo = self.patientInfo;
+        
+    }
+    
+    
 }@end
