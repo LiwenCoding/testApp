@@ -8,16 +8,17 @@
 
 #import "SecondaryInsuranceViewController.h"
 #import "UIFloatLabelTextField.h"
+#import "AllergyTableViewController.h"
 
 @interface SecondaryInsuranceViewController ()
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *company;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *insuranceID;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *groupNumber;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *planName;
-
 @end
 
 @implementation SecondaryInsuranceViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,10 +43,13 @@
     [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_group_number"];
     [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
     
+    
     NSLog(@"saved info is %@", [self.patientInfo objectForKey:@"secondary_insurance"]);
     
     // do segue
-//    [self performSegueWithIdentifier:@"showSecondaryInsurance" sender:self];
+    [self performSegueWithIdentifier:@"showAllergy" sender:self];
+        
+
     
 }
 
@@ -108,14 +112,16 @@
     
 }
 
-/*
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showAllergy"]) {
+        UINavigationController *navi = segue.destinationViewController;
+        AllergyTableViewController *vc = (AllergyTableViewController *)navi.topViewController;
+        vc.patientInfo = self.patientInfo;
+    }
 }
-*/
 
 @end
