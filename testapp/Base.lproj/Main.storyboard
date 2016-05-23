@@ -514,7 +514,7 @@
                     <navigationItem key="navigationItem" title="Name &amp; Sex" id="sU0-Sx-0VD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="bsg-gB-lhD">
                             <connections>
-                                <segue destination="yDG-eu-gEE" kind="show" id="7SW-6s-fEm"/>
+                                <segue destination="yDG-eu-gEE" kind="show" id="QYK-hC-1Rt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ulV-mh-uU5">
@@ -583,7 +583,7 @@
                     <navigationItem key="navigationItem" title="Backgound Information" id="Kgu-60-4nr">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="aYL-tQ-yxP">
                             <connections>
-                                <segue destination="P7r-bV-Y12" kind="show" id="keo-sL-Clp"/>
+                                <action selector="backButtonPressed:" destination="URX-I9-l6h" id="0mR-Nx-PBs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="LU7-HI-5F6">
@@ -608,11 +608,12 @@
                             <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                         </segue>
                         <segue destination="KQk-Gf-H8K" kind="show" identifier="showContactInfo" id="K4G-FN-tj3"/>
+                        <segue destination="P7r-bV-Y12" kind="show" identifier="backName" id="4sn-Fh-eqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2H4-MT-Ses" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="656"/>
+            <point key="canvasLocation" x="1937" y="1533"/>
         </scene>
         <!--Contact Information-->
         <scene sceneID="KM0-tN-RBP">
@@ -654,7 +655,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Information" id="Zte-bu-fI2">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="bGv-Gl-IWN"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="bGv-Gl-IWN">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="x57-Gv-S1f" id="JVD-FO-GMU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="wI6-fX-MlC">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="x57-Gv-S1f" id="MzM-oK-grc"/>
@@ -667,6 +672,7 @@
                         <outlet property="homePhone" destination="Tai-qV-fSD" id="app-Bb-SNj"/>
                         <outlet property="workPhone" destination="FC9-mu-ZNE" id="zbJ-Wo-4nx"/>
                         <segue destination="RqR-lM-f2F" kind="show" identifier="showAddress" id="5xZ-Qc-82d"/>
+                        <segue destination="URX-I9-l6h" kind="show" identifier="backBackgroundInfo" id="MGD-Lv-zE8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXo-Qo-jRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,7 +719,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Address" id="cvd-fO-xYb">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="sxG-fo-2YC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="sxG-fo-2YC">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="Ltm-T5-vRW" id="aOZ-cQ-4ce"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="33t-le-zyD">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="Ltm-T5-vRW" id="Ig9-Xi-hWO"/>
@@ -726,11 +736,12 @@
                         <outlet property="state" destination="tvK-eC-smj" id="osQ-t6-yzr"/>
                         <outlet property="zipCode" destination="Khc-hI-SP8" id="9GS-Ny-ksO"/>
                         <segue destination="Yz2-9r-GJe" kind="show" identifier="showEmergencyContact" id="9Pw-VQ-Ylw"/>
+                        <segue destination="x57-Gv-S1f" kind="show" identifier="backContactInfo" id="L5s-dN-bj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqT-rZ-P75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4382" y="2541"/>
+            <point key="canvasLocation" x="3940" y="2507"/>
         </scene>
         <!--Emergency Contact-->
         <scene sceneID="wEn-yX-95G">
@@ -766,7 +777,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emergency Contact" id="wxV-Ad-uyb">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="4V9-fy-wuJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="4V9-fy-wuJ">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="rvd-Yp-DMI" id="RDP-If-IEU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="e9s-tu-DYH">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="rvd-Yp-DMI" id="fxi-qI-EPC"/>
@@ -778,11 +793,12 @@
                         <outlet property="phone" destination="gfs-DJ-4Kk" id="aA3-l3-ndz"/>
                         <outlet property="relation" destination="n4F-0k-8Bm" id="UPj-F9-yHN"/>
                         <segue destination="04d-4t-koF" kind="show" identifier="showPrimaryInsurance" id="phz-6k-8oz"/>
+                        <segue destination="Ltm-T5-vRW" kind="show" identifier="backAddress" id="XHI-KR-alA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pER-0T-ujy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5091" y="2541"/>
+            <point key="canvasLocation" x="4803" y="2244"/>
         </scene>
         <!--Primary Insurance-->
         <scene sceneID="9s1-bI-k1K">
@@ -824,7 +840,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Primary Insurance" id="Sea-sJ-4Kq">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="uHh-Qk-Cxm"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="uHh-Qk-Cxm">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="n9i-0u-lXH" id="JyM-mO-rFL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="JwG-XE-fRo">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="n9i-0u-lXH" id="XF5-gy-sna"/>
@@ -837,6 +857,7 @@
                         <outlet property="insuranceID" destination="xub-vW-aRJ" id="gX4-vo-zsl"/>
                         <outlet property="planName" destination="yTP-dd-z1r" id="Bif-4d-3jx"/>
                         <segue destination="Bft-va-Ffb" kind="show" identifier="showSecondaryInsurance" id="TDB-eX-X9L"/>
+                        <segue destination="rvd-Yp-DMI" kind="show" identifier="backEmergencyContact" id="H1C-qZ-aMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikI-6o-Fi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -883,7 +904,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Secondary Insurance" id="rzz-pU-hd2">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="3gg-xD-BBu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3gg-xD-BBu">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="mfr-77-ega" id="8OU-uq-afk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="pyo-Z8-SnY">
                             <connections>
                                 <action selector="nextButtonPressed:" destination="mfr-77-ega" id="qFU-cB-fWn"/>
@@ -896,6 +921,7 @@
                         <outlet property="insuranceID" destination="yAz-yx-I2E" id="PUg-z3-Bwg"/>
                         <outlet property="planName" destination="tFd-FH-NaK" id="gr8-4Y-azo"/>
                         <segue destination="w7c-cs-whH" kind="show" identifier="showAllergy" id="DWn-Bx-I8d"/>
+                        <segue destination="n9i-0u-lXH" kind="show" identifier="backPrimaryInsurance" id="ibE-Af-tM0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmg-NM-U63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1294,7 +1320,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4o-gy-6S4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="1733"/>
+            <point key="canvasLocation" x="2175" y="2507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HQR-53-2F4">
@@ -1312,7 +1338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bw-76-f1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="2541"/>
+            <point key="canvasLocation" x="2940" y="3485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Ys-JZ-TUt">
@@ -1406,10 +1432,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tsp-mM-QAH"/>
-        <segue reference="y3A-fu-UMs"/>
-        <segue reference="7SW-6s-fEm"/>
-        <segue reference="lCM-bN-aw3"/>
+        <segue reference="XHI-KR-alA"/>
+        <segue reference="H1C-qZ-aMA"/>
+        <segue reference="ibE-Af-tM0"/>
         <segue reference="jwu-YB-Ys7"/>
+        <segue reference="lCM-bN-aw3"/>
+        <segue reference="L5s-dN-bj2"/>
+        <segue reference="MGD-Lv-zE8"/>
+        <segue reference="4sn-Fh-eqa"/>
+        <segue reference="QYK-hC-1Rt"/>
+        <segue reference="BWm-bI-XvY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,7 @@
 #import "ContactInfoViewController.h"
 #import "AddressViewController.h"
 #import "UIFloatLabelTextField.h"
+#import "BackgroundInfoViewController.h"
 
 @interface ContactInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *homePhone;
@@ -33,19 +34,32 @@
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
-    [self.view endEditing:YES];
     
     
     // save changes in the memory
-    [self.patientInfo setObject:self.homePhone.text forKey:@"home_phone"];
-    [self.patientInfo setObject:self.cellPhone.text forKey:@"cell_phone"];
-    [self.patientInfo setObject:self.emailAddress.text forKey:@"email"];
-    [self.patientInfo setObject:self.workPhone forKey:@"office_phone"];
+    [self saveChangesInMemory];
     
     // do segue
     [self performSegueWithIdentifier:@"showAddress" sender:self];
     
 }
+
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self saveChangesInMemory];
+    [self performSegueWithIdentifier:@"backBackgroundInfo" sender:self];
+    
+}
+
+- (void)saveChangesInMemory {
+    [self.view endEditing:YES];
+
+    [self.patientInfo setObject:self.homePhone.text forKey:@"home_phone"];
+    [self.patientInfo setObject:self.cellPhone.text forKey:@"cell_phone"];
+    [self.patientInfo setObject:self.emailAddress.text forKey:@"email"];
+    [self.patientInfo setObject:self.workPhone.text forKey:@"office_phone"];
+}
+
 
 - (void)setTextFieldText {
     
@@ -116,6 +130,12 @@
         UINavigationController *navi = segue.destinationViewController;
         AddressViewController *vc = (AddressViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"backBackgroundInfo"]) {
+        BackgroundInfoViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
     }
 }
 

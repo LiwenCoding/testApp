@@ -7,6 +7,7 @@
 //
 
 #import "SecondaryInsuranceViewController.h"
+#import "PrimaryInsuranceViewController.h"
 #import "UIFloatLabelTextField.h"
 #import "AllergyTableViewController.h"
 
@@ -34,16 +35,12 @@
 
 
 - (IBAction)nextButtonPressed:(id)sender {
-    [self.view endEditing:YES];
     
     
     // save changes in the memory
-    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
-    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
-    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_plan_name"];
-    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
+
     
-    
+    [self saveChangesInMemory];
     NSLog(@"saved info is %@", [self.patientInfo objectForKey:@"secondary_insurance"]);
     
     // do segue
@@ -51,6 +48,25 @@
         
 
     
+}
+
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self saveChangesInMemory];
+    [self performSegueWithIdentifier:@"backPrimaryInsurance" sender:self];
+    
+}
+
+
+
+- (void)saveChangesInMemory {
+    [self.view endEditing:YES];
+
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.planName.text forKey:@"insurance_plan_name"];
+    [[self.patientInfo objectForKey:@"secondary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
+
 }
 
 - (void)setTextFieldText {
@@ -121,6 +137,12 @@
         UINavigationController *navi = segue.destinationViewController;
         AllergyTableViewController *vc = (AllergyTableViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"backPrimaryInsurance"]) {
+        PrimaryInsuranceViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
     }
 }
 

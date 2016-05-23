@@ -13,6 +13,7 @@
 #import "EthnicitySelectionTableViewController.h"
 #import "ContactInfoViewController.h"
 #import "RKDropdownAlert.h"
+#import "NameViewController.h"
 
 @interface BackgroundInfoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *dateOfBirth;
@@ -43,6 +44,20 @@
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
+
+    [self saveChangesInMemory];
+    // do segue
+    [self performSegueWithIdentifier:@"showContactInfo" sender:self];
+    
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self saveChangesInMemory];
+    [self performSegueWithIdentifier:@"backName" sender:self];
+    
+}
+
+- (void)saveChangesInMemory {
     [self.view endEditing:YES];
     
     // validate required field
@@ -70,12 +85,7 @@
     if (![self.ethnicity.text isEqualToString:@""]) {
         [self.patientInfo setObject:self.socialSecurity.text forKey:@"social_security_number"];
     }
-    
-    // do segue
-    [self performSegueWithIdentifier:@"showContactInfo" sender:self];
-    
 }
-
 
 
 
@@ -266,6 +276,12 @@
         vc.patientInfo = self.patientInfo;
     }
     
+    
+    if ([[segue identifier] isEqualToString:@"backName"]) {
+        NameViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
+    }
     
     
 }

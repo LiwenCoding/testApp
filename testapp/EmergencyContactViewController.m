@@ -9,6 +9,7 @@
 #import "EmergencyContactViewController.h"
 #import "PrimaryInsuranceViewController.h"
 #import "UIFloatLabelTextField.h"
+#import "AddressViewController.h"
 
 @interface EmergencyContactViewController ()
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *name;
@@ -32,18 +33,31 @@
 
 
 - (IBAction)nextButtonPressed:(id)sender {
-    [self.view endEditing:YES];
     
     
     // save changes in the memory
-    [self.patientInfo setObject:self.name.text forKey:@"emergency_contact_name"];
-    [self.patientInfo setObject:self.phone.text forKey:@"emergency_contact_phone"];
-    [self.patientInfo setObject:self.relation.text forKey:@"emergency_contact_relation"];
+    [self saveChangesInMemory];
     
     // do segue
     [self performSegueWithIdentifier:@"showPrimaryInsurance" sender:self];
     
 }
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self saveChangesInMemory];
+    [self performSegueWithIdentifier:@"backAddress" sender:self];
+    
+}
+
+- (void)saveChangesInMemory {
+    [self.view endEditing:YES];
+
+    [self.patientInfo setObject:self.name.text forKey:@"emergency_contact_name"];
+    [self.patientInfo setObject:self.phone.text forKey:@"emergency_contact_phone"];
+    [self.patientInfo setObject:self.relation.text forKey:@"emergency_contact_relation"];
+}
+
+
 
 - (void)setTextFieldText {
     
@@ -99,6 +113,12 @@
         UINavigationController *navi = segue.destinationViewController;
         PrimaryInsuranceViewController *vc = (PrimaryInsuranceViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"backAddress"]) {
+        AddressViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
     }
 }
 
