@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-
+    self.navigationController.navigationBar.barStyle  = UIBarStyleBlackOpaque;
+    self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
     NSLog(@"patient info recieved: %@", self.patientInfo);
     [self startDownloadingImage];
 }

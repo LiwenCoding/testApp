@@ -18,8 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-//    [self.window.rootViewController performSegueWithIdentifier:@"firstView" sender:self.window.rootViewController];
 
 
     return YES;
@@ -54,7 +52,7 @@
     NSString *headerValue = [NSString stringWithFormat:@"Bearer %@", accessToken];
     
     [[NSUserDefaults standardUserDefaults] setValue:headerValue forKey:@"headerValue"];
-    [[NSUserDefaults standardUserDefaults] setValue:@"9204151" forKey:@"liwen"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"1353" forKey:@"PIN"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;

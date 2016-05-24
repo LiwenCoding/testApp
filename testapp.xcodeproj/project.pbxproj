@@ -11,7 +11,6 @@
 		80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DAE1CC7FDBF00515123 /* AppDelegate.m */; };
 		80198DB21CC7FDBF00515123 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DB11CC7FDBF00515123 /* ViewController.m */; };
 		80198DB51CC7FDBF00515123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB31CC7FDBF00515123 /* Main.storyboard */; };
-		80198DB71CC7FDBF00515123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB61CC7FDBF00515123 /* Assets.xcassets */; };
 		80198DBA1CC7FDBF00515123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */; };
 		80198DC91CC93FBF00515123 /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DC81CC93FBF00515123 /* MasterTableViewController.m */; };
 		80198DCD1CC94CF200515123 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 80198DCC1CC94CF200515123 /* Appointment.m */; };
@@ -22,6 +21,7 @@
 		805EA3881CEA5A9800A70189 /* StartPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805EA3871CEA5A9800A70189 /* StartPageViewController.m */; };
 		805EA38B1CEA5C5000A70189 /* MatchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805EA38A1CEA5C5000A70189 /* MatchUserViewController.m */; };
 		805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 805EA38D1CEAB8B700A70189 /* MBProgressHUD.m */; };
+		8090D2921CF45D6600FAC10F /* PINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2911CF45D6600FAC10F /* PINViewController.m */; };
 		80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */; };
 		80BB68D61CEF0696004ABA2D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D51CEF0696004ABA2D /* PhotoViewController.m */; };
 		80BB68D91CEFB582004ABA2D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D81CEFB582004ABA2D /* NameViewController.m */; };
@@ -41,6 +41,7 @@
 		80BB69071CF3D939004ABA2D /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69061CF3D939004ABA2D /* FinishViewController.m */; };
 		80BB69091CF3F607004ABA2D /* settingButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BB69081CF3F607004ABA2D /* settingButton.png */; };
 		80BB690C1CF3F939004ABA2D /* UserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */; };
+		80BB690E1CF417B5004ABA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BB690D1CF417B5004ABA2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,6 @@
 		80198DB01CC7FDBF00515123 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		80198DB11CC7FDBF00515123 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		80198DB41CC7FDBF00515123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80198DB61CC7FDBF00515123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80198DB91CC7FDBF00515123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80198DBB1CC7FDBF00515123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80198DC71CC93FBF00515123 /* MasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewController.h; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		805EA38A1CEA5C5000A70189 /* MatchUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchUserViewController.m; sourceTree = "<group>"; };
 		805EA38C1CEAB8B700A70189 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		805EA38D1CEAB8B700A70189 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8090D2901CF45D6600FAC10F /* PINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINViewController.h; sourceTree = "<group>"; };
+		8090D2911CF45D6600FAC10F /* PINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINViewController.m; sourceTree = "<group>"; };
 		80BB68D11CEDB837004ABA2D /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		80BB68D41CEF0696004ABA2D /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		80BB69081CF3F607004ABA2D /* settingButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingButton.png; sourceTree = "<group>"; };
 		80BB690A1CF3F939004ABA2D /* UserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPasswordViewController.h; sourceTree = "<group>"; };
 		80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPasswordViewController.m; sourceTree = "<group>"; };
+		80BB690D1CF417B5004ABA2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +150,7 @@
 				80198DCE1CC9525A00515123 /* Model */,
 				80198DCA1CC94CC200515123 /* Controller */,
 				80198DB31CC7FDBF00515123 /* Main.storyboard */,
-				80198DB61CC7FDBF00515123 /* Assets.xcassets */,
+				80BB690D1CF417B5004ABA2D /* Assets.xcassets */,
 				80BB69081CF3F607004ABA2D /* settingButton.png */,
 				80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */,
 				80198DBB1CC7FDBF00515123 /* Info.plist */,
@@ -169,6 +172,8 @@
 			children = (
 				80198DB01CC7FDBF00515123 /* ViewController.h */,
 				80198DB11CC7FDBF00515123 /* ViewController.m */,
+				8090D2901CF45D6600FAC10F /* PINViewController.h */,
+				8090D2911CF45D6600FAC10F /* PINViewController.m */,
 				805EA3861CEA5A9800A70189 /* StartPageViewController.h */,
 				805EA3871CEA5A9800A70189 /* StartPageViewController.m */,
 				80198DC71CC93FBF00515123 /* MasterTableViewController.h */,
@@ -307,8 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				80198DBA1CC7FDBF00515123 /* LaunchScreen.storyboard in Resources */,
-				80198DB71CC7FDBF00515123 /* Assets.xcassets in Resources */,
 				80BB69091CF3F607004ABA2D /* settingButton.png in Resources */,
+				80BB690E1CF417B5004ABA2D /* Assets.xcassets in Resources */,
 				80198DB51CC7FDBF00515123 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +340,7 @@
 				80BB68E21CF1273E004ABA2D /* RaceSelectionTableViewController.m in Sources */,
 				80BB68DF1CF079CE004ABA2D /* BackgroundInfoViewController.m in Sources */,
 				802E1A2A1CCA6EA7009CB16D /* CheckInTableViewController.m in Sources */,
+				8090D2921CF45D6600FAC10F /* PINViewController.m in Sources */,
 				80BB68E51CF16C7B004ABA2D /* LanguageSelectionTableViewController.m in Sources */,
 				80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */,
 				80BB68E81CF17356004ABA2D /* EthnicitySelectionTableViewController.m in Sources */,
@@ -467,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shen-Liwen.testapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -478,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shen-Liwen.testapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
