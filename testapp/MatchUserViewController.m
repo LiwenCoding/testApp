@@ -105,6 +105,13 @@
                     NSLog(@"patient info: %@", self.patientInfo);
                     [self getAppointmentList];
                 }
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    return;
+                });
+            
             }
         }] resume];
     });

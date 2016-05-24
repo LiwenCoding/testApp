@@ -1,23 +1,22 @@
 //
-//  StartPageViewController.m
+//  FinishViewController.m
 //  testapp
 //
-//  Created by Shen Liwen on 5/16/16.
+//  Created by Shen Liwen on 5/23/16.
 //  Copyright © 2016 Shen Liwen. All rights reserved.
 //
 
-#import "StartPageViewController.h"
+#import "FinishViewController.h"
 
-@interface StartPageViewController ()
+@interface FinishViewController ()
 
 @end
 
-@implementation StartPageViewController
+@implementation FinishViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.toolbarHidden = YES;
-
     // Do any additional setup after loading the view.
 }
 

@@ -155,6 +155,11 @@
 
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                         [RKDropdownAlert title:@"good" message:@"good!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                        
+                        // go to main page
+                        [self performSegueWithIdentifier:@"finish" sender:self];
+
+                        
                     });
                 } else {
                     //post failure
@@ -164,6 +169,13 @@
                     });
                 }
                 NSLog(@"patch response is : %@", requestReply);
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    return;
+                });
+                
             }
         }] resume];
     });
@@ -186,6 +198,7 @@
         vc.patientInfo = self.patientInfo;
         
     }
+    
     
     
 }

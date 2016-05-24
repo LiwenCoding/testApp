@@ -11,6 +11,7 @@
 #import "SecondaryInsuranceViewController.h"
 #import "AllergyTableViewCell.h"
 #import "MBProgressHUD.h"
+#import "RKDropdownAlert.h"
 
 @interface AllergyTableViewController ()
 @property (strong, nonatomic) NSString *headerValue;
@@ -79,6 +80,13 @@
                     [self.tableView reloadData];
                 });
 
+                
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    return;
+                });
                 
             }
         }] resume];

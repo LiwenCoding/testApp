@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
+
     NSLog(@"patient info recieved: %@", self.patientInfo);
     [self startDownloadingImage];
 }
