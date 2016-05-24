@@ -10,6 +10,7 @@
 
 @interface RaceSelectionTableViewController ()
 @property (strong, nonatomic)NSArray *raceArray;
+@property (strong, nonatomic)NSArray *selectionArray;
 
 @end
 
@@ -17,8 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.raceArray =  @[@"American Indian or Alaska Native", @"Asian", @"Black or African American", @"Native Hawaiian or Other Pacific Islander", @"White", @"Other", @"Unknown", @"Declined to State"];
+    self.raceArray =  @[@"American Indian or Alaska Native", @"Asian", @"Black or African American", @"Native Hawaiian or Other Pacific Islander", @"White", @"Declined to State"];
     
+    self.selectionArray =  @[@"indian", @"asian", @"black", @"hawaiian", @"white", @"Declined to State"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +45,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *selectedString = [self.raceArray objectAtIndex:indexPath.row];
+    NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
     NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
     

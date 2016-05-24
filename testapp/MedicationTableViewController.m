@@ -7,7 +7,9 @@
 //
 
 #import "MedicationTableViewController.h"
+#import "AllergyTableViewController.h"
 #import "MBProgressHUD.h"
+#import "RKDropdownAlert.h"
 
 @interface MedicationTableViewController ()
 @property (strong, nonatomic) NSArray *medicationArray;
@@ -18,18 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"most updated patientInfo is %@", self.patientInfo);
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
     [self getPatientHealthHistory];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -56,15 +54,13 @@
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data) {
                 NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
-                NSLog(@"request reply for history is %@", requestReply);
+//                NSLog(@"request reply for history is %@", requestReply);
                 
                 NSNumber *count = [requestReply objectForKey:@"count"];
-                NSLog(@"count is %@", count);
-                
                 
                 if ([count intValue] != 0) {
                     self.medicationArray = [requestReply objectForKey:@"results"];
-                    NSLog(@"medication array %@", self.allergyArray);
+//                    NSLog(@"medication array %@", self.medicationArray);
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -81,7 +77,23 @@
     
 }
 
-#pragma mark - Table view data source
+
+- (IBAction)finishButtonPressed:(id)sender {
+    
+    [self saveAllInfomationToServer];
+}
+
+
+
+
+
+- (IBAction)backButtonPressed:(id)sender {
+    
+    [self performSegueWithIdentifier:@"backAllergy" sender:self];
+    
+}
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -100,48 +112,82 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+- (void)saveAllInfomationToServer {
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+    //show progress indicator
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.label.text = @"Saving...";
+    
+//    NSString *doctor = @"89784";
+    
+//    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys: [self.patientInfo objectForKey:@"first_name"], @"first_name", [self.patientInfo objectForKey:@"last_name"], @"last_name", [self.patientInfo objectForKey:@"cell_phone"], @"cell_phone", [self.patientInfo objectForKey:@"gender"], @"gender", doctor, @"doctor", [self.patientInfo objectForKey:@"data_of_birth"], @"date_of_birth", [self.patientInfo objectForKey:@"address"], @"address", [self.patientInfo objectForKey:@"city"], @"city", [self.patientInfo objectForKey:@"email"], @"email",[self.patientInfo objectForKey:@"emergency_contact_name"], @"emergency_contact_name",[self.patientInfo objectForKey:@"emergency_contact_phone"], @"emergency_contact_phone",[self.patientInfo objectForKey:@"emergency_contact_relation"], @"emergency_contact_relation",[self.patientInfo objectForKey:@"ethnicity"], @"ethnicity", [self.patientInfo objectForKey:@"home_phone"], @"home_phone",[self.patientInfo objectForKey:@"middle_name"], @"middle_name",[self.patientInfo objectForKey:@"office_phone"], @"office_phone",[self.patientInfo objectForKey:@"preferred_language"], @"preferred_language",[self.patientInfo objectForKey:@"race"], @"race",[self.patientInfo objectForKey:@"social_security_number"], @"social_security_number",[self.patientInfo objectForKey:@"state"], @"state",[self.patientInfo objectForKey:@"zip_code"], @"zip_code",[self.patientInfo objectForKey:@"ethnicity"], @"ethnicity",[self.patientInfo objectForKey:@"primary_insurance"], @"primary_insurance",[self.patientInfo objectForKey:@"secondary_insurance"], @"secondary_insurance",
+//                         nil];
+    
+//    
+//    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys: [self.textFieldArray objectAtIndex:0], @"first_name", [self.textFieldArray objectAtIndex:1], @"last_name", [self.textFieldArray objectAtIndex:4], @"cell_phone", [self.textFieldArray objectAtIndex:2], @"gender", doctor, @"doctor", [self.textFieldArray objectAtIndex:3], @"date_of_birth", [self.textFieldArray objectAtIndex:2], @"address",
+//                         nil];
+    
+    [self.patientInfo removeObjectsForKeys:@[@"tertiary_insurance", @"patient_photo", @"patient_photo_date", @123, @3.14]];
+    NSLog(@"serialized dictionary is %@", self.patientInfo);
+    NSError *error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:self.patientInfo options:0 error:&error];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSString *url = [NSString stringWithFormat:@"https://drchrono.com/api/patients/%@", [self.patientInfo objectForKey:@"id"]];
+    NSLog(@"url is : %@", url);
+    [request setURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"PATCH"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:self.headerValue forHTTPHeaderField:@"Authorization"];
+    [request setHTTPBody:postData];
+    
+    dispatch_queue_t fetchQ = dispatch_queue_create("fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (data) {
+                NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
+                if ([requestReply objectForKey:@"id"]) {
+                    //post success
+                    dispatch_async(dispatch_get_main_queue(), ^{
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        [RKDropdownAlert title:@"good" message:@"good!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    });
+                } else {
+                    //post failure
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                        [RKDropdownAlert title:@"Save Failed" message:@"Please try later!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    });
+                }
+                NSLog(@"patch response is : %@", requestReply);
+            }
+        }] resume];
+    });
+    
 
-/*
+
+
+
+}
+
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    
+    if ([[segue identifier] isEqualToString:@"backAllergy"]) {
+        AllergyTableViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
+        
+    }
+    
+    
 }
-*/
 
 @end

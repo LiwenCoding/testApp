@@ -9,6 +9,7 @@
 #import "AddressViewController.h"
 #import "EmergencyContactViewController.h"
 #import "UIFloatLabelTextField.h"
+#import "RKDropdownAlert.h"
 #import "ContactInfoViewController.h"
 
 @interface AddressViewController ()
@@ -35,6 +36,12 @@
 
 - (IBAction)nextButtonPressed:(id)sender {
     
+    //validate input
+    if ([[self.address.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.address.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.zipCode.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.zipCode.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.state.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.state.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.city.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.city.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
+        //drop down alert
+        [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+        return;
+    }
     
     // save changes in the memory
     [self saveChangesInMemory];

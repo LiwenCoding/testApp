@@ -155,7 +155,6 @@
         UINavigationController *navi = segue.destinationViewController;
         MedicationTableViewController *vc = (MedicationTableViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
-        vc.allergyArray = self.allergyArray;
     }
     
     if ([[segue identifier] isEqualToString:@"backSecondaryInsurance"]) {
@@ -165,4 +164,5 @@
     }
     
     
-}@end
+}
+@end

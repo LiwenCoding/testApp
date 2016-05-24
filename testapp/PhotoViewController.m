@@ -8,6 +8,7 @@
 
 #import "PhotoViewController.h"
 #import "NameViewController.h"
+#import "MBProgressHUD.h"
 
 @interface PhotoViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
@@ -33,21 +34,29 @@
     if(![[self.patientInfo objectForKey:@"patient_photo"] isEqual:[NSNull null]]) {
         NSURL *imageURL = [NSURL URLWithString:[self.patientInfo objectForKey:@"patient_photo"]];
         if (imageURL) {
-    //        [self.spinner startAnimating];
+            //show progress indicator
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.label.text = @"Loading...";
             NSURLRequest *request = [NSURLRequest requestWithURL:imageURL];
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-            NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *localfile, NSURLResponse *response, NSError *error) {
-                if (!error) {
-                    if ([request.URL isEqual:imageURL]) {
-                        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:localfile]];
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            self.imageView.image = image;
-                        });
+            
+            dispatch_queue_t fetchQ = dispatch_queue_create("fetcher", NULL);
+            dispatch_async(fetchQ, ^{
+                NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+                NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *localfile, NSURLResponse *response, NSError *error) {
+                    if (!error) {
+                        if ([request.URL isEqual:imageURL]) {
+                            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:localfile]];
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                self.imageView.image = image;
+                            });
+                        }
                     }
-                }
-            }];
-            [task resume];
+                }];
+                [task resume];
+            });
         }
     }
 }

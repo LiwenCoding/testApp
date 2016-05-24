@@ -140,11 +140,11 @@
                     NSLog(@"compare %d", compare);
                     if (compare) {
                         flag = 1;
-                        dispatch_async(dispatch_get_main_queue(), ^{
+//                        dispatch_async(dispatch_get_main_queue(), ^{
 //                            [MBProgressHUD hideHUDForView:self.view animated:YES];
 //                            [RKDropdownAlert title:@"Success!" message:@"congratulations!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
                             [self performSegueWithIdentifier:@"profilePhoto" sender:self];
-                        });
+//                        });
                     }
                 }
                 if (flag == 0) {

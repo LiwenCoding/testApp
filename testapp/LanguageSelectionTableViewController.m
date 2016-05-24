@@ -10,15 +10,16 @@
 
 @interface LanguageSelectionTableViewController ()
 @property (strong, nonatomic)NSArray *languageArray;
-
+@property (strong, nonatomic)NSArray *selectionArray;
 @end
 
 @implementation LanguageSelectionTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.languageArray =  @[@"English", @"Spanish", @"Chinese", @"French", @"Italian", @"Japanese", @"Portuguese", @"Russian", @"Other", @"Unknown", @"Declined to State"];
+    self.languageArray =  @[@"English", @"Spanish", @"Chinese", @"French", @"Italian", @"Japanese", @"Portuguese", @"Russian", @"Other"];
 
+    self.selectionArray =  @[@"eng", @"spa", @"zho", @"fra", @"ita", @"jpe", @"por", @"rus", @"other"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +44,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *selectedString = [self.languageArray objectAtIndex:indexPath.row];
+    NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
     NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
     

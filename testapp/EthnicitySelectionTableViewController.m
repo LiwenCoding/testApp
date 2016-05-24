@@ -10,7 +10,7 @@
 
 @interface EthnicitySelectionTableViewController ()
 @property (strong, nonatomic)NSArray *ethnicityArray;
-
+@property (strong, nonatomic)NSArray *selectionArray;
 @end
 
 @implementation EthnicitySelectionTableViewController
@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.ethnicityArray =  @[@"Hispanic or Latino", @"Not Hispanic or Latino", @"Declined to State"];
+    self.selectionArray =  @[@"hispanic", @"not_hispanic", @"declined"];
     
 }
 
@@ -42,7 +43,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *selectedString = [self.ethnicityArray objectAtIndex:indexPath.row];
+    NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
     NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
     

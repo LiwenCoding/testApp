@@ -10,6 +10,5 @@
 
 @interface MedicationTableViewController : UITableViewController
 @property(strong, nonatomic)NSMutableDictionary *patientInfo;
-@property (strong, nonatomic) NSArray *allergyArray;
 
 @end

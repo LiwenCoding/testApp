@@ -1037,11 +1037,18 @@
                     <navigationItem key="navigationItem" title="Medications" id="Ppj-gX-ffK">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="DWe-hX-hlx">
                             <connections>
-                                <segue destination="X1R-Cz-QDx" kind="show" id="lCM-bN-aw3"/>
+                                <action selector="backButtonPressed:" destination="Vnk-vl-Pzk" id="qYr-pH-m2G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="RWP-ox-9Zd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="RWP-ox-9Zd">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="Vnk-vl-Pzk" id="zC8-jK-b4J"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="X1R-Cz-QDx" kind="show" identifier="backAllergy" id="7cs-PH-7lB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzJ-58-rWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1175,7 +1182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfb-XB-pLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="-1109"/>
+            <point key="canvasLocation" x="704" y="-97"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ilw-3a-5Wl">
@@ -1437,11 +1444,11 @@
         <segue reference="H1C-qZ-aMA"/>
         <segue reference="ibE-Af-tM0"/>
         <segue reference="jwu-YB-Ys7"/>
-        <segue reference="lCM-bN-aw3"/>
+        <segue reference="7cs-PH-7lB"/>
         <segue reference="L5s-dN-bj2"/>
         <segue reference="MGD-Lv-zE8"/>
         <segue reference="4sn-Fh-eqa"/>
-        <segue reference="zGO-mu-EvH"/>
+        <segue reference="vbI-Da-np7"/>
         <segue reference="BWm-bI-XvY"/>
     </inferredMetricsTieBreakers>
 </document>
