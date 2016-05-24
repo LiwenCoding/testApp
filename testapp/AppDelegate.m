@@ -54,8 +54,9 @@
     NSString *headerValue = [NSString stringWithFormat:@"Bearer %@", accessToken];
     
     [[NSUserDefaults standardUserDefaults] setValue:headerValue forKey:@"headerValue"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"9204151" forKey:@"liwen"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-
+    
     return YES;
 
 }

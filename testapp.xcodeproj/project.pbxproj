@@ -39,6 +39,8 @@
 		80BB69011CF2C309004ABA2D /* AllergyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */; };
 		80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */; };
 		80BB69071CF3D939004ABA2D /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69061CF3D939004ABA2D /* FinishViewController.m */; };
+		80BB69091CF3F607004ABA2D /* settingButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BB69081CF3F607004ABA2D /* settingButton.png */; };
+		80BB690C1CF3F939004ABA2D /* UserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,9 @@
 		80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
 		80BB69051CF3D939004ABA2D /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
 		80BB69061CF3D939004ABA2D /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
+		80BB69081CF3F607004ABA2D /* settingButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingButton.png; sourceTree = "<group>"; };
+		80BB690A1CF3F939004ABA2D /* UserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPasswordViewController.h; sourceTree = "<group>"; };
+		80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 				80198DCA1CC94CC200515123 /* Controller */,
 				80198DB31CC7FDBF00515123 /* Main.storyboard */,
 				80198DB61CC7FDBF00515123 /* Assets.xcassets */,
+				80BB69081CF3F607004ABA2D /* settingButton.png */,
 				80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */,
 				80198DBB1CC7FDBF00515123 /* Info.plist */,
 				80198DAA1CC7FDBF00515123 /* Supporting Files */,
@@ -197,6 +203,8 @@
 				80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */,
 				80BB69051CF3D939004ABA2D /* FinishViewController.h */,
 				80BB69061CF3D939004ABA2D /* FinishViewController.m */,
+				80BB690A1CF3F939004ABA2D /* UserPasswordViewController.h */,
+				80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */,
 				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
 			);
 			name = Controller;
@@ -300,6 +308,7 @@
 			files = (
 				80198DBA1CC7FDBF00515123 /* LaunchScreen.storyboard in Resources */,
 				80198DB71CC7FDBF00515123 /* Assets.xcassets in Resources */,
+				80BB69091CF3F607004ABA2D /* settingButton.png in Resources */,
 				80198DB51CC7FDBF00515123 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +348,7 @@
 				80198DAC1CC7FDBF00515123 /* main.m in Sources */,
 				80BB68D61CEF0696004ABA2D /* PhotoViewController.m in Sources */,
 				80BB68DC1CEFD203004ABA2D /* UIFloatLabelTextField.m in Sources */,
+				80BB690C1CF3F939004ABA2D /* UserPasswordViewController.m in Sources */,
 				80BB68FE1CF2BCBB004ABA2D /* AllergyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

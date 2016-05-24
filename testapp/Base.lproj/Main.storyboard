@@ -40,15 +40,15 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppZ-AM-Qsy">
                                 <rect key="frame" x="207" y="346" width="193" height="30"/>
-                                <color key="backgroundColor" red="0.14901960784313725" green="0.64313725490196083" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Start the App"/>
                                 <connections>
                                     <segue destination="1fr-Xd-RTZ" kind="show" id="odX-L8-yde"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.13333333333333333" green="0.14509803921568629" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="check" destination="dRj-El-01g" id="DdP-Jv-p6Q"/>
@@ -359,13 +359,64 @@
                                     <segue destination="bHi-ck-tZ9" kind="show" id="yRq-uA-yB4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVm-Yl-tTT">
+                                <rect key="frame" x="514" y="86" width="38" height="37"/>
+                                <state key="normal" image="settingButton"/>
+                                <connections>
+                                    <segue destination="ijx-Vn-Dbw" kind="show" id="e2d-WL-kLd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w48-yd-sHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-294" y="-3000"/>
+            <point key="canvasLocation" x="-531" y="-3008"/>
+        </scene>
+        <!--User Password View Controller-->
+        <scene sceneID="j04-FN-0fo">
+            <objects>
+                <viewController id="ijx-Vn-Dbw" customClass="UserPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CU8-A0-Y9Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="NOf-ua-Bez"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JCt-uI-qqF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Username" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-FW-a4o" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="148" y="185" width="305" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Password" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-DG-B2f" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="148" y="272" width="305" height="56"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cki-Rs-MzE">
+                                <rect key="frame" x="154" y="377" width="223" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="ijx-Vn-Dbw" eventType="touchUpInside" id="wqh-Z7-ZCu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="eaJ-DG-B2f" id="bV7-wU-gno"/>
+                        <outlet property="username" destination="7Th-FW-a4o" id="74w-ia-Izh"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="manage" id="MF0-lg-2uq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJN-nQ-Mua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1585" y="-2210"/>
         </scene>
         <!--Match User View Controller-->
         <scene sceneID="Ifp-eq-JOz">
@@ -522,7 +573,7 @@
                         <outlet property="lastName" destination="clA-dF-63W" id="JiM-mJ-50V"/>
                         <outlet property="middleName" destination="bTg-Bq-1pA" id="2Rw-2k-Swv"/>
                         <segue destination="yTb-yF-Tlb" kind="show" identifier="showBackgroundInfo" id="Ne9-Dr-1OK"/>
-                        <segue destination="yDG-eu-gEE" kind="show" identifier="backPhoto" id="zGO-mu-EvH"/>
+                        <segue destination="yDG-eu-gEE" kind="show" identifier="backPhoto" animates="NO" id="zGO-mu-EvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gck-sx-vQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,7 +653,7 @@
                             <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                         </segue>
                         <segue destination="KQk-Gf-H8K" kind="show" identifier="showContactInfo" id="K4G-FN-tj3"/>
-                        <segue destination="P7r-bV-Y12" kind="show" identifier="backName" id="4sn-Fh-eqa"/>
+                        <segue destination="P7r-bV-Y12" kind="show" identifier="backName" animates="NO" id="4sn-Fh-eqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2H4-MT-Ses" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -666,7 +717,7 @@
                         <outlet property="homePhone" destination="Tai-qV-fSD" id="app-Bb-SNj"/>
                         <outlet property="workPhone" destination="FC9-mu-ZNE" id="zbJ-Wo-4nx"/>
                         <segue destination="RqR-lM-f2F" kind="show" identifier="showAddress" id="5xZ-Qc-82d"/>
-                        <segue destination="URX-I9-l6h" kind="show" identifier="backBackgroundInfo" id="MGD-Lv-zE8"/>
+                        <segue destination="URX-I9-l6h" kind="show" identifier="backBackgroundInfo" animates="NO" id="MGD-Lv-zE8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXo-Qo-jRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -730,7 +781,7 @@
                         <outlet property="state" destination="tvK-eC-smj" id="osQ-t6-yzr"/>
                         <outlet property="zipCode" destination="Khc-hI-SP8" id="9GS-Ny-ksO"/>
                         <segue destination="Yz2-9r-GJe" kind="show" identifier="showEmergencyContact" id="9Pw-VQ-Ylw"/>
-                        <segue destination="x57-Gv-S1f" kind="show" identifier="backContactInfo" id="L5s-dN-bj2"/>
+                        <segue destination="x57-Gv-S1f" kind="show" identifier="backContactInfo" animates="NO" id="L5s-dN-bj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqT-rZ-P75" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -787,7 +838,7 @@
                         <outlet property="phone" destination="gfs-DJ-4Kk" id="aA3-l3-ndz"/>
                         <outlet property="relation" destination="n4F-0k-8Bm" id="UPj-F9-yHN"/>
                         <segue destination="04d-4t-koF" kind="show" identifier="showPrimaryInsurance" id="phz-6k-8oz"/>
-                        <segue destination="Ltm-T5-vRW" kind="show" identifier="backAddress" id="XHI-KR-alA"/>
+                        <segue destination="Ltm-T5-vRW" kind="show" identifier="backAddress" animates="NO" id="XHI-KR-alA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pER-0T-ujy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,7 +902,7 @@
                         <outlet property="insuranceID" destination="xub-vW-aRJ" id="gX4-vo-zsl"/>
                         <outlet property="planName" destination="yTP-dd-z1r" id="Bif-4d-3jx"/>
                         <segue destination="Bft-va-Ffb" kind="show" identifier="showSecondaryInsurance" id="TDB-eX-X9L"/>
-                        <segue destination="rvd-Yp-DMI" kind="show" identifier="backEmergencyContact" id="H1C-qZ-aMA"/>
+                        <segue destination="rvd-Yp-DMI" kind="show" identifier="backEmergencyContact" animates="NO" id="H1C-qZ-aMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikI-6o-Fi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -915,12 +966,12 @@
                         <outlet property="insuranceID" destination="yAz-yx-I2E" id="PUg-z3-Bwg"/>
                         <outlet property="planName" destination="tFd-FH-NaK" id="gr8-4Y-azo"/>
                         <segue destination="w7c-cs-whH" kind="show" identifier="showAllergy" id="DWn-Bx-I8d"/>
-                        <segue destination="n9i-0u-lXH" kind="show" identifier="backPrimaryInsurance" id="ibE-Af-tM0"/>
+                        <segue destination="n9i-0u-lXH" kind="show" identifier="backPrimaryInsurance" animates="NO" id="ibE-Af-tM0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmg-NM-U63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3015" y="-493"/>
+            <point key="canvasLocation" x="3057" y="-311"/>
         </scene>
         <!--Allergies-->
         <scene sceneID="UQ3-91-uME">
@@ -988,7 +1039,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="mfr-77-ega" kind="show" identifier="backSecondaryInsurance" id="jwu-YB-Ys7"/>
+                        <segue destination="mfr-77-ega" kind="show" identifier="backSecondaryInsurance" animates="NO" id="jwu-YB-Ys7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcT-KS-469" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1040,7 +1091,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="X1R-Cz-QDx" kind="show" identifier="backAllergy" id="7cs-PH-7lB"/>
+                        <segue destination="X1R-Cz-QDx" kind="show" identifier="backAllergy" animates="NO" id="7cs-PH-7lB"/>
                         <segue destination="uSz-nX-2Yn" kind="show" identifier="finish" id="0pd-iM-tsH"/>
                     </connections>
                 </tableViewController>
@@ -1427,7 +1478,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbQ-D9-OJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048" y="576"/>
+            <point key="canvasLocation" x="2084" y="592"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rTR-W2-73Z">
@@ -1445,7 +1496,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggj-y6-MhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="554"/>
+            <point key="canvasLocation" x="3037" y="1066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TJY-06-HhX">
@@ -1463,19 +1514,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnz-Bl-13P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613" y="584"/>
+            <point key="canvasLocation" x="3811" y="1042"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settingButton" width="500" height="500"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8it-e5-awS"/>
+        <segue reference="XHI-KR-alA"/>
+        <segue reference="H1C-qZ-aMA"/>
+        <segue reference="ibE-Af-tM0"/>
+        <segue reference="jwu-YB-Ys7"/>
+        <segue reference="7cs-PH-7lB"/>
         <segue reference="L5s-dN-bj2"/>
         <segue reference="MGD-Lv-zE8"/>
-        <segue reference="7pg-ya-sCe"/>
-        <segue reference="cQa-1a-BEe"/>
-        <segue reference="sv5-wF-HQu"/>
-        <segue reference="WdB-9C-9Jl"/>
-        <segue reference="7cs-PH-7lB"/>
-        <segue reference="vbI-Da-np7"/>
-        <segue reference="tsp-mM-QAH"/>
+        <segue reference="4sn-Fh-eqa"/>
+        <segue reference="zGO-mu-EvH"/>
+        <segue reference="odX-L8-yde"/>
     </inferredMetricsTieBreakers>
 </document>
