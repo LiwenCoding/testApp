@@ -9,8 +9,6 @@
 #import "ViewController.h"
 
 @interface MatchUserViewController : ViewController
-@property (weak, nonatomic) IBOutlet UITextField *firstName;
-@property (weak, nonatomic) IBOutlet UITextField *dateOfBirth;
-@property (weak, nonatomic) IBOutlet UITextField *lastName;
+
 
 @end

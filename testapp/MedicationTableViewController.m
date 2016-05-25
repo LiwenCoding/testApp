@@ -154,7 +154,7 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
 
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                        [RKDropdownAlert title:@"good" message:@"good!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                        [RKDropdownAlert title:@"Success" message:@"All information has been succussfully saved!" backgroundColor:[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
                         
                         // go to main page
                         [self performSegueWithIdentifier:@"finish" sender:self];

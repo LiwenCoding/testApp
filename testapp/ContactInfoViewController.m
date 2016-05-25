@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *cellPhone;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *emailAddress;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *workPhone;
+@property (weak, nonatomic) IBOutlet UIButton *next;
+@property (weak, nonatomic) IBOutlet UIButton *back;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
 
 @end
 
@@ -24,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"contactview info list %@", self.patientInfo);
+    self.back.layer.cornerRadius = 5;
+    self.next.layer.cornerRadius = 5;
+    self.cancel.layer.cornerRadius = 5;
     [self setTextFieldText];
     [self setTextFieldUI];
 }
@@ -50,6 +56,31 @@
     [self performSegueWithIdentifier:@"backBackgroundInfo" sender:self];
     
 }
+
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    
+    [self alert];
+    
+}
+
+#pragma mark - alert
+
+- (void)alert {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"home4" sender:self];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (void)saveChangesInMemory {
     [self.view endEditing:YES];
@@ -127,8 +158,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showAddress"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        AddressViewController *vc = (AddressViewController *)navi.topViewController;
+        AddressViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
     }
     

@@ -10,8 +10,14 @@
 #import "MBProgressHUD.h"
 #import "RKDropdownAlert.h"
 #import "PhotoViewController.h"
+#import "UIFloatLabelTextField.h"
 
 @interface MatchUserViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIFloatLabelTextField *firstName;
+@property (weak, nonatomic) IBOutlet UIFloatLabelTextField *lastName;
+@property (weak, nonatomic) IBOutlet UIFloatLabelTextField *dateOfBirth;
+@property (weak, nonatomic) IBOutlet UIButton *enter;
+@property (weak, nonatomic) IBOutlet UIButton *back;
 @property (strong, nonatomic) NSString *headerValue;
 @property (strong, nonatomic) NSMutableDictionary *patientInfo;
 @end
@@ -20,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dateOfBirth.delegate = self;
+    [self setTextFieldUI];
+    self.enter.layer.cornerRadius = 5;
+    self.back.layer.cornerRadius = 5;
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
 }
 
@@ -27,7 +37,7 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)editDidBegin:(id)sender {
+- (void)editDidBegin {
     if (self.dateOfBirth.inputView == nil) {
         UIDatePicker *datePicker = [[UIDatePicker alloc] init];
         datePicker.datePickerMode = UIDatePickerModeDate;
@@ -42,6 +52,70 @@
         [self.dateOfBirth setInputAccessoryView:toolBar];
     }
 }
+
+
+-(void)updateTextField:(UIDatePicker *)sender {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.dateOfBirth.text = [formatter stringFromDate:sender.date];
+}
+
+-(void)doneButtonPressed {
+    [self.dateOfBirth resignFirstResponder];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
+
+- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField
+{
+    
+    if (textField == self.dateOfBirth) {
+        [self editDidBegin];
+    }
+    return YES;
+}
+
+- (void)setTextFieldUI {
+    
+    [self.dateOfBirth setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.dateOfBirth.floatLabelActiveColor = [UIColor orangeColor];
+    self.dateOfBirth.floatLabelFont = [UIFont boldSystemFontOfSize:15];
+    
+    [self.firstName setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.firstName.floatLabelActiveColor = [UIColor orangeColor];
+    self.firstName.floatLabelFont = [UIFont boldSystemFontOfSize:15];
+    
+    [self.lastName setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.lastName.floatLabelActiveColor = [UIColor orangeColor];
+    self.lastName.floatLabelFont = [UIFont boldSystemFontOfSize:15];
+    
+    // set bottom border
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
+    bottomBorder.backgroundColor = [UIColor grayColor].CGColor;
+    bottomBorder.borderWidth = 2;
+    
+    CALayer *bottomBorder2 = [CALayer layer];
+    bottomBorder2.frame = CGRectMake(0.0f, self.firstName.frame.size.height - 1, self.firstName.frame.size.width - 1, 1.0f);
+    bottomBorder2.backgroundColor = [UIColor grayColor].CGColor;
+    bottomBorder2.borderWidth = 2;
+    
+    CALayer *bottomBorder3 = [CALayer layer];
+    bottomBorder3.frame = CGRectMake(0.0f, self.lastName.frame.size.height - 1, self.lastName.frame.size.width - 1, 1.0f);
+    bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
+    bottomBorder3.borderWidth = 2;
+    
+    
+    [self.dateOfBirth.layer addSublayer:bottomBorder];
+    [self.firstName.layer addSublayer:bottomBorder2];
+    [self.lastName.layer addSublayer:bottomBorder3];
+
+}
+
 
 - (IBAction)enterButtonPressed:(id)sender {
     [self.view endEditing:YES];
@@ -59,20 +133,6 @@
     [self getPatientInfo];
 }
 
--(void)updateTextField:(UIDatePicker *)sender {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd"];
-        self.dateOfBirth.text = [formatter stringFromDate:sender.date];
-}
-
--(void)doneButtonPressed {
-    [self.dateOfBirth resignFirstResponder];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    [self.view endEditing:YES];
-}
 
 - (void)getPatientInfo {
     //generate request
@@ -95,7 +155,7 @@
                 if ([count intValue] == 0) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                        [RKDropdownAlert title:@"Login Failed" message:@"No matched record found!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                        [RKDropdownAlert title:@"Login Failed" message:@"No matched record found!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
                         return;
                     });
                 } else {
@@ -108,7 +168,7 @@
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
                     return;
                 });
             
@@ -177,9 +237,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"profilePhoto"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        PhotoViewController *photoViewController = (PhotoViewController *)navi.topViewController;
-        photoViewController.patientInfo = self.patientInfo;
+//        UINavigationController *navi = segue.destinationViewController;
+//        PhotoViewController *photoViewController = (PhotoViewController *)navi.topViewController;
+//        photoViewController.patientInfo = self.patientInfo;
+        PhotoViewController *vc = segue.destinationViewController;
+        vc.patientInfo = self.patientInfo;
     }
 }
 

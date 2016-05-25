@@ -22,6 +22,7 @@
 		805EA38B1CEA5C5000A70189 /* MatchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805EA38A1CEA5C5000A70189 /* MatchUserViewController.m */; };
 		805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 805EA38D1CEAB8B700A70189 /* MBProgressHUD.m */; };
 		8090D2921CF45D6600FAC10F /* PINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2911CF45D6600FAC10F /* PINViewController.m */; };
+		8090D2951CF55DE000FAC10F /* SecondPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2941CF55DE000FAC10F /* SecondPINViewController.m */; };
 		80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */; };
 		80BB68D61CEF0696004ABA2D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D51CEF0696004ABA2D /* PhotoViewController.m */; };
 		80BB68D91CEFB582004ABA2D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D81CEFB582004ABA2D /* NameViewController.m */; };
@@ -40,7 +41,6 @@
 		80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */; };
 		80BB69071CF3D939004ABA2D /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69061CF3D939004ABA2D /* FinishViewController.m */; };
 		80BB69091CF3F607004ABA2D /* settingButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BB69081CF3F607004ABA2D /* settingButton.png */; };
-		80BB690C1CF3F939004ABA2D /* UserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */; };
 		80BB690E1CF417B5004ABA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BB690D1CF417B5004ABA2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,8 @@
 		805EA38D1CEAB8B700A70189 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8090D2901CF45D6600FAC10F /* PINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINViewController.h; sourceTree = "<group>"; };
 		8090D2911CF45D6600FAC10F /* PINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINViewController.m; sourceTree = "<group>"; };
+		8090D2931CF55DDF00FAC10F /* SecondPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondPINViewController.h; sourceTree = "<group>"; };
+		8090D2941CF55DE000FAC10F /* SecondPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondPINViewController.m; sourceTree = "<group>"; };
 		80BB68D11CEDB837004ABA2D /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		80BB68D41CEF0696004ABA2D /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -109,8 +111,6 @@
 		80BB69051CF3D939004ABA2D /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
 		80BB69061CF3D939004ABA2D /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
 		80BB69081CF3F607004ABA2D /* settingButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingButton.png; sourceTree = "<group>"; };
-		80BB690A1CF3F939004ABA2D /* UserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPasswordViewController.h; sourceTree = "<group>"; };
-		80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPasswordViewController.m; sourceTree = "<group>"; };
 		80BB690D1CF417B5004ABA2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +174,8 @@
 				80198DB11CC7FDBF00515123 /* ViewController.m */,
 				8090D2901CF45D6600FAC10F /* PINViewController.h */,
 				8090D2911CF45D6600FAC10F /* PINViewController.m */,
+				8090D2931CF55DDF00FAC10F /* SecondPINViewController.h */,
+				8090D2941CF55DE000FAC10F /* SecondPINViewController.m */,
 				805EA3861CEA5A9800A70189 /* StartPageViewController.h */,
 				805EA3871CEA5A9800A70189 /* StartPageViewController.m */,
 				80198DC71CC93FBF00515123 /* MasterTableViewController.h */,
@@ -208,8 +210,6 @@
 				80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */,
 				80BB69051CF3D939004ABA2D /* FinishViewController.h */,
 				80BB69061CF3D939004ABA2D /* FinishViewController.m */,
-				80BB690A1CF3F939004ABA2D /* UserPasswordViewController.h */,
-				80BB690B1CF3F939004ABA2D /* UserPasswordViewController.m */,
 				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
 			);
 			name = Controller;
@@ -347,6 +347,7 @@
 				805EA38E1CEAB8B700A70189 /* MBProgressHUD.m in Sources */,
 				80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */,
 				80BB68EB1CF1B895004ABA2D /* ContactInfoViewController.m in Sources */,
+				8090D2951CF55DE000FAC10F /* SecondPINViewController.m in Sources */,
 				80BB68F81CF27E04004ABA2D /* SecondaryInsuranceViewController.m in Sources */,
 				802E1A271CCA2EA4009CB16D /* DetailViewController.m in Sources */,
 				80198DAF1CC7FDBF00515123 /* AppDelegate.m in Sources */,
@@ -354,7 +355,6 @@
 				80198DAC1CC7FDBF00515123 /* main.m in Sources */,
 				80BB68D61CEF0696004ABA2D /* PhotoViewController.m in Sources */,
 				80BB68DC1CEFD203004ABA2D /* UIFloatLabelTextField.m in Sources */,
-				80BB690C1CF3F939004ABA2D /* UserPasswordViewController.m in Sources */,
 				80BB68FE1CF2BCBB004ABA2D /* AllergyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

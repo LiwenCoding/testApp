@@ -9,6 +9,7 @@
 #import "FinishViewController.h"
 
 @interface FinishViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *exit;
 
 @end
 
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.exit.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning {

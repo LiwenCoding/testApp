@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *groupNumber;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *planName;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *insuranceID;
+@property (weak, nonatomic) IBOutlet UIButton *next;
+@property (weak, nonatomic) IBOutlet UIButton *back;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
 
 @end
 
@@ -24,6 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"insuranceview info list %@", self.patientInfo);
+    
+    self.back.layer.cornerRadius = 5;
+    self.next.layer.cornerRadius = 5;
+    self.cancel.layer.cornerRadius = 5;
     [self setTextFieldText];
     [self setTextFieldUI];
 }
@@ -52,6 +59,31 @@
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backEmergencyContact" sender:self];
     
+}
+
+
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    
+    [self alert];
+    
+}
+
+#pragma mark - alert
+
+- (void)alert {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"home7" sender:self];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)saveChangesInMemory {
@@ -128,8 +160,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showSecondaryInsurance"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        SecondaryInsuranceViewController *vc = (SecondaryInsuranceViewController *)navi.topViewController;
+        SecondaryInsuranceViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
     }
     

@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *middleName;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSelector;
 @property (strong, nonatomic) NSString *gender;
+@property (weak, nonatomic) IBOutlet UIButton *next;
+@property (weak, nonatomic) IBOutlet UIButton *back;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
 
 @end
 
@@ -26,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"nameview info list %@", self.patientInfo);
+    self.back.layer.cornerRadius = 5;
+    self.next.layer.cornerRadius = 5;
+    self.cancel.layer.cornerRadius = 5;
     [self setTextFieldText];
     [self setTextFieldUI];
 }
@@ -40,19 +46,19 @@
     {
         case 0:
             self.gender = @"Male";
-            [self.genderSelector setTintColor:[UIColor greenColor]];
-            NSLog(@"gender is %@", self.gender);
+//            [self.genderSelector setTintColor:[UIColor greenColor]];
+//            NSLog(@"gender is %@", self.gender);
             break;
         case 1:
             self.gender = @"Female";
-            [self.genderSelector setTintColor:[UIColor redColor]];
+//            [self.genderSelector setTintColor:[UIColor redColor]];
 
-            NSLog(@"gender is %@", self.gender);
+//            NSLog(@"gender is %@", self.gender);
 
             break;
         case 2:
             self.gender = @"Other";
-            [self.genderSelector setTintColor:[UIColor grayColor]];
+//            [self.genderSelector setTintColor:[UIColor grayColor]];
 
         default:
             break;
@@ -64,7 +70,7 @@
     // validate required field
     if ([[self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.firstName.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.lastName.text canBeConvertedToEncoding:NSASCIIStringEncoding] ) {
         //drop down alert
-        [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+        [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor grayColor] textColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] time:3];
         return;
     }
     
@@ -84,6 +90,30 @@
     [self performSegueWithIdentifier:@"backPhoto" sender:self];
     
 }
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    
+    [self alert];
+    
+}
+
+#pragma mark - alert
+
+- (void)alert {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"home2" sender:self];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (void)saveChangesInMemory {
     
@@ -167,16 +197,15 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // next page
     if ([[segue identifier] isEqualToString:@"showBackgroundInfo"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        BackgroundInfoViewController *backgroundInfoViewController = (BackgroundInfoViewController *)navi.topViewController;
-        backgroundInfoViewController.patientInfo = self.patientInfo;
+        BackgroundInfoViewController *vc = segue.destinationViewController;
+       vc.patientInfo = self.patientInfo;
     }
-    
+    // back page
     if ([[segue identifier] isEqualToString:@"backPhoto"]) {
         PhotoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
-        
     }
 }
 

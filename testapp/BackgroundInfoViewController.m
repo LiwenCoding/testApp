@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *race;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *ethnicity;
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *socialSecurity;
+@property (weak, nonatomic) IBOutlet UIButton *next;
+@property (weak, nonatomic) IBOutlet UIButton *back;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
 
 @end
 
@@ -32,6 +35,10 @@
     self.race.delegate = self;
     self.preferredLanguage.delegate = self;
     self.ethnicity.delegate = self;
+    
+    self.back.layer.cornerRadius = 5;
+    self.next.layer.cornerRadius = 5;
+    self.cancel.layer.cornerRadius = 5;
     NSLog(@"backgroundview info list %@", self.patientInfo);
     [self setTextFieldText];
     [self setTextFieldUI];
@@ -64,6 +71,30 @@
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backName" sender:self];
     
+}
+
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    
+    [self alert];
+    
+}
+
+#pragma mark - alert
+
+- (void)alert {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"home3" sender:self];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)saveChangesInMemory {
@@ -274,8 +305,7 @@
     // prepare data for next segue
     
     if ([[segue identifier] isEqualToString:@"showContactInfo"]) {
-        UINavigationController *navi = segue.destinationViewController;
-        ContactInfoViewController *vc = (ContactInfoViewController *)navi.topViewController;
+        ContactInfoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
     }
     
