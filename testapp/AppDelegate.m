@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MasterTableViewController.h"
-#import "DetailViewController.h"
 
 @interface AppDelegate ()
 

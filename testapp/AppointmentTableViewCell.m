@@ -1,14 +1,14 @@
 //
-//  CheckInTableViewCell.m
+//  AppointmentTableViewCell.m
 //  testapp
 //
-//  Created by Shen Liwen on 4/22/16.
+//  Created by Shen Liwen on 5/25/16.
 //  Copyright © 2016 Shen Liwen. All rights reserved.
 //
 
-#import "CheckInTableViewCell.h"
+#import "AppointmentTableViewCell.h"
 
-@implementation CheckInTableViewCell
+@implementation AppointmentTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

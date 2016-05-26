@@ -73,7 +73,7 @@
 }
 - (IBAction)takePhotoButtonPressed:(id)sender {
     
-     [RKDropdownAlert title:@"Bingo!" message:@"Coming soon!" backgroundColor:[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
+     [RKDropdownAlert title:@"Hodor!" message:@"Coming soon!" backgroundColor:[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
