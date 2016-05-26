@@ -21,6 +21,10 @@
 
 @implementation PhotoViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self startDownloadingImage];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationItem.hidesBackButton = YES;
@@ -31,7 +35,6 @@
     self.next.layer.cornerRadius = 5;
     self.cancel.layer.cornerRadius = 5;
 
-    [self startDownloadingImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,7 +95,7 @@
     }];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Continue" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
-        [self performSegueWithIdentifier:@"photoHome" sender:self];
+        [self performSegueWithIdentifier:@"home1" sender:self];
     }];
     [alert addAction:cancel];
     [alert addAction:ok];

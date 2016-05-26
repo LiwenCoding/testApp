@@ -97,17 +97,17 @@
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
     bottomBorder.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder.borderWidth = 2;
+//    bottomBorder.borderWidth = 2;
     
     CALayer *bottomBorder2 = [CALayer layer];
     bottomBorder2.frame = CGRectMake(0.0f, self.firstName.frame.size.height - 1, self.firstName.frame.size.width - 1, 1.0f);
     bottomBorder2.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder2.borderWidth = 2;
+//    bottomBorder2.borderWidth = 2;
     
     CALayer *bottomBorder3 = [CALayer layer];
     bottomBorder3.frame = CGRectMake(0.0f, self.lastName.frame.size.height - 1, self.lastName.frame.size.width - 1, 1.0f);
     bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder3.borderWidth = 2;
+//    bottomBorder3.borderWidth = 2;
     
     
     [self.dateOfBirth.layer addSublayer:bottomBorder];

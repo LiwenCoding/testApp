@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--SecondPIN View Controller-->
@@ -214,10 +212,10 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ud-pY-2eL">
                                             <rect key="frame" x="8" y="4" width="100" height="100"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyh-z5-DxI">
-                                            <rect key="frame" x="537" y="76" width="223" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-X2-ShD">
+                                            <rect key="frame" x="116" y="17" width="173" height="40"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJY-lf-IpM">
@@ -233,15 +231,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-hs-LwA">
-                                            <rect key="frame" x="581" y="27.5" width="179" height="29.5"/>
+                                            <rect key="frame" x="565" y="21" width="179" height="29.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-X2-ShD">
-                                            <rect key="frame" x="116" y="17" width="173" height="40"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyh-z5-DxI">
+                                            <rect key="frame" x="521" y="76" width="223" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -347,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w48-yd-sHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4777" y="-591"/>
+            <point key="canvasLocation" x="-3140" y="2985"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VAx-B6-4kT">
@@ -374,8 +372,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PD-cD-Ldr"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="ABj-ga-Cgz"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="opQ-8x-0pS"/>
                                 </connections>
                             </button>
@@ -455,8 +451,6 @@
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="enterButtonPressed:" destination="bHi-ck-tZ9" eventType="touchUpInside" id="Q6h-y0-jbR"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="01y-ZN-sZs"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stZ-HQ-VUT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-cl-w6W">
@@ -465,20 +459,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="First Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-1S-t9g" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="206" y="210" width="328" height="67"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DJm-3m-j3R" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="206" y="443" width="328" height="67"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Last Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zkN-qF-mDm" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="206" y="323" width="328" height="67"/>
+                                <rect key="frame" x="138" y="443" width="489" height="67"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -489,6 +471,18 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Last Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zkN-qF-mDm" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="138" y="325" width="489" height="67"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="First Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yQn-cJ-qOg" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="138" y="214" width="489" height="67"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -498,14 +492,14 @@
                         <outlet property="back" destination="0qR-dG-J4z" id="UIt-QR-nc6"/>
                         <outlet property="dateOfBirth" destination="DJm-3m-j3R" id="Djh-cY-kbg"/>
                         <outlet property="enter" destination="18G-Nc-DdR" id="ak5-pL-2JM"/>
-                        <outlet property="firstName" destination="8ke-1S-t9g" id="dgU-Hn-iNq"/>
+                        <outlet property="firstName" destination="yQn-cJ-qOg" id="0R7-6i-KAx"/>
                         <outlet property="lastName" destination="zkN-qF-mDm" id="Uzg-d2-Nj2"/>
                         <segue destination="yDG-eu-gEE" kind="show" identifier="profilePhoto" id="ph2-xp-2cW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcX-Q5-Blh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3851" y="-640"/>
+            <point key="canvasLocation" x="-4475" y="-532"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="v4e-sS-dGn">
@@ -524,7 +518,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-Vz-rRt">
-                                <rect key="frame" x="148" y="738" width="476" height="84"/>
+                                <rect key="frame" x="146" y="777" width="476" height="84"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,53 +529,48 @@
                                     <segue destination="P7r-bV-Y12" kind="show" identifier="nameInfo" id="L1U-uj-9CG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHC-Kk-U3S">
-                                <rect key="frame" x="148" y="858" width="476" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="mjg-wn-fou"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDX-t7-EX8"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="UJl-f5-OBY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iis-qv-N5p">
-                                <rect key="frame" x="148" y="617" width="476" height="84"/>
+                                <rect key="frame" x="146" y="638" width="476" height="84"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
-                                    <action selector="enterButtonPressed:" destination="bHi-ck-tZ9" eventType="touchUpInside" id="Fkn-Tc-GpT"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="43g-yl-BhA"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IE1-si-xqB"/>
                                     <action selector="takePhotoButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="EQw-rv-XgG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdQ-Kl-Ggu">
                                 <rect key="frame" x="201" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhK-Nu-aTF">
+                                <rect key="frame" x="280" y="916" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="uiH-yx-xLO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="cancel" destination="EHC-Kk-U3S" id="LcE-Sz-Dp3"/>
+                        <outlet property="cancel" destination="UhK-Nu-aTF" id="sER-pQ-O9W"/>
                         <outlet property="imageView" destination="dbp-pc-Pxw" id="2WR-oM-Mal"/>
                         <outlet property="next" destination="yoP-Vz-rRt" id="uJH-Dx-A18"/>
                         <outlet property="takePhoto" destination="iis-qv-N5p" id="9dq-yl-FoU"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="photoHome" id="cgR-EF-g6V"/>
+                        <segue destination="1fr-Xd-RTZ" kind="show" identifier="home1" id="Gkv-tH-0CM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWj-rx-yUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2903" y="-640"/>
+            <point key="canvasLocation" x="-3175" y="-664"/>
         </scene>
         <!--Name View Controller-->
         <scene sceneID="aSO-K1-E4f">
@@ -596,7 +585,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-TE-uYS">
-                                <rect key="frame" x="216" y="537" width="335" height="29"/>
+                                <rect key="frame" x="248" y="540" width="273" height="29"/>
                                 <segments>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
@@ -607,28 +596,13 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xu-Ip-yyh">
-                                <rect key="frame" x="140" y="742" width="489" height="84"/>
+                                <rect key="frame" x="140" y="787" width="489" height="84"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="Amy-EJ-igF"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="8M6-eg-QhL"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVt-3o-3SA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InO-96-TnE">
-                                <rect key="frame" x="140" y="609" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="enterButtonPressed:" destination="bHi-ck-tZ9" eventType="touchUpInside" id="kap-9k-bD2"/>
-                                    <action selector="nextButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="cBO-FC-HeR"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JG1-Oc-bVT"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="pnf-xY-UtE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-Ig-IT2">
@@ -638,43 +612,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="First Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="B2S-h9-mar" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="220" y="223" width="331" height="67"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <rect key="frame" x="140" y="223" width="411" height="67"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Last Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fpC-a5-0jz" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="220" y="327" width="331" height="67"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <rect key="frame" x="140" y="327" width="411" height="67"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name &amp; Sex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svK-3I-lB9">
                                 <rect key="frame" x="201" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEe-7U-YRg">
-                                <rect key="frame" x="140" y="880" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="6kA-Tw-kDT"/>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="NuX-lg-aVn"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="33h-Re-Ihc"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pX-Uz-qC3"/>
-                                    <segue destination="1fr-Xd-RTZ" kind="show" identifier="home2" id="k7v-oz-paI"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Middle Name" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wDP-04-1ug" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="220" y="429" width="331" height="67"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <rect key="frame" x="140" y="429" width="411" height="67"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCW-No-V0H">
+                                <rect key="frame" x="280" y="913" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="SXR-Fp-Q8c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InO-96-TnE">
+                                <rect key="frame" x="140" y="632" width="489" height="84"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="cBO-FC-HeR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -682,7 +661,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="2xu-Ip-yyh" id="A5Z-vm-RI2"/>
-                        <outlet property="cancel" destination="TEe-7U-YRg" id="8U6-fn-u6E"/>
+                        <outlet property="cancel" destination="vCW-No-V0H" id="VlI-kE-bJD"/>
                         <outlet property="firstName" destination="B2S-h9-mar" id="2fi-hN-YUE"/>
                         <outlet property="genderSelector" destination="3Hp-TE-uYS" id="rpp-41-GYX"/>
                         <outlet property="lastName" destination="fpC-a5-0jz" id="FVP-sn-G9W"/>
@@ -690,11 +669,12 @@
                         <outlet property="next" destination="InO-96-TnE" id="cuc-my-QTL"/>
                         <segue destination="yDG-eu-gEE" kind="show" identifier="backPhoto" id="zGO-mu-EvH"/>
                         <segue destination="URX-I9-l6h" kind="show" identifier="showBackgroundInfo" id="EUp-42-NPK"/>
+                        <segue destination="1fr-Xd-RTZ" kind="show" identifier="home2" id="HuP-H5-dS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gck-sx-vQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1959" y="-678"/>
+            <point key="canvasLocation" x="-1292" y="-2257"/>
         </scene>
         <!--Background Info View Controller-->
         <scene sceneID="OON-Oa-Fwf">
@@ -709,81 +689,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Ethnicity" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-O2-2Vf" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="372" y="237" width="191" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="422" y="268" width="284" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-PS-ZhR" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="60" y="166" width="191" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="62" y="170" width="284" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Preferred Language" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-lr-W7m" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="372" y="166" width="191" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="422" y="170" width="284" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Social Security #" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tMZ-KZ-lTg" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="60" y="306" width="191" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="62" y="340" width="284" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Race" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AgD-hD-nkf" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="60" y="237" width="191" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="62" y="268" width="284" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIU-ln-xTg">
-                                <rect key="frame" x="131" y="700" width="489" height="84"/>
+                                <rect key="frame" x="140" y="777" width="489" height="84"/>
                                 <color key="backgroundColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="c8c-ki-Hg9"/>
                                     <action selector="backButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="ftK-0J-KcT"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="5Vo-0s-DVs"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xc5-2V-Ev4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdM-Ta-Qr5">
-                                <rect key="frame" x="131" y="567" width="489" height="84"/>
+                                <rect key="frame" x="140" y="638" width="489" height="84"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="enterButtonPressed:" destination="bHi-ck-tZ9" eventType="touchUpInside" id="9en-RA-9My"/>
-                                    <action selector="nextButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="apb-kI-a0t"/>
                                     <action selector="nextButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="mk7-1v-FuS"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7aT-PQ-req"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="MQ4-xf-mK4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj9-y8-CUl">
-                                <rect key="frame" x="131" y="838" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06P-NK-fXB">
+                                <rect key="frame" x="280" y="916" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
                                 <connections>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="SvK-dp-iVu"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="Y1a-d9-seC"/>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="es9-fL-xtW"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acp-CZ-csz"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="BQV-hq-TUf"/>
-                                    <segue destination="1fr-Xd-RTZ" kind="show" identifier="home3" id="10m-rZ-WOU"/>
+                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="jrn-mu-6mM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oQ-Ns-U1B">
-                                <rect key="frame" x="176" y="57" width="366" height="49"/>
+                                <rect key="frame" x="201" y="56" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -793,7 +760,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="FIU-ln-xTg" id="R1Q-uC-cb6"/>
-                        <outlet property="cancel" destination="Zj9-y8-CUl" id="qj0-WQ-Ww4"/>
+                        <outlet property="cancel" destination="06P-NK-fXB" id="O9x-QG-zoI"/>
                         <outlet property="dateOfBirth" destination="Imz-PS-ZhR" id="l2o-5k-91t"/>
                         <outlet property="ethnicity" destination="HLB-O2-2Vf" id="T5d-6f-RX1"/>
                         <outlet property="next" destination="xdM-Ta-Qr5" id="4V4-kd-xLQ"/>
@@ -804,18 +771,19 @@
                             <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                         </segue>
                         <segue destination="bTL-PX-yn9" kind="popoverPresentation" identifier="showLanguagePopover" popoverAnchorView="UAN-lr-W7m" id="KSf-Db-uIt">
-                            <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                            <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                         </segue>
                         <segue destination="YOF-bG-Q9a" kind="popoverPresentation" identifier="showEthnicityPopover" popoverAnchorView="HLB-O2-2Vf" id="iXg-aP-gpA">
                             <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                         </segue>
                         <segue destination="P7r-bV-Y12" kind="show" identifier="backName" id="4sn-Fh-eqa"/>
                         <segue destination="x57-Gv-S1f" kind="show" identifier="showContactInfo" id="DSx-cc-upO"/>
+                        <segue destination="1fr-Xd-RTZ" kind="show" identifier="home3" id="Zbr-PV-Xiy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2H4-MT-Ses" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="-678"/>
+            <point key="canvasLocation" x="-1325" y="-500"/>
         </scene>
         <!--Contact Info View Controller-->
         <scene sceneID="KM0-tN-RBP">
@@ -830,26 +798,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Home Phone" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-qV-fSD" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="121" y="216" width="255" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="48" y="221" width="328" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Email Addresss" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-s3-uks" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="475" y="329" width="255" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="420" y="329" width="328" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Cell Phone" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7dZ-px-5cy" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="475" y="216" width="255" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Work Phone" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FC9-mu-ZNE" customClass="UIFloatLabelTextField">
-                                <rect key="frame" x="121" y="329" width="255" height="56"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="420" y="221" width="328" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
@@ -882,26 +844,27 @@
                                     <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="Cwl-2d-MUZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-hA-9Aa">
-                                <rect key="frame" x="201" y="57" width="366" height="49"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB8-Cn-suk">
                                 <rect key="frame" x="280" y="867" width="208" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Cancel Check-in"/>
                                 <connections>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="R90-O4-dea"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="Uwb-sc-z1V"/>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="acd-hu-pKj"/>
-                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="z23-O2-Jvr"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="mem-pQ-ooQ"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zSw-Sc-RdB"/>
+                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="UDL-PE-EJH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-hA-9Aa">
+                                <rect key="frame" x="201" y="57" width="366" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Work Phone" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FC9-mu-ZNE" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="48" y="329" width="328" height="56"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -909,7 +872,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="1af-LS-tct" id="Adk-eG-vUb"/>
-                        <outlet property="cancel" destination="gB8-Cn-suk" id="iGa-IW-elH"/>
+                        <outlet property="cancel" destination="gB8-Cn-suk" id="QUr-Sl-qUB"/>
                         <outlet property="cellPhone" destination="7dZ-px-5cy" id="eOE-FU-NcI"/>
                         <outlet property="emailAddress" destination="g6d-s3-uks" id="hw7-0J-3c8"/>
                         <outlet property="homePhone" destination="Tai-qV-fSD" id="app-Bb-SNj"/>
@@ -967,26 +930,10 @@
                                     <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="uFc-GO-nji"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unr-Cp-IKL">
-                                <rect key="frame" x="140" y="724" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="16Z-fn-BDx"/>
-                                    <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="5BB-IK-8fq"/>
-                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="7wZ-th-gyI"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="Hda-nr-57x"/>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="RVn-oy-lbV"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FgB-5Q-hdN"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="Lku-9e-vqC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-Ud-qYz">
                                 <rect key="frame" x="201" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Street Address" textAlignment="natural" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VqQ-TT-hOI" customClass="UIFloatLabelTextField">
@@ -1013,6 +960,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk8-6H-Gyu">
+                                <rect key="frame" x="150" y="734" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="X7O-ST-zMF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1021,7 +977,7 @@
                     <connections>
                         <outlet property="address" destination="VqQ-TT-hOI" id="Kev-4m-nJ3"/>
                         <outlet property="back" destination="VdY-x4-oYe" id="aPI-HV-k5y"/>
-                        <outlet property="cancel" destination="Unr-Cp-IKL" id="LiN-9Q-wvj"/>
+                        <outlet property="cancel" destination="Wk8-6H-Gyu" id="0aJ-6I-28d"/>
                         <outlet property="city" destination="QKc-vH-JsO" id="Sr5-3r-EgM"/>
                         <outlet property="next" destination="ERn-46-ZFR" id="BDg-Ud-9y0"/>
                         <outlet property="state" destination="tvK-eC-smj" id="osQ-t6-yzr"/>
@@ -1033,7 +989,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqT-rZ-P75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4366" y="977"/>
+            <point key="canvasLocation" x="-3954" y="1097"/>
         </scene>
         <!--Emergency Contact View Controller-->
         <scene sceneID="wEn-yX-95G">
@@ -1081,27 +1037,10 @@
                                     <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndl-SW-8bg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNN-hT-ncl">
-                                <rect key="frame" x="60" y="700" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="BVB-EV-O1M"/>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="cG3-ZS-hdU"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="gg6-ZD-fmR"/>
-                                    <action selector="cancelButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="hKt-yw-3ic"/>
-                                    <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="lK7-Vg-VDh"/>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="pSr-FP-iog"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAD-Oq-qhE"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="sud-01-nJv"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emergency Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3O-F7-ycQ">
                                 <rect key="frame" x="207" y="58" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFU-nM-b8b">
@@ -1121,6 +1060,15 @@
                                     <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xe3-Yf-rcT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHk-t0-TqD">
+                                <rect key="frame" x="70" y="710" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="opw-tr-XsY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1128,7 +1076,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="ZVA-aU-q58" id="MA5-uv-W0w"/>
-                        <outlet property="cancel" destination="FNN-hT-ncl" id="p90-zR-sh1"/>
+                        <outlet property="cancel" destination="UHk-t0-TqD" id="jsg-th-fVl"/>
                         <outlet property="name" destination="nkH-2R-NOE" id="C3s-Zf-sDT"/>
                         <outlet property="next" destination="MFU-nM-b8b" id="PMf-Pm-7A0"/>
                         <outlet property="phone" destination="gfs-DJ-4Kk" id="aA3-l3-ndz"/>
@@ -1214,30 +1162,21 @@
                                     <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="bq9-AT-2yc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nod-Ku-vzi">
-                                <rect key="frame" x="44" y="660" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="n9i-0u-lXH" eventType="touchUpInside" id="Uf8-pC-Lgg"/>
-                                    <action selector="cancelButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="X3j-4a-VNy"/>
-                                    <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="Zoz-zy-aya"/>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="ojT-cV-VTt"/>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="sBB-aH-m4g"/>
-                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="uxZ-ex-L8D"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="zqF-kb-GwH"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="6el-qY-myQ"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7C3-6X-9QP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primary Insurance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCu-pT-uWf">
                                 <rect key="frame" x="158" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7y-rf-45s">
+                                <rect key="frame" x="54" y="670" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="n9i-0u-lXH" eventType="touchUpInside" id="PAt-Kb-xrk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1245,7 +1184,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="vV3-2j-LOA" id="Rde-Dl-lKV"/>
-                        <outlet property="cancel" destination="Nod-Ku-vzi" id="c8c-Y0-K1w"/>
+                        <outlet property="cancel" destination="c7y-rf-45s" id="S7Y-mR-fWX"/>
                         <outlet property="company" destination="vec-HC-smn" id="sEa-aS-SsO"/>
                         <outlet property="groupNumber" destination="rvg-XW-u2O" id="OC0-3W-NHi"/>
                         <outlet property="insuranceID" destination="xub-vW-aRJ" id="gX4-vo-zsl"/>
@@ -1334,31 +1273,21 @@
                                     <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="nVI-bi-ZQD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-G0-25l">
-                                <rect key="frame" x="65" y="689" width="489" height="84"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="5dN-Jw-bIp"/>
-                                    <action selector="cancelButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="6BU-Bw-LL8"/>
-                                    <action selector="cancelButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="E3H-ui-n1X"/>
-                                    <action selector="cancelButtonPressed:" destination="yDG-eu-gEE" eventType="touchUpInside" id="ECk-q8-8DM"/>
-                                    <action selector="cancelButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="Kn5-Fo-0YW"/>
-                                    <action selector="cancelButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="LIW-lf-csA"/>
-                                    <action selector="cancelButtonPressed:" destination="n9i-0u-lXH" eventType="touchUpInside" id="c8P-r3-LB0"/>
-                                    <action selector="cancelButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="e96-cJ-Fow"/>
-                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="kRv-aB-Kyu"/>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="luM-QX-DnL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secondary Insurance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqg-3B-acb">
                                 <rect key="frame" x="126" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.2156862745" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH7-6B-VpE">
+                                <rect key="frame" x="75" y="699" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="POh-fK-q7g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1366,62 +1295,50 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="back" destination="ug0-Nd-l28" id="1YU-ZF-zTy"/>
-                        <outlet property="cancel" destination="Odr-G0-25l" id="rEu-om-eTQ"/>
+                        <outlet property="cancel" destination="sH7-6B-VpE" id="EA0-rI-JV9"/>
                         <outlet property="company" destination="4nq-Xs-ecO" id="pSr-Bt-sXc"/>
                         <outlet property="groupNumber" destination="v7g-ik-Eln" id="CN6-4Q-e0M"/>
                         <outlet property="insuranceID" destination="yAz-yx-I2E" id="PUg-z3-Bwg"/>
                         <outlet property="next" destination="psK-SX-n16" id="NfY-Bn-VPt"/>
                         <outlet property="planName" destination="tFd-FH-NaK" id="gr8-4Y-azo"/>
                         <segue destination="w7c-cs-whH" kind="show" identifier="showAllergy" id="DWn-Bx-I8d"/>
-                        <segue destination="n9i-0u-lXH" kind="show" identifier="backPrimaryInsurance" animates="NO" id="ibE-Af-tM0"/>
+                        <segue destination="n9i-0u-lXH" kind="show" identifier="backPrimaryInsurance" id="ibE-Af-tM0"/>
                         <segue destination="1fr-Xd-RTZ" kind="show" identifier="home8" id="VUI-wo-BrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmg-NM-U63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="895"/>
+            <point key="canvasLocation" x="-516" y="889"/>
         </scene>
         <!--Allergies-->
         <scene sceneID="UQ3-91-uME">
             <objects>
                 <tableViewController id="X1R-Cz-QDx" customClass="AllergyTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="kOf-EK-ydO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="kOf-EK-ydO">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allergy" rowHeight="48" id="gLA-Lx-AnP" customClass="AllergyTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="768" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allergy" rowHeight="56" id="gLA-Lx-AnP" customClass="AllergyTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="768" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLA-Lx-AnP" id="BpU-pw-iVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-1T-wtr">
-                                            <rect key="frame" x="329" y="7" width="431" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Zt-t0K">
+                                            <rect key="frame" x="24" y="3" width="339" height="48.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Zt-t0K">
-                                            <rect key="frame" x="16" y="7" width="233" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="233" id="qgf-Lk-NfJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-1T-wtr">
+                                            <rect key="frame" x="376" y="7" width="384" height="42"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="lrg-1T-wtr" firstAttribute="baseline" secondItem="tne-Zt-t0K" secondAttribute="baseline" id="3zx-JB-8Mc"/>
-                                        <constraint firstItem="lrg-1T-wtr" firstAttribute="leading" secondItem="tne-Zt-t0K" secondAttribute="trailing" constant="80" id="LTG-V6-GYT"/>
-                                        <constraint firstItem="tne-Zt-t0K" firstAttribute="centerY" secondItem="BpU-pw-iVM" secondAttribute="centerY" id="Ll7-iV-mC4"/>
-                                        <constraint firstItem="tne-Zt-t0K" firstAttribute="leading" secondItem="BpU-pw-iVM" secondAttribute="leadingMargin" constant="8" id="SOj-R2-seQ"/>
-                                        <constraint firstItem="lrg-1T-wtr" firstAttribute="trailing" secondItem="BpU-pw-iVM" secondAttribute="trailingMargin" id="bmr-uG-Wyn"/>
-                                        <constraint firstItem="lrg-1T-wtr" firstAttribute="firstBaseline" secondItem="tne-Zt-t0K" secondAttribute="firstBaseline" id="jEo-t0-k3E"/>
-                                        <constraint firstItem="tne-Zt-t0K" firstAttribute="top" secondItem="BpU-pw-iVM" secondAttribute="topMargin" constant="-1" id="kVD-Vo-Lmc"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="allergyDescription" destination="tne-Zt-t0K" id="Mi8-tA-i8K"/>
@@ -1436,11 +1353,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Allergies" id="QTn-5I-JZP">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="zvJ-TI-ZL0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="X1R-Cz-QDx" id="Wd2-B0-QLP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="YS2-2c-0SS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="M9T-ST-uSV" kind="show" identifier="showMedication" id="06R-t0-daw"/>
                             </connections>
@@ -1460,23 +1379,23 @@
         <scene sceneID="TO5-64-a0f">
             <objects>
                 <tableViewController id="Vnk-vl-Pzk" customClass="MedicationTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7CP-LP-brF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="7CP-LP-brF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication" textLabel="Lap-PG-K9p" rowHeight="48" style="IBUITableViewCellStyleDefault" id="ghq-EQ-uDl">
-                                <rect key="frame" x="0.0" y="92" width="768" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication" textLabel="Lap-PG-K9p" rowHeight="56" style="IBUITableViewCellStyleDefault" id="ghq-EQ-uDl">
+                                <rect key="frame" x="0.0" y="92" width="768" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghq-EQ-uDl" id="u2F-GU-XPw">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="47.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lap-PG-K9p">
-                                            <rect key="frame" x="68" y="0.0" width="632" height="47.5"/>
+                                            <rect key="frame" x="68" y="0.0" width="632" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1490,11 +1409,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Medications" id="Ppj-gX-ffK">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="DWe-hX-hlx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="Vnk-vl-Pzk" id="qYr-pH-m2G"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Finish" id="RWP-ox-9Zd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="finishButtonPressed:" destination="Vnk-vl-Pzk" id="zC8-jK-b4J"/>
                             </connections>
@@ -1571,7 +1492,7 @@
                                             <rect key="frame" x="68" y="0.0" width="632" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1609,7 +1530,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1701,7 +1622,7 @@
                                             <rect key="frame" x="68" y="0.0" width="632" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1786,16 +1707,16 @@
         <image name="logo2" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lwW-Jy-j5J"/>
-        <segue reference="DSx-cc-upO"/>
-        <segue reference="MGD-Lv-zE8"/>
+        <segue reference="cgR-EF-g6V"/>
+        <segue reference="zGO-mu-EvH"/>
         <segue reference="4sn-Fh-eqa"/>
+        <segue reference="EUp-42-NPK"/>
+        <segue reference="DSx-cc-upO"/>
+        <segue reference="Zbr-PV-Xiy"/>
         <segue reference="5JF-bu-zke"/>
         <segue reference="gBp-QX-iM3"/>
-        <segue reference="ibE-Af-tM0"/>
-        <segue reference="jwu-YB-Ys7"/>
+        <segue reference="bGL-Md-CBm"/>
         <segue reference="7cs-PH-7lB"/>
-        <segue reference="NhT-Sb-C7Z"/>
-        <segue reference="ph2-xp-2cW"/>
+        <segue reference="jwu-YB-Ys7"/>
     </inferredMetricsTieBreakers>
 </document>

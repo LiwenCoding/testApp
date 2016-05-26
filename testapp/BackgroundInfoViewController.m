@@ -56,7 +56,7 @@
     // validate required field
     if ([[self.dateOfBirth.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.dateOfBirth.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
         //drop down alert
-        [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+        [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
         return;
     }
     
