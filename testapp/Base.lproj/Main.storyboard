@@ -1310,7 +1310,7 @@
             </objects>
             <point key="canvasLocation" x="-1216" y="865"/>
         </scene>
-        <!--Allergies-->
+        <!--Allergies(Read-Only)-->
         <scene sceneID="UQ3-91-uME">
             <objects>
                 <tableViewController id="X1R-Cz-QDx" customClass="AllergyTableViewController" sceneMemberID="viewController">
@@ -1351,7 +1351,7 @@
                             <outlet property="delegate" destination="X1R-Cz-QDx" id="WXa-35-629"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Allergies" id="QTn-5I-JZP">
+                    <navigationItem key="navigationItem" title="Allergies(Read-Only)" id="QTn-5I-JZP">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="zvJ-TI-ZL0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -1375,7 +1375,7 @@
             </objects>
             <point key="canvasLocation" x="-217" y="305"/>
         </scene>
-        <!--Medications-->
+        <!--Medications(Read-Only)-->
         <scene sceneID="TO5-64-a0f">
             <objects>
                 <tableViewController id="Vnk-vl-Pzk" customClass="MedicationTableViewController" sceneMemberID="viewController">
@@ -1407,7 +1407,7 @@
                             <outlet property="delegate" destination="Vnk-vl-Pzk" id="o5x-GJ-cfd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Medications" id="Ppj-gX-ffK">
+                    <navigationItem key="navigationItem" title="Medications(Read-Only)" id="Ppj-gX-ffK">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="DWe-hX-hlx">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
