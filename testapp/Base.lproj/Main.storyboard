@@ -202,20 +202,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="107" id="BWK-k6-dK4" customClass="AppointmentTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="768" height="107"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="112" id="BWK-k6-dK4" customClass="AppointmentTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="768" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWK-k6-dK4" id="aUc-fB-Sqq">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="106.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="112"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ud-pY-2eL">
-                                            <rect key="frame" x="8" y="4" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="1" width="85" height="105"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-X2-ShD">
                                             <rect key="frame" x="116" y="17" width="173" height="40"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyh-z5-DxI">
+                                            <rect key="frame" x="521" y="76" width="223" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJY-lf-IpM">
@@ -225,21 +231,15 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exam room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlD-Qx-mBx">
-                                            <rect key="frame" x="116" y="51" width="122" height="27"/>
+                                            <rect key="frame" x="116" y="51" width="157" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-hs-LwA">
-                                            <rect key="frame" x="565" y="21" width="179" height="29.5"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <rect key="frame" x="570" y="33" width="179" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyh-z5-DxI">
-                                            <rect key="frame" x="521" y="76" width="223" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -283,7 +283,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxm-AE-Ahk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2465" y="-2427"/>
+            <point key="canvasLocation" x="-2425" y="-2089"/>
         </scene>
         <!--Start Page View Controller-->
         <scene sceneID="u0d-bD-D1I">
@@ -1713,16 +1713,16 @@
         <image name="logo2" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cgR-EF-g6V"/>
-        <segue reference="ph2-xp-2cW"/>
-        <segue reference="Ppu-U9-0P4"/>
-        <segue reference="7cs-PH-7lB"/>
-        <segue reference="jwu-YB-Ys7"/>
-        <segue reference="ibE-Af-tM0"/>
-        <segue reference="H1C-qZ-aMA"/>
-        <segue reference="L1U-uj-9CG"/>
+        <segue reference="lwW-Jy-j5J"/>
         <segue reference="DSx-cc-upO"/>
         <segue reference="MGD-Lv-zE8"/>
         <segue reference="5JF-bu-zke"/>
+        <segue reference="ibE-Af-tM0"/>
+        <segue reference="jwu-YB-Ys7"/>
+        <segue reference="7cs-PH-7lB"/>
+        <segue reference="Ppu-U9-0P4"/>
+        <segue reference="ph2-xp-2cW"/>
+        <segue reference="L1U-uj-9CG"/>
+        <segue reference="H1C-qZ-aMA"/>
     </inferredMetricsTieBreakers>
 </document>
