@@ -126,7 +126,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Start the App"/>
+                                <state key="normal" title="Start the check-in App"/>
                                 <connections>
                                     <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aut-5u-V4Q"/>
                                 </connections>
@@ -326,6 +326,13 @@
                                     <segue destination="bHi-ck-tZ9" kind="show" id="IWq-3J-ihx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUY-fg-AQj">
+                                <rect key="frame" x="679" y="176" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="shC-Pr-eYc" kind="show" id="lSy-hM-76q"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVm-Yl-tTT">
                                 <rect key="frame" x="693" y="56" width="40" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="4"/>
@@ -519,7 +526,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-Vz-rRt">
                                 <rect key="frame" x="146" y="777" width="476" height="84"/>
-                                <color key="backgroundColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Next"/>
@@ -531,7 +538,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iis-qv-N5p">
                                 <rect key="frame" x="146" y="638" width="476" height="84"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Take Photo"/>
@@ -963,7 +970,7 @@
                                     <action selector="cancelButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="X7O-ST-zMF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-Ud-qYz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrR-Ud-qYz">
                                 <rect key="frame" x="201" y="57" width="366" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1476,7 +1483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChB-70-e0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="853"/>
+            <point key="canvasLocation" x="-371" y="3379"/>
         </scene>
         <!--Select Language-->
         <scene sceneID="HFA-77-A8C">
@@ -1704,6 +1711,100 @@
             </objects>
             <point key="canvasLocation" x="694" y="1508"/>
         </scene>
+        <!--Reason View Controller-->
+        <scene sceneID="3vv-g4-fYO">
+            <objects>
+                <viewController id="shC-Pr-eYc" customClass="ReasonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u2b-0a-Rgl"/>
+                        <viewControllerLayoutGuide type="bottom" id="2BM-nv-vlK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AAT-6s-KYh">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reason &amp; Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-n5-Pnj">
+                                <rect key="frame" x="201" y="57" width="366" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvp-us-pvj">
+                                <rect key="frame" x="140" y="777" width="489" height="84"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="0xg-jJ-x3E"/>
+                                    <action selector="backButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="3Jo-6g-LvV"/>
+                                    <action selector="backButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="5wx-c1-e2H"/>
+                                    <action selector="backButtonPressed:" destination="n9i-0u-lXH" eventType="touchUpInside" id="Ca3-HH-dqG"/>
+                                    <action selector="backButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="Cw8-XU-GfM"/>
+                                    <action selector="backButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="QCX-b8-eUc"/>
+                                    <action selector="backButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="T13-cg-aCf"/>
+                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6A-mx-PGl"/>
+                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="RIJ-p7-jwb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIZ-nh-3bm">
+                                <rect key="frame" x="140" y="638" width="489" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Finish Check-in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="9VI-jx-fbN"/>
+                                    <action selector="enterButtonPressed:" destination="bHi-ck-tZ9" eventType="touchUpInside" id="W8q-WN-cfL"/>
+                                    <action selector="nextButtonPressed:" destination="x57-Gv-S1f" eventType="touchUpInside" id="6Ce-fn-Hv0"/>
+                                    <action selector="nextButtonPressed:" destination="P7r-bV-Y12" eventType="touchUpInside" id="91r-eC-8cH"/>
+                                    <action selector="nextButtonPressed:" destination="n9i-0u-lXH" eventType="touchUpInside" id="EG3-we-sI3"/>
+                                    <action selector="nextButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="G1O-Qa-PB3"/>
+                                    <action selector="nextButtonPressed:" destination="URX-I9-l6h" eventType="touchUpInside" id="hLj-Ev-6cx"/>
+                                    <action selector="nextButtonPressed:" destination="Ltm-T5-vRW" eventType="touchUpInside" id="scb-hD-LWY"/>
+                                    <action selector="nextButtonPressed:" destination="rvd-Yp-DMI" eventType="touchUpInside" id="tQL-gc-NOk"/>
+                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYL-1y-0rm"/>
+                                    <action selector="startAppButtonPressed:" destination="gRR-ft-2Bb" eventType="touchUpInside" id="v5F-wq-m71"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9N-LX-96Z">
+                                <rect key="frame" x="280" y="916" width="208" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="tintColor" red="0.88235294119999996" green="0.16078431369999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Check-in"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="k4R-Cv-8K7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Additional notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-pq-WIH">
+                                <rect key="frame" x="178" y="382" width="412" height="180"/>
+                                <color key="backgroundColor" red="0.77768135065251198" green="0.87473327829157765" blue="0.88958333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Reason to visit" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fss-26-oo3">
+                                <rect key="frame" x="178" y="153" width="412" height="180"/>
+                                <color key="backgroundColor" red="0.7776813507" green="0.87473327830000003" blue="0.88958333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="note" destination="dnx-pq-WIH" id="cah-r2-hlb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIe-BL-ke6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1685" y="2922"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1-gray" width="1024" height="1024"/>
@@ -1713,16 +1814,16 @@
         <image name="logo2" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lwW-Jy-j5J"/>
-        <segue reference="DSx-cc-upO"/>
-        <segue reference="MGD-Lv-zE8"/>
-        <segue reference="5JF-bu-zke"/>
-        <segue reference="ibE-Af-tM0"/>
-        <segue reference="jwu-YB-Ys7"/>
-        <segue reference="7cs-PH-7lB"/>
-        <segue reference="Ppu-U9-0P4"/>
+        <segue reference="cgR-EF-g6V"/>
         <segue reference="ph2-xp-2cW"/>
+        <segue reference="Ppu-U9-0P4"/>
+        <segue reference="7cs-PH-7lB"/>
         <segue reference="L1U-uj-9CG"/>
-        <segue reference="H1C-qZ-aMA"/>
+        <segue reference="L5s-dN-bj2"/>
+        <segue reference="XHI-KR-alA"/>
+        <segue reference="gBp-QX-iM3"/>
+        <segue reference="MGD-Lv-zE8"/>
+        <segue reference="ibE-Af-tM0"/>
+        <segue reference="pLW-7l-n32"/>
     </inferredMetricsTieBreakers>
 </document>

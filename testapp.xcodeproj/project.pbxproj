@@ -21,6 +21,7 @@
 		8090D2951CF55DE000FAC10F /* SecondPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2941CF55DE000FAC10F /* SecondPINViewController.m */; };
 		8090D2981CF6545B00FAC10F /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2971CF6545B00FAC10F /* AppointmentTableViewCell.m */; };
 		8090D29F1CF6E79600FAC10F /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D29E1CF6E79600FAC10F /* UIImage+scale.m */; };
+		8090D2A21CFBD32100FAC10F /* ReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8090D2A11CFBD32100FAC10F /* ReasonViewController.m */; };
 		80BB68D31CEDB837004ABA2D /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */; };
 		80BB68D61CEF0696004ABA2D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D51CEF0696004ABA2D /* PhotoViewController.m */; };
 		80BB68D91CEFB582004ABA2D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB68D81CEFB582004ABA2D /* NameViewController.m */; };
@@ -70,6 +71,8 @@
 		8090D2971CF6545B00FAC10F /* AppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTableViewCell.m; sourceTree = "<group>"; };
 		8090D29D1CF6E79600FAC10F /* UIImage+scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
 		8090D29E1CF6E79600FAC10F /* UIImage+scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+scale.m"; sourceTree = "<group>"; };
+		8090D2A01CFBD32100FAC10F /* ReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReasonViewController.h; sourceTree = "<group>"; };
+		8090D2A11CFBD32100FAC10F /* ReasonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReasonViewController.m; sourceTree = "<group>"; };
 		80BB68D11CEDB837004ABA2D /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		80BB68D21CEDB837004ABA2D /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		80BB68D41CEF0696004ABA2D /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */,
 				80BB69021CF2DDC0004ABA2D /* MedicationTableViewController.h */,
 				80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */,
+				8090D2A01CFBD32100FAC10F /* ReasonViewController.h */,
+				8090D2A11CFBD32100FAC10F /* ReasonViewController.m */,
 				80BB69051CF3D939004ABA2D /* FinishViewController.h */,
 				80BB69061CF3D939004ABA2D /* FinishViewController.m */,
 				80BB68EC1CF1B8F0004ABA2D /* Popover Controllers */,
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8090D2A21CFBD32100FAC10F /* ReasonViewController.m in Sources */,
 				80BB69011CF2C309004ABA2D /* AllergyTableViewController.m in Sources */,
 				80BB69071CF3D939004ABA2D /* FinishViewController.m in Sources */,
 				80198DB21CC7FDBF00515123 /* ViewController.m in Sources */,

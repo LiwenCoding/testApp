@@ -122,16 +122,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.label.text = @"Saving...";
-    
-//    NSString *doctor = @"89784";
-    
-//    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys: [self.patientInfo objectForKey:@"first_name"], @"first_name", [self.patientInfo objectForKey:@"last_name"], @"last_name", [self.patientInfo objectForKey:@"cell_phone"], @"cell_phone", [self.patientInfo objectForKey:@"gender"], @"gender", doctor, @"doctor", [self.patientInfo objectForKey:@"data_of_birth"], @"date_of_birth", [self.patientInfo objectForKey:@"address"], @"address", [self.patientInfo objectForKey:@"city"], @"city", [self.patientInfo objectForKey:@"email"], @"email",[self.patientInfo objectForKey:@"emergency_contact_name"], @"emergency_contact_name",[self.patientInfo objectForKey:@"emergency_contact_phone"], @"emergency_contact_phone",[self.patientInfo objectForKey:@"emergency_contact_relation"], @"emergency_contact_relation",[self.patientInfo objectForKey:@"ethnicity"], @"ethnicity", [self.patientInfo objectForKey:@"home_phone"], @"home_phone",[self.patientInfo objectForKey:@"middle_name"], @"middle_name",[self.patientInfo objectForKey:@"office_phone"], @"office_phone",[self.patientInfo objectForKey:@"preferred_language"], @"preferred_language",[self.patientInfo objectForKey:@"race"], @"race",[self.patientInfo objectForKey:@"social_security_number"], @"social_security_number",[self.patientInfo objectForKey:@"state"], @"state",[self.patientInfo objectForKey:@"zip_code"], @"zip_code",[self.patientInfo objectForKey:@"ethnicity"], @"ethnicity",[self.patientInfo objectForKey:@"primary_insurance"], @"primary_insurance",[self.patientInfo objectForKey:@"secondary_insurance"], @"secondary_insurance",
-//                         nil];
-    
-//    
-//    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys: [self.textFieldArray objectAtIndex:0], @"first_name", [self.textFieldArray objectAtIndex:1], @"last_name", [self.textFieldArray objectAtIndex:4], @"cell_phone", [self.textFieldArray objectAtIndex:2], @"gender", doctor, @"doctor", [self.textFieldArray objectAtIndex:3], @"date_of_birth", [self.textFieldArray objectAtIndex:2], @"address",
-//                         nil];
-    
+
     [self.patientInfo removeObjectsForKeys:@[@"tertiary_insurance", @"patient_photo", @"patient_photo_date", @123, @3.14]];
     NSLog(@"serialized dictionary is %@", self.patientInfo);
     NSError *error;

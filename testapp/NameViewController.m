@@ -70,7 +70,7 @@
     // validate required field
     if ([[self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.firstName.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.lastName.text canBeConvertedToEncoding:NSASCIIStringEncoding] ) {
         //drop down alert
-        [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor grayColor] textColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] time:3];
+        [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
         return;
     }
     
@@ -96,6 +96,13 @@
     [self alert];
     
 }
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
 
 #pragma mark - alert
 
