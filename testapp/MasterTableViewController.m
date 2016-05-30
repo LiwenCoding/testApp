@@ -32,7 +32,6 @@
     [self requestAppointmentList];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
@@ -90,8 +89,8 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 //    NSDate *date = [NSDate date];
 //    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
-    // appointments on 4-23
-    NSString *dateString = @"2016-04-23";
+    // appointments on 4-19
+    NSString *dateString = @"2016-04-19";
     NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
     [request setURL:[NSURL URLWithString:appointmentURLString]];
     [request setHTTPMethod:@"GET"];
@@ -149,7 +148,6 @@
 
 // put patientInfo into patientArray in order
 - (void) orderArray {
-
     for (NSDictionary *everyAppointment in self.appointmentArray) {
         NSString *patientId = [everyAppointment objectForKey:@"patient"];
 //        NSLog(@"order array patient id is %@", patientId);

@@ -10,7 +10,5 @@
 
 @interface AllergyTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *allergyDescription;
-
 @property (weak, nonatomic) IBOutlet UILabel *reaction;
-
 @end

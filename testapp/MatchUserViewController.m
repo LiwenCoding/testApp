@@ -183,8 +183,8 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     //    NSDate *date = [NSDate date];
     //    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
-    // for convience, just use the appointments on 2016-04-23
-    NSString *dateString = @"2016-04-23";
+    // for convience, just use the appointments on 2016-04-19
+    NSString *dateString = @"2016-04-19";
     NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
     [request setURL:[NSURL URLWithString:appointmentURLString]];
     [request setHTTPMethod:@"GET"];
