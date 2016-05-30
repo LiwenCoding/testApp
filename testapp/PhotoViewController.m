@@ -108,6 +108,10 @@
     if ([[segue identifier] isEqualToString:@"nameInfo"]) {
         NameViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
 }
 

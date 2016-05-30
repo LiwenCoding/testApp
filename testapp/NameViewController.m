@@ -207,12 +207,20 @@
     // next page
     if ([[segue identifier] isEqualToString:@"showBackgroundInfo"]) {
         BackgroundInfoViewController *vc = segue.destinationViewController;
-       vc.patientInfo = self.patientInfo;
+        vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     // back page
     if ([[segue identifier] isEqualToString:@"backPhoto"]) {
         PhotoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
 }
 

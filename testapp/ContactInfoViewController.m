@@ -166,11 +166,19 @@
     if ([[segue identifier] isEqualToString:@"showAddress"]) {
         AddressViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     
     if ([[segue identifier] isEqualToString:@"backBackgroundInfo"]) {
         BackgroundInfoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
         
     }
 }

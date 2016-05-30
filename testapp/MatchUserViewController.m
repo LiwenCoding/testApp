@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *enter;
 @property (weak, nonatomic) IBOutlet UIButton *back;
 @property (strong, nonatomic) NSString *headerValue;
+@property (strong, nonatomic) NSString *appointmentId;
+@property (strong, nonatomic) NSMutableString *reason;
+@property (strong, nonatomic) NSMutableString *notes;
 @property (strong, nonatomic) NSMutableDictionary *patientInfo;
 @end
 
@@ -31,6 +34,10 @@
     self.enter.layer.cornerRadius = 5;
     self.back.layer.cornerRadius = 5;
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
+    self.reason = [[NSMutableString alloc] init];
+    self.notes = [[NSMutableString alloc] init];
+    NSLog(@"reason is %@", self.reason);
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -200,6 +207,7 @@
             if (data) {
                 NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
                 NSDictionary *results = [requestReply objectForKey:@"results"];
+                NSLog(@"result appointment is %@", results);
                 for (NSDictionary *everyRecord in results) {
                     NSNumber *patientId = [everyRecord objectForKey:@"patient"];
                     NSLog(@"patientId every is %@", patientId);
@@ -210,6 +218,14 @@
 //                        dispatch_async(dispatch_get_main_queue(), ^{
 //                            [MBProgressHUD hideHUDForView:self.view animated:YES];
 //                            [RKDropdownAlert title:@"Success!" message:@"congratulations!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
+                        
+                        
+                        // get reason and notes from appointment
+                        [self.reason setString:[everyRecord objectForKey:@"reason"]];
+                        [self.notes setString:[everyRecord objectForKey:@"notes"]];
+                        self.appointmentId = [everyRecord objectForKey:@"id"];
+
+                        NSLog(@"note and reason is %@, %@", self.notes, self.reason);
                             [self performSegueWithIdentifier:@"profilePhoto" sender:self];
 //                        });
                     }
@@ -242,6 +258,10 @@
 //        photoViewController.patientInfo = self.patientInfo;
         PhotoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+        
     }
 }
 

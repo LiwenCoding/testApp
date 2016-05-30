@@ -150,11 +150,19 @@
     if ([[segue identifier] isEqualToString:@"showPrimaryInsurance"]) {
         PrimaryInsuranceViewController *vc =  segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     
     if ([[segue identifier] isEqualToString:@"backAddress"]) {
         AddressViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
         
     }
 }

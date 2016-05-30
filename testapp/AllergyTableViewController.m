@@ -21,10 +21,15 @@
 
 @implementation AllergyTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
+//    self.navigationItem.hidesBackButton = YES;
+    
     self.navigationController.navigationBar.barStyle  = UIBarStyleBlackOpaque;
     self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
@@ -166,11 +171,19 @@
         UINavigationController *navi = segue.destinationViewController;
         MedicationTableViewController *vc = (MedicationTableViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     
     if ([[segue identifier] isEqualToString:@"backSecondaryInsurance"]) {
             SecondaryInsuranceViewController *vc = segue.destinationViewController;
             vc.patientInfo = self.patientInfo;
+            vc.reason = self.reason;
+            vc.notes = self.notes;
+            vc.appointmentId = self.appointmentId;
+
         
     }
     

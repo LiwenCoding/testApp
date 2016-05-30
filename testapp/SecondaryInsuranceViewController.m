@@ -176,11 +176,19 @@
         UINavigationController *navi = segue.destinationViewController;
         AllergyTableViewController *vc = (AllergyTableViewController *)navi.topViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     
     if ([[segue identifier] isEqualToString:@"backPrimaryInsurance"]) {
         PrimaryInsuranceViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
         
     }
 }

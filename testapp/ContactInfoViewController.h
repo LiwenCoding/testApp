@@ -10,5 +10,7 @@
 
 @interface ContactInfoViewController : ViewController
 @property(strong, nonatomic)NSMutableDictionary *patientInfo;
-
+@property (strong, nonatomic) NSMutableString *reason;
+@property (strong, nonatomic) NSMutableString *notes;
+@property (strong, nonatomic) NSString *appointmentId;
 @end

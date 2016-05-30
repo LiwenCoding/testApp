@@ -178,12 +178,19 @@
     if ([[segue identifier] isEqualToString:@"showEmergencyContact"]) {
         EmergencyContactViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
     
     if ([[segue identifier] isEqualToString:@"backContactInfo"]) {
         ContactInfoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
-        
+        vc.reason = self.reason;
+        vc.notes = self.notes;
+        vc.appointmentId = self.appointmentId;
+
     }
 }
 
