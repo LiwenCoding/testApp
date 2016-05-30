@@ -22,7 +22,6 @@
     self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
     self.ethnicityArray =  @[@"Hispanic or Latino", @"Not Hispanic or Latino", @"Declined to State"];
     self.selectionArray =  @[@"hispanic", @"not_hispanic", @"declined"];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,20 +36,15 @@
     return [self.ethnicityArray count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ethnicity" forIndexPath:indexPath];
-    
     cell.textLabel.text = [self.ethnicityArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
-    NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
-    
 }
-
 
 @end

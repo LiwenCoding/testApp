@@ -29,7 +29,6 @@
     //show progress indicator
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
-//    hud.label.text = @"Verifying...";
     [self requestAppointmentList];
 }
 
@@ -37,15 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-    self.navigationController.navigationBar.barStyle  = UIBarStyleBlackOpaque;
-    self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 #pragma mark - tableview
 
@@ -81,22 +78,15 @@
         NSURL *imageURL = [NSURL URLWithString:[[self.patientArray objectAtIndex:indexPath.row]objectForKey:@"patient_photo"]];
         UIImage *image = [[UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]] scaleToSize:CGSizeMake(80.0f, 80.0f)];
         cell.imageView.image = image;
-        
     }
-    
     return cell;
 }
-
-
 
 #pragma mark - request data
 
 - (IBAction)requestAppointmentList {
     
-
-    
     [self.refreshControl beginRefreshing];
-//    [self.appointmentArray removeAllObjects];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 //    NSDate *date = [NSDate date];
 //    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
@@ -112,7 +102,6 @@
     dispatch_async(fetchQ, ^{
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            
             if (data) {
                 NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
                 self.appointmentArray = [NSMutableArray arrayWithArray:[requestReply objectForKey:@"results"]];
@@ -120,7 +109,6 @@
                 self.patientDictionary = [[NSMutableDictionary alloc] init];
 //                NSLog(@"appointArray is %@", self.appointmentArray);
                 [self getPatientArray];
-//                [self orderArray];
             }
         }] resume];
     });
@@ -131,9 +119,7 @@
     return;
 }
 
-
 - (void)getPatientArray {
-    
     __block int count = 0;
     for (NSDictionary *everyRecord in self.appointmentArray) {
         NSString *patientId = [everyRecord objectForKey:@"patient"];
@@ -156,7 +142,6 @@
                     [self orderArray];
 //                    NSLog(@"patientArray array is %@", self.patientArray);
                 }
-
             }
         }] resume];
     }

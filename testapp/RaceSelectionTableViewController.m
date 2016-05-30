@@ -11,7 +11,6 @@
 @interface RaceSelectionTableViewController ()
 @property (strong, nonatomic)NSArray *raceArray;
 @property (strong, nonatomic)NSArray *selectionArray;
-
 @end
 
 @implementation RaceSelectionTableViewController
@@ -22,14 +21,12 @@
     self.navigationController.navigationBar.barStyle  = UIBarStyleBlackOpaque;
     self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
     self.raceArray =  @[@"American Indian or Alaska Native", @"Asian", @"Black or African American", @"Native Hawaiian or Other Pacific Islander", @"White", @"Declined to State"];
-    
     self.selectionArray =  @[@"indian", @"asian", @"black", @"hawaiian", @"white", @"Declined to State"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -42,17 +39,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"race" forIndexPath:indexPath];
-    
     cell.textLabel.text = [self.raceArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
-    NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
-    
 }
-
 
 @end

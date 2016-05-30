@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIFloatLabelTextField *city;
 @property (weak, nonatomic) IBOutlet UIButton *next;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
-
 @property (weak, nonatomic) IBOutlet UIButton *back;
 @end
 
@@ -27,61 +26,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"addressview info list %@", self.patientInfo);
     self.back.layer.cornerRadius = 5;
     self.next.layer.cornerRadius = 5;
     self.cancel.layer.cornerRadius = 5;
     [self setTextFieldText];
-    [self setTextFieldUI];}
+    [self setTextFieldUI];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)nextButtonPressed:(id)sender {
-    
     //validate input
     if ([[self.address.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.address.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.zipCode.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.zipCode.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.state.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.state.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.city.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.city.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
         //drop down alert
         [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
         return;
     }
-    
     // save changes in the memory
     [self saveChangesInMemory];
-    
     // do segue
     [self performSegueWithIdentifier:@"showEmergencyContact" sender:self];
-    
 }
-
 
 - (IBAction)backButtonPressed:(id)sender {
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backContactInfo" sender:self];
-    
 }
-
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    
     [self alert];
-    
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
 }
 
-
 #pragma mark - alert
 
 - (void)alert {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
@@ -97,7 +82,6 @@
 
 - (void)saveChangesInMemory {
     [self.view endEditing:YES];
-
     [self.patientInfo setObject:self.address.text forKey:@"address"];
     [self.patientInfo setObject:self.zipCode.text forKey:@"zip_code"];
     [self.patientInfo setObject:self.state.text forKey:@"state"];
@@ -106,17 +90,13 @@
 
 
 - (void)setTextFieldText {
-    
     self.address.text = [self.patientInfo objectForKey:@"address"];
     self.zipCode.text = [self.patientInfo objectForKey:@"zip_code"];
     self.state.text = [self.patientInfo objectForKey:@"state"];
     self.city.text = [self.patientInfo objectForKey:@"city"];
-    
 }
 
-
 - (void)setTextFieldUI {
-    
     [self.address setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.address.floatLabelActiveColor = [UIColor orangeColor];
     self.address.floatLabelFont = [UIFont boldSystemFontOfSize:15];
@@ -133,44 +113,32 @@
     self.city.floatLabelActiveColor = [UIColor orangeColor];
     self.city.floatLabelFont = [UIFont boldSystemFontOfSize:15];
     
-    
     // set bottom border
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.address.frame.size.height - 1, self.address.frame.size.width - 1, 1.0f);
     bottomBorder.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder.borderWidth = 2 ;
+    bottomBorder.borderWidth = 2;
     
     CALayer *bottomBorder2 = [CALayer layer];
     bottomBorder2.frame = CGRectMake(0.0f, self.zipCode.frame.size.height - 1, self.zipCode.frame.size.width - 1, 1.0f);
     bottomBorder2.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder2.borderWidth = 2 ;
+    bottomBorder2.borderWidth = 2;
     
     CALayer *bottomBorder3 = [CALayer layer];
     bottomBorder3.frame = CGRectMake(0.0f, self.state.frame.size.height - 1, self.state.frame.size.width - 1, 1.0f);
     bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder3.borderWidth = 2 ;
+    bottomBorder3.borderWidth = 2;
     
     CALayer *bottomBorder4 = [CALayer layer];
     bottomBorder4.frame = CGRectMake(0.0f, self.city.frame.size.height - 1, self.city.frame.size.width - 1, 1.0f);
     bottomBorder4.backgroundColor = [UIColor grayColor].CGColor;
-    bottomBorder4.borderWidth = 2 ;
-    
-    
+    bottomBorder4.borderWidth = 2;
     
     [self.address.layer addSublayer:bottomBorder];
     [self.zipCode.layer addSublayer:bottomBorder2];
     [self.state.layer addSublayer:bottomBorder3];
     [self.city.layer addSublayer:bottomBorder4];
-    
 }
-
-
-
-
-
-
-
-
 
 #pragma mark - Navigation
 
@@ -181,7 +149,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
     
     if ([[segue identifier] isEqualToString:@"backContactInfo"]) {
@@ -190,7 +157,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
 }
 

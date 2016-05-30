@@ -591,6 +591,7 @@
                                     <segment title="Female"/>
                                     <segment title="Other"/>
                                 </segments>
+                                <color key="tintColor" red="0.36862745099999999" green="0.80392156859999997" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="genderSelector:" destination="P7r-bV-Y12" eventType="valueChanged" id="jCI-fz-0yq"/>
                                 </connections>
@@ -1444,6 +1445,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPG-RM-eA1">
+                                <rect key="frame" x="171" y="433" width="426" height="157"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="54"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MRe-cS-ahD"/>
+                                    <segue destination="1fr-Xd-RTZ" kind="show" id="Ppu-U9-0P4"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check in successfully!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQu-Uz-LFE">
                                 <rect key="frame" x="97" y="137" width="574" height="201"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
@@ -1456,17 +1468,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1-gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ft2-MJ-WRq">
                                 <rect key="frame" x="344" y="867" width="138" height="157"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPG-RM-eA1">
-                                <rect key="frame" x="171" y="433" width="426" height="157"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.75294117650000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="54"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <action selector="startAppButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MRe-cS-ahD"/>
-                                    <segue destination="1fr-Xd-RTZ" kind="show" id="Ppu-U9-0P4"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Return to start page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-mi-bKv">
+                                <rect key="frame" x="262" y="614" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1776,20 +1783,32 @@
                                     <action selector="cancelButtonPressed:" destination="mfr-77-ega" eventType="touchUpInside" id="k4R-Cv-8K7"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Additional notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-pq-WIH">
-                                <rect key="frame" x="178" y="382" width="412" height="180"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-pq-WIH">
+                                <rect key="frame" x="178" y="398" width="412" height="180"/>
                                 <color key="backgroundColor" red="0.77768135065251198" green="0.87473327829157765" blue="0.88958333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Reason to visit" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fss-26-oo3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fss-26-oo3">
                                 <rect key="frame" x="178" y="153" width="412" height="180"/>
                                 <color key="backgroundColor" red="0.7776813507" green="0.87473327830000003" blue="0.88958333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reason to visit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-Qg-Lnm">
+                                <rect key="frame" x="178" y="122" width="176" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcO-QP-odx">
+                                <rect key="frame" x="178" y="367" width="176" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1819,16 +1838,16 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gad-GU-d4m"/>
-        <segue reference="fk7-1s-dfa"/>
+        <segue reference="Ppu-U9-0P4"/>
         <segue reference="8Ev-5J-hIm"/>
         <segue reference="7cs-PH-7lB"/>
-        <segue reference="ph2-xp-2cW"/>
-        <segue reference="L1U-uj-9CG"/>
         <segue reference="L5s-dN-bj2"/>
         <segue reference="XHI-KR-alA"/>
         <segue reference="gBp-QX-iM3"/>
-        <segue reference="MGD-Lv-zE8"/>
         <segue reference="ibE-Af-tM0"/>
         <segue reference="pLW-7l-n32"/>
+        <segue reference="EUp-42-NPK"/>
+        <segue reference="L1U-uj-9CG"/>
+        <segue reference="zGO-mu-EvH"/>
     </inferredMetricsTieBreakers>
 </document>

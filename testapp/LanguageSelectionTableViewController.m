@@ -21,13 +21,11 @@
     self.navigationController.navigationBar.barStyle  = UIBarStyleBlackOpaque;
     self.navigationController.navigationBar.barTintColor =[UIColor colorWithRed:44.0/255.0 green:192.0/255.0 blue:83.0/255.0 alpha:1];
     self.languageArray =  @[@"English", @"Spanish", @"Chinese", @"French", @"Italian", @"Japanese", @"Portuguese", @"Russian", @"Other"];
-
     self.selectionArray =  @[@"eng", @"spa", @"zho", @"fra", @"ita", @"jpe", @"por", @"rus", @"other"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -38,7 +36,6 @@
     return [self.languageArray count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"language" forIndexPath:indexPath];
     
@@ -48,9 +45,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *selectedString = [self.selectionArray objectAtIndex:indexPath.row];
-    NSLog(@"selected is %@", selectedString);
     self.selectionHappenedInPopoverVC(selectedString);
-    
 }
 
 @end

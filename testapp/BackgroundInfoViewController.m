@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *next;
 @property (weak, nonatomic) IBOutlet UIButton *back;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
-
 @end
 
 @implementation BackgroundInfoViewController
@@ -35,55 +34,44 @@
     self.race.delegate = self;
     self.preferredLanguage.delegate = self;
     self.ethnicity.delegate = self;
-    
     self.back.layer.cornerRadius = 5;
     self.next.layer.cornerRadius = 5;
     self.cancel.layer.cornerRadius = 5;
-    NSLog(@"backgroundview info list %@", self.patientInfo);
     [self setTextFieldText];
     [self setTextFieldUI];
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
     [self.view endEditing:YES];
-
     // validate required field
     if ([[self.dateOfBirth.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.dateOfBirth.text canBeConvertedToEncoding:NSASCIIStringEncoding]) {
         //drop down alert
         [RKDropdownAlert title:@"Error" message:@"Please fill the valid date of birth" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
         return;
     }
-    
+    // save changes in memeory
     [self saveChangesInMemory];
     // do segue
     [self performSegueWithIdentifier:@"showContactInfo" sender:self];
-    
 }
 
 - (IBAction)backButtonPressed:(id)sender {
     [self.view endEditing:YES];
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backName" sender:self];
-    
 }
 
-
 - (IBAction)cancelButtonPressed:(id)sender {
-    
     [self alert];
-    
 }
 
 #pragma mark - alert
 
 - (void)alert {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
@@ -98,10 +86,6 @@
 }
 
 - (void)saveChangesInMemory {
-    
-
-    
-    // save changes in the memory
     [self.patientInfo setObject:self.dateOfBirth.text forKey:@"date_of_birth"];
     
     if (![self.preferredLanguage.text isEqualToString:@""]) {
@@ -121,12 +105,7 @@
     }
 }
 
-
-
-
-
 - (void)setTextFieldText {
-    
     self.dateOfBirth.text = [self.patientInfo objectForKey:@"date_of_birth"];
     
     if ([[self.patientInfo objectForKey:@"preferred_language"] isEqualToString:@"blank"]) {
@@ -152,9 +131,7 @@
     } else {
         self.socialSecurity.text = [self.patientInfo objectForKey:@"social_security_number"];
     }
-
 }
-
 
 - (void)editDidBegin {
     if (self.dateOfBirth.inputView == nil) {
@@ -172,7 +149,6 @@
     }
 }
 
-
 -(void)updateTextField:(UIDatePicker *)sender {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -188,10 +164,7 @@
     [self.view endEditing:YES];
 }
 
-
-- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField
-{
-    
+- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField {
     if (textField == self.race) {
         [self.view endEditing:YES];
         [self performSegueWithIdentifier:@"showRacePopover" sender:self];
@@ -205,12 +178,10 @@
         [self.view endEditing:YES];
         [self performSegueWithIdentifier:@"showEthnicityPopover" sender:self];
     }
-
     return NO;
 }
 
 - (void)setTextFieldUI {
-    
     [self.dateOfBirth setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.dateOfBirth.floatLabelActiveColor = [UIColor orangeColor];
     self.dateOfBirth.floatLabelFont = [UIFont boldSystemFontOfSize:15];
@@ -230,7 +201,6 @@
     [self.socialSecurity setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.socialSecurity.floatLabelActiveColor = [UIColor orangeColor];
     self.socialSecurity.floatLabelFont = [UIFont boldSystemFontOfSize:15];
-    
     // set bottom border
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
@@ -257,21 +227,16 @@
     bottomBorder5.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder5.borderWidth = 2;
 
-    
     [self.dateOfBirth.layer addSublayer:bottomBorder];
     [self.preferredLanguage.layer addSublayer:bottomBorder3];
     [self.race.layer addSublayer:bottomBorder4];
     [self.ethnicity.layer addSublayer:bottomBorder5];
     [self.socialSecurity.layer addSublayer:bottomBorder2];
-    
 }
-
-
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     // get data from popovers
     if ([[segue identifier] isEqualToString:@"showRacePopover"]) {
         UINavigationController *navi = segue.destinationViewController;
@@ -301,30 +266,22 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         };
     }
-
     // prepare data for next segue
-    
     if ([[segue identifier] isEqualToString:@"showContactInfo"]) {
         ContactInfoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
-    
-    
+    // back page
     if ([[segue identifier] isEqualToString:@"backName"]) {
         NameViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
-        
     }
-    
-    
 }
 
 @end

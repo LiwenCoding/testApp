@@ -10,5 +10,4 @@
 
 @interface LanguageSelectionTableViewController : UITableViewController
 @property (nonatomic, copy) void (^selectionHappenedInPopoverVC)(NSString *responseLanguage);
-
 @end

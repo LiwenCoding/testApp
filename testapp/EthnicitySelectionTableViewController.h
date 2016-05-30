@@ -10,5 +10,4 @@
 
 @interface EthnicitySelectionTableViewController : UITableViewController
 @property (nonatomic, copy) void (^selectionHappenedInPopoverVC)(NSString *responseEthnicity);
-
 @end

@@ -27,17 +27,19 @@
 
 @implementation MatchUserViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
+    self.reason = [[NSMutableString alloc] init];
+    self.notes = [[NSMutableString alloc] init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dateOfBirth.delegate = self;
     [self setTextFieldUI];
     self.enter.layer.cornerRadius = 5;
     self.back.layer.cornerRadius = 5;
-    self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
-    self.reason = [[NSMutableString alloc] init];
-    self.notes = [[NSMutableString alloc] init];
-    NSLog(@"reason is %@", self.reason);
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +62,6 @@
     }
 }
 
-
 -(void)updateTextField:(UIDatePicker *)sender {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -76,10 +77,7 @@
     [self.view endEditing:YES];
 }
 
-
-- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField
-{
-    
+- (BOOL)textFieldShouldBeginEditing:(UIFloatLabelTextField *) textField {
     if (textField == self.dateOfBirth) {
         [self editDidBegin];
     }
@@ -87,7 +85,6 @@
 }
 
 - (void)setTextFieldUI {
-    
     [self.dateOfBirth setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.dateOfBirth.floatLabelActiveColor = [UIColor orangeColor];
     self.dateOfBirth.floatLabelFont = [UIFont boldSystemFontOfSize:15];
@@ -104,25 +101,19 @@
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.dateOfBirth.frame.size.height - 1, self.dateOfBirth.frame.size.width - 1, 1.0f);
     bottomBorder.backgroundColor = [UIColor grayColor].CGColor;
-//    bottomBorder.borderWidth = 2;
     
     CALayer *bottomBorder2 = [CALayer layer];
     bottomBorder2.frame = CGRectMake(0.0f, self.firstName.frame.size.height - 1, self.firstName.frame.size.width - 1, 1.0f);
     bottomBorder2.backgroundColor = [UIColor grayColor].CGColor;
-//    bottomBorder2.borderWidth = 2;
     
     CALayer *bottomBorder3 = [CALayer layer];
     bottomBorder3.frame = CGRectMake(0.0f, self.lastName.frame.size.height - 1, self.lastName.frame.size.width - 1, 1.0f);
     bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
-//    bottomBorder3.borderWidth = 2;
-    
     
     [self.dateOfBirth.layer addSublayer:bottomBorder];
     [self.firstName.layer addSublayer:bottomBorder2];
     [self.lastName.layer addSublayer:bottomBorder3];
-
 }
-
 
 - (IBAction)enterButtonPressed:(id)sender {
     [self.view endEditing:YES];
@@ -144,7 +135,8 @@
 - (void)getPatientInfo {
     //generate request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/patients?verbose=true&last_name=%@&first_name=%@&date_of_birth=%@", self.lastName.text, self.firstName.text, self.dateOfBirth.text];
+    NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/patients?verbose=true&last_name=%@&first_name=%@&date_of_birth=%@", [self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], self.dateOfBirth.text];
+//    NSLog(@"url is %@", urlString);
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -153,12 +145,13 @@
     dispatch_async(fetchQ, ^{
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//            NSLog(@"data is %@", data);
             if (data) {
                 NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
                 //if there is no patient matched
-                NSLog(@"request reply is %@", requestReply);
+//                NSLog(@"request reply is %@", requestReply);
                 NSNumber *count = [requestReply objectForKey:@"count"];
-                NSLog(@"count is %@", count);
+//                NSLog(@"count is %@", count);
                 if ([count intValue] == 0) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -169,7 +162,7 @@
                     //find the patient in the appointment list
                     NSMutableDictionary *resultDictionary = [[requestReply objectForKey:@"results"] objectAtIndex:0];
                     self.patientInfo = [[NSMutableDictionary alloc]initWithDictionary:resultDictionary];
-                    NSLog(@"patient info: %@", self.patientInfo);
+//                    NSLog(@"patient info: %@", self.patientInfo);
                     [self getAppointmentList];
                 }
             } else {
@@ -178,7 +171,6 @@
                     [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
                     return;
                 });
-            
             }
         }] resume];
     });
@@ -188,82 +180,61 @@
 - (void)getAppointmentList {
     
     NSNumber *patientIdTobeMatched = [self.patientInfo objectForKey:@"id"];
-    NSLog(@"patientIdTobeMatched is %@", patientIdTobeMatched);
-    if (patientIdTobeMatched) {
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        //    NSDate *date = [NSDate date];
-        //    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
-        // for convience, just use the appointments on 2016-04-23
-        NSString *dateString = @"2016-04-23";
-        NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
-        [request setURL:[NSURL URLWithString:appointmentURLString]];
-        [request setHTTPMethod:@"GET"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [request addValue:self.headerValue forHTTPHeaderField:@"Authorization"];
-            
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        __block int flag = 0;
-        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            if (data) {
-                NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
-                NSDictionary *results = [requestReply objectForKey:@"results"];
-                NSLog(@"result appointment is %@", results);
-                for (NSDictionary *everyRecord in results) {
-                    NSNumber *patientId = [everyRecord objectForKey:@"patient"];
-                    NSLog(@"patientId every is %@", patientId);
-                    BOOL compare = [patientIdTobeMatched isEqualToNumber:patientId];
-                    NSLog(@"compare %d", compare);
-                    if (compare) {
-                        flag = 1;
-//                        dispatch_async(dispatch_get_main_queue(), ^{
-//                            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                            [RKDropdownAlert title:@"Success!" message:@"congratulations!" backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
-                        
-                        
-                        // get reason and notes from appointment
-                        [self.reason setString:[everyRecord objectForKey:@"reason"]];
-                        [self.notes setString:[everyRecord objectForKey:@"notes"]];
-                        self.appointmentId = [everyRecord objectForKey:@"id"];
-
-                        NSLog(@"note and reason is %@, %@", self.notes, self.reason);
-                            [self performSegueWithIdentifier:@"profilePhoto" sender:self];
-//                        });
-                    }
-                }
-                if (flag == 0) {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    //    NSDate *date = [NSDate date];
+    //    NSString *dateString = [[[date description] componentsSeparatedByString: @" "] objectAtIndex:0];
+    // for convience, just use the appointments on 2016-04-23
+    NSString *dateString = @"2016-04-23";
+    NSString *appointmentURLString = [NSString stringWithFormat:@"https://drchrono.com/api/appointments?date=%@", dateString];
+    [request setURL:[NSURL URLWithString:appointmentURLString]];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:self.headerValue forHTTPHeaderField:@"Authorization"];
+        
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    __block int flag = 0;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (data) {
+            NSDictionary *requestReply = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
+            NSDictionary *results = [requestReply objectForKey:@"results"];
+//                NSLog(@"result appointment is %@", results);
+            for (NSDictionary *everyRecord in results) {
+                NSNumber *patientId = [everyRecord objectForKey:@"patient"];
+//                    NSLog(@"patientId every is %@", patientId);
+                BOOL compare = [patientIdTobeMatched isEqualToNumber:patientId];
+                if (compare) {
+                    flag = 1;
+                    // get reason and notes from appointment
+                    [self.reason setString:[everyRecord objectForKey:@"reason"]];
+                    [self.notes setString:[everyRecord objectForKey:@"notes"]];
+                    self.appointmentId = [everyRecord objectForKey:@"id"];
+//                        NSLog(@"note and reason is %@, %@", self.notes, self.reason);
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                        [RKDropdownAlert title:@"Login Failed" message:@"No appointment found, please make an appointment with the doctor first." backgroundColor:[UIColor grayColor] textColor:[UIColor whiteColor] time:3];
-                        return;
+                        [self performSegueWithIdentifier:@"profilePhoto" sender:self];
                     });
                 }
             }
-        }] resume];
-    }
+            if (flag == 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    [RKDropdownAlert title:@"Login Failed" message:@"No appointment found, please make an appointment with the doctor first." backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
+                    return;
+                });
+            }
+        }
+    }] resume];
 }
-
-
-
-
-
-
-
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"profilePhoto"]) {
-//        UINavigationController *navi = segue.destinationViewController;
-//        PhotoViewController *photoViewController = (PhotoViewController *)navi.topViewController;
-//        photoViewController.patientInfo = self.patientInfo;
         PhotoViewController *vc = segue.destinationViewController;
         vc.patientInfo = self.patientInfo;
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-        
     }
 }
-
 
 @end

@@ -26,8 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"insuranceview info list %@", self.patientInfo);
-    
     self.back.layer.cornerRadius = 5;
     self.next.layer.cornerRadius = 5;
     self.cancel.layer.cornerRadius = 5;
@@ -37,38 +35,23 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 - (IBAction)nextButtonPressed:(id)sender {
-    
-    
     // save changes in the memory
     [self saveChangesInMemory];
-    
-    NSLog(@"saved info is %@", [self.patientInfo objectForKey:@"primary_insurance"]);
-    
     // do segue
     [self performSegueWithIdentifier:@"showSecondaryInsurance" sender:self];
-    
 }
-
 
 - (IBAction)backButtonPressed:(id)sender {
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backEmergencyContact" sender:self];
-    
 }
-
-
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    
     [self alert];
-    
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
@@ -78,7 +61,6 @@
 #pragma mark - alert
 
 - (void)alert {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
@@ -93,30 +75,21 @@
 }
 
 - (void)saveChangesInMemory {
-
     [self.view endEditing:YES];
-
     [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.company.text forKey:@"insurance_company"];
     [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.groupNumber.text forKey:@"insurance_group_number"];
     [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.planName.text forKey:@"insurance_plan_name"];
     [[self.patientInfo objectForKey:@"primary_insurance"] setObject:self.insuranceID.text forKey:@"insurance_id_number"];
-    
 }
 
 - (void)setTextFieldText {
-    
-    NSLog(@"insurance info is %@", [self.patientInfo objectForKey:@"primary_insurance"]);
     self.company.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_company"];
     self.groupNumber.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_group_number"];
     self.planName.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_plan_name"];
     self.insuranceID.text = [[self.patientInfo objectForKey:@"primary_insurance"] objectForKey:@"insurance_id_number"];
-
-    
 }
 
-
 - (void)setTextFieldUI {
-    
     [self.company setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.company.floatLabelActiveColor = [UIColor orangeColor];
     self.company.floatLabelFont = [UIFont boldSystemFontOfSize:15];
@@ -132,7 +105,6 @@
     [self.insuranceID setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.insuranceID.floatLabelActiveColor = [UIColor orangeColor];
     self.insuranceID.floatLabelFont = [UIFont boldSystemFontOfSize:15];
-    
     // set bottom border
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.company.frame.size.height - 1, self.company.frame.size.width - 1, 1.0f);
@@ -158,8 +130,6 @@
     [self.groupNumber.layer addSublayer:bottomBorder2];
     [self.planName.layer addSublayer:bottomBorder3];
     [self.insuranceID.layer addSublayer:bottomBorder4];
-
-    
 }
 
 #pragma mark - Navigation
@@ -171,7 +141,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
     
     if ([[segue identifier] isEqualToString:@"backEmergencyContact"]) {
@@ -180,8 +149,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
-        
     }
 }
 

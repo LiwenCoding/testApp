@@ -28,10 +28,7 @@
     self.redirect.layer.cornerRadius = 5;
     self.check.layer.cornerRadius = 5;
     self.start.layer.cornerRadius = 5;
-    
-
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,8 +41,7 @@
 
 - (IBAction)startAppButtonPressed:(id)sender {
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
-    NSLog(@"header value is %@", self.headerValue);
-    
+//    NSLog(@"header value is %@", self.headerValue);
     if(self.headerValue) {
         [self performSegueWithIdentifier:@"startApp" sender:self];
     } else {
@@ -53,7 +49,6 @@
         [RKDropdownAlert title:@"Notice" message:@"Please connect with Drchrono first!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
     }
 }
-
 
 - (IBAction)checkAppointmentButtonPressed:(id)sender {
     self.headerValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"headerValue"];
@@ -65,6 +60,5 @@
     }
     
 }
-
 
 @end

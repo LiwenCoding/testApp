@@ -39,7 +39,6 @@
 		80BB69011CF2C309004ABA2D /* AllergyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69001CF2C309004ABA2D /* AllergyTableViewController.m */; };
 		80BB69041CF2DDC0004ABA2D /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */; };
 		80BB69071CF3D939004ABA2D /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BB69061CF3D939004ABA2D /* FinishViewController.m */; };
-		80BB69091CF3F607004ABA2D /* settingButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 80BB69081CF3F607004ABA2D /* settingButton.png */; };
 		80BB690E1CF417B5004ABA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BB690D1CF417B5004ABA2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +106,6 @@
 		80BB69031CF2DDC0004ABA2D /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
 		80BB69051CF3D939004ABA2D /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
 		80BB69061CF3D939004ABA2D /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
-		80BB69081CF3F607004ABA2D /* settingButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingButton.png; sourceTree = "<group>"; };
 		80BB690D1CF417B5004ABA2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +146,6 @@
 				80198DCA1CC94CC200515123 /* Controller */,
 				80198DB31CC7FDBF00515123 /* Main.storyboard */,
 				80BB690D1CF417B5004ABA2D /* Assets.xcassets */,
-				80BB69081CF3F607004ABA2D /* settingButton.png */,
 				80198DB81CC7FDBF00515123 /* LaunchScreen.storyboard */,
 				80198DBB1CC7FDBF00515123 /* Info.plist */,
 				8090D29C1CF6E76500FAC10F /* Category */,
@@ -315,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80198DBA1CC7FDBF00515123 /* LaunchScreen.storyboard in Resources */,
-				80BB69091CF3F607004ABA2D /* settingButton.png in Resources */,
 				80BB690E1CF417B5004ABA2D /* Assets.xcassets in Resources */,
 				80198DB51CC7FDBF00515123 /* Main.storyboard in Resources */,
 			);

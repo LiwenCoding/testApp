@@ -21,14 +21,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *next;
 @property (weak, nonatomic) IBOutlet UIButton *back;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
-
 @end
 
 @implementation NameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"nameview info list %@", self.patientInfo);
     self.back.layer.cornerRadius = 5;
     self.next.layer.cornerRadius = 5;
     self.cancel.layer.cornerRadius = 5;
@@ -41,73 +39,55 @@
 }
 
 - (IBAction)genderSelector:(id)sender {
-    
-    switch (self.genderSelector.selectedSegmentIndex)
-    {
+    switch (self.genderSelector.selectedSegmentIndex) {
         case 0:
             self.gender = @"Male";
-//            [self.genderSelector setTintColor:[UIColor greenColor]];
-//            NSLog(@"gender is %@", self.gender);
+            self.genderSelector.tintColor = [UIColor colorWithRed:67.0/255.0 green:152.0/255.0 blue:202.0/255.0 alpha:1];
             break;
         case 1:
             self.gender = @"Female";
-//            [self.genderSelector setTintColor:[UIColor redColor]];
-
-//            NSLog(@"gender is %@", self.gender);
-
+            self.genderSelector.tintColor = [UIColor colorWithRed:222.0/255.0 green:114.0/255.0 blue:132.0/255.0 alpha:1];
             break;
         case 2:
             self.gender = @"Other";
-//            [self.genderSelector setTintColor:[UIColor grayColor]];
-
+            self.genderSelector.tintColor = [UIColor grayColor];
         default:
             break;
     }
 }
+
 - (IBAction)nextButtonPressed:(id)sender {
     [self.view endEditing:YES];
-    
     // validate required field
     if ([[self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.firstName.text canBeConvertedToEncoding:NSASCIIStringEncoding] || [[self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0 || ![self.lastName.text canBeConvertedToEncoding:NSASCIIStringEncoding] ) {
         //drop down alert
         [RKDropdownAlert title:@"Error" message:@"Please input valid information" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
         return;
     }
-    
     // save changes in the memory
-
-
     [self saveChangesInMemory];
     // do segue
     [self performSegueWithIdentifier:@"showBackgroundInfo" sender:self];
-
 }
-
 
 - (IBAction)backButtonPressed:(id)sender {
     [self.view endEditing:YES];
     [self saveChangesInMemory];
     [self performSegueWithIdentifier:@"backPhoto" sender:self];
-    
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    
     [self alert];
-    
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
 }
 
-
 #pragma mark - alert
 
 - (void)alert {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notice" message:@"If continue, all saved information will be lost" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
@@ -121,43 +101,35 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
 - (void)saveChangesInMemory {
-    
     [self.patientInfo setObject:self.firstName.text forKey:@"first_name"];
     [self.patientInfo setObject:self.lastName.text forKey:@"last_name"];
     [self.patientInfo setObject:self.middleName.text forKey:@"middle_name"];
     [self.patientInfo setObject:self.gender forKey:@"gender"];
 }
 
-
-
-
-
 - (void)setTextFieldText {
-
     self.firstName.text = [self.patientInfo objectForKey:@"first_name"];
     self.lastName.text = [self.patientInfo objectForKey:@"last_name"];
     self.middleName.text = [self.patientInfo objectForKey:@"middle_name"];
-
-
     // display gender
     NSString *genderInfo = [self.patientInfo objectForKey:@"gender"];
     if ([genderInfo isEqualToString:@""] || [genderInfo isEqualToString:@"Male"]) {
         self.gender = @"Male";
         self.genderSelector.selectedSegmentIndex = 0;
+        self.genderSelector.tintColor = [UIColor colorWithRed:67.0/255.0 green:152.0/255.0 blue:202.0/255.0 alpha:1];
     } else if ([genderInfo isEqualToString:@"Female"]) {
         self.gender = @"Female";
         self.genderSelector.selectedSegmentIndex = 1;
+        self.genderSelector.tintColor = [UIColor colorWithRed:222.0/255.0 green:114.0/255.0 blue:132.0/255.0 alpha:1];
     } else {
         self.gender = @"Other";
         self.genderSelector.selectedSegmentIndex = 2;
+        self.genderSelector.tintColor = [UIColor grayColor];
     }
 }
 
-
 - (void)setTextFieldUI {
-
     [self.firstName setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.firstName.floatLabelActiveColor = [UIColor orangeColor];
     self.firstName.floatLabelFont = [UIFont boldSystemFontOfSize:15];
@@ -169,9 +141,6 @@
     [self.middleName setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.middleName.floatLabelActiveColor = [UIColor orangeColor];
     self.middleName.floatLabelFont = [UIFont boldSystemFontOfSize:15];
-    
-
-    
     // set bottom border
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.firstName.frame.size.height - 1, self.firstName.frame.size.width - 1, 1.0f);
@@ -188,18 +157,10 @@
     bottomBorder3.backgroundColor = [UIColor grayColor].CGColor;
     bottomBorder3.borderWidth = 2 ;
     
-
-    
     [self.firstName.layer addSublayer:bottomBorder];
     [self.lastName.layer addSublayer:bottomBorder2];
     [self.middleName.layer addSublayer:bottomBorder3];
-
 }
-
-
-
-
-
 
 #pragma mark - Navigation
 
@@ -211,7 +172,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
     // back page
     if ([[segue identifier] isEqualToString:@"backPhoto"]) {
@@ -220,7 +180,6 @@
         vc.reason = self.reason;
         vc.notes = self.notes;
         vc.appointmentId = self.appointmentId;
-
     }
 }
 
