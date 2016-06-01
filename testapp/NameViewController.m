@@ -102,9 +102,9 @@
 }
 
 - (void)saveChangesInMemory {
-    [self.patientInfo setObject:self.firstName.text forKey:@"first_name"];
-    [self.patientInfo setObject:self.lastName.text forKey:@"last_name"];
-    [self.patientInfo setObject:self.middleName.text forKey:@"middle_name"];
+    [self.patientInfo setObject:[self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"first_name"];
+    [self.patientInfo setObject:[self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"last_name"];
+    [self.patientInfo setObject:[self.middleName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"middle_name"];
     [self.patientInfo setObject:self.gender forKey:@"gender"];
 }
 

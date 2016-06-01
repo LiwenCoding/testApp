@@ -133,7 +133,7 @@
 
 
 - (void)getPatientInfo {
-    //generate request
+    //generate request                     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *urlString = [NSString stringWithFormat:@"https://drchrono.com/api/patients?verbose=true&last_name=%@&first_name=%@&date_of_birth=%@", [self.lastName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], [self.firstName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]], self.dateOfBirth.text];
 //    NSLog(@"url is %@", urlString);
@@ -168,7 +168,7 @@
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    [RKDropdownAlert title:@"Error" message:@"No internet connection, please try later!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
+                    [RKDropdownAlert title:@"Error" message:@"Whitespace in the name or no internet connection, please try again!" backgroundColor:[UIColor colorWithRed:225.0/255.0 green:41.0/255.0 blue:57.0/255.0 alpha:0.8] textColor:[UIColor whiteColor] time:3];
                     return;
                 });
             }

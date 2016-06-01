@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="height" constant="90" id="hXB-bq-dZq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Connect with Drchrono">
+                                <state key="normal" title="Connect with drchrono">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1321,14 +1321,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allergy" rowHeight="56" id="gLA-Lx-AnP" customClass="AllergyTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="768" height="56"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLA-Lx-AnP" id="BpU-pw-iVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tne-Zt-t0K">
-                                            <rect key="frame" x="24" y="3" width="339" height="48.5"/>
+                                            <rect key="frame" x="24" y="3" width="339" height="49"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1386,7 +1386,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medication" textLabel="Lap-PG-K9p" rowHeight="56" style="IBUITableViewCellStyleDefault" id="ghq-EQ-uDl">
-                                <rect key="frame" x="0.0" y="92" width="768" height="56"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghq-EQ-uDl" id="u2F-GU-XPw">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="55.5"/>
@@ -1492,19 +1492,19 @@
             <objects>
                 <tableViewController id="VNP-Qu-l1q" customClass="LanguageSelectionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MeP-m2-XYw">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="language" textLabel="UkL-IK-GfO" rowHeight="48" style="IBUITableViewCellStyleDefault" id="Sj4-Rc-3aU">
-                                <rect key="frame" x="0.0" y="92" width="768" height="48"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sj4-Rc-3aU" id="xuO-YB-Kb3">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="47.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="47.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UkL-IK-GfO">
-                                            <rect key="frame" x="68" y="0.0" width="632" height="47.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
@@ -1622,19 +1622,19 @@
             <objects>
                 <tableViewController id="eel-fC-t00" customClass="EthnicitySelectionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Una-nN-2dh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ethnicity" textLabel="wYh-Rb-Jfe" rowHeight="48" style="IBUITableViewCellStyleDefault" id="hVq-Hc-Msr">
-                                <rect key="frame" x="0.0" y="92" width="768" height="48"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVq-Hc-Msr" id="0P7-uS-H3S">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="47.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="47.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wYh-Rb-Jfe">
-                                            <rect key="frame" x="68" y="0.0" width="632" height="47.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.2628263757" green="0.59507450399999995" blue="0.7911658654" alpha="1" colorSpace="calibratedRGB"/>
@@ -1838,14 +1838,14 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gad-GU-d4m"/>
-        <segue reference="Ppu-U9-0P4"/>
-        <segue reference="8Ev-5J-hIm"/>
-        <segue reference="7cs-PH-7lB"/>
+        <segue reference="5lV-ce-NdB"/>
         <segue reference="L5s-dN-bj2"/>
         <segue reference="XHI-KR-alA"/>
         <segue reference="gBp-QX-iM3"/>
         <segue reference="ibE-Af-tM0"/>
         <segue reference="pLW-7l-n32"/>
+        <segue reference="8Ev-5J-hIm"/>
+        <segue reference="7cs-PH-7lB"/>
         <segue reference="EUp-42-NPK"/>
         <segue reference="L1U-uj-9CG"/>
         <segue reference="zGO-mu-EvH"/>
